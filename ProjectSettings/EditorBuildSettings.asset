@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/OpeningPV.unity
+    guid: 2cba8ce620e217841b106956181aa785
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: a538061e02b31b543979e12bf8e07cdb
+  - enabled: 0
+    path: Assets/Scenes/SceneSelecter.unity
+    guid: 8103d6a5651a10e49b74fdbad715aa04
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: fbbb7db8c2999bf4da17c4609306a351
+  - enabled: 1
+    path: Assets/Scenes/RealScene1.unity
+    guid: e4382c809e9124646afaccea40e630cd
+  - enabled: 1
+    path: Assets/Scenes/Result.unity
+    guid: 10c6695f22c1dc841935a37339874f82
+  - enabled: 1
+    path: Assets/Scenes/RealScene2.unity
+    guid: f449ddbb2e7c14e4aae961651001f6d1
+  - enabled: 1
+    path: Assets/Scenes/Boss2Scene.unity
+    guid: 32a5685c35add774f94d7726c4b08758
+  - enabled: 1
+    path: Assets/Scenes/Boss3Scene.unity
+    guid: b7abdf5be63b848469bbb75c96b59eca
+  - enabled: 1
+    path: Assets/Scenes/FinalResult.unity
+    guid: 4f59839501bcc53459f67fd30c92d5ec
+  - enabled: 1
+    path: Assets/Scenes/Dead.unity
+    guid: d0072459c68b4df4eb5027232374dc8f
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 27e297da073721e4b88002dc5028e9f5, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_UseUCBPForAssetBundles: 0
