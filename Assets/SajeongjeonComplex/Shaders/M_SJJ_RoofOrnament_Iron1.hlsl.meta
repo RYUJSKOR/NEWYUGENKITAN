@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 704a6898618be1d4c92123c342ef07d0
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Shaders/M_SJJ_RoofOrnament_Iron1.hlsl
+  uploadId: 645695

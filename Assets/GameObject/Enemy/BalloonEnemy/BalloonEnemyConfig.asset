@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba5f4314bbb4ed459222c87bed56770, type: 3}
+  m_Name: BalloonEnemyConfig
+  m_EditorClassIdentifier: 
+  moveDirection: {x: -1, y: 0, z: 0}
+  moveSpeed: 4
+  bullet: {fileID: 6347013360028792297, guid: 8ec452b87c0530a42921bb1f3ae9b3ab, type: 3}
+  hitIgnoreTags:
+  - ' EnemyMissing'
+  - Ground
+  - asiba
+  pattern: 0
+  explosionScaleMultiplier: 2
+  explosionDuration: 0.3
+  peakScaleFactor: 1.1
+  peakDuration: 0.05
+  destroyDelay: 0.2
+  floatStrength: 2
+  floatSpeed: 2

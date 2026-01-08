@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 191be5ccc4b95214a90a1060d527f703
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Props/Mesh/Materials/MI_SJJ_Ilwolobongdo.mat
+  uploadId: 645695

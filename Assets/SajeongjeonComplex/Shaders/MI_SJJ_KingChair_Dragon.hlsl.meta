@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0480ea89b05819f458bf6ba31da465bf
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Shaders/MI_SJJ_KingChair_Dragon.hlsl
+  uploadId: 645695

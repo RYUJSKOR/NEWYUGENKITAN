@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f6eb6423e52507643b32cb5bc3cfb59e
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Shaders/MI_SJJ_Red-Lacquered_Chair_Cushion.hlsl
+  uploadId: 645695

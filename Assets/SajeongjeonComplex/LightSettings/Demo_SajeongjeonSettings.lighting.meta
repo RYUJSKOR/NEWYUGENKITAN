@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c9cce5dd79d8755429c615e2d492f160
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/LightSettings/Demo_SajeongjeonSettings.lighting
+  uploadId: 645695
