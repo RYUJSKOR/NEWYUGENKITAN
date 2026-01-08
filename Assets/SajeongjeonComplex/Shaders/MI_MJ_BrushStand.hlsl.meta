@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0ed5e42f99c0e684fa3ca096a4a3f93d
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Shaders/MI_MJ_BrushStand.hlsl
+  uploadId: 645695

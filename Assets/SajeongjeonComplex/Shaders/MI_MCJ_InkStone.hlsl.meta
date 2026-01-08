@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: da2b1c495dd5bf2408db7715a5f816e6
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Shaders/MI_MCJ_InkStone.hlsl
+  uploadId: 645695
