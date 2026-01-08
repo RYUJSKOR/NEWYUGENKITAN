@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b03aa16f97283a447a014575ce563e4e
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Shaders/M_SJJ_DoorframeC.hlsl
+  uploadId: 645695

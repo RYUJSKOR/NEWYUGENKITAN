@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 306eec38da365cf4a9e2c1bef8f7f45c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Cheonchujeon/Mesh/Materials/M_CCJ_Roof_Gypsum.mat
+  uploadId: 645695

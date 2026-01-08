@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63dcf22ec8a4dba409915c0b7f580943, type: 3}
+  m_Name: KarakasaMovementConfig
+  m_EditorClassIdentifier: 
+  bounceUpForce: 20
+  floatFallSpeed: 1
+  swingSpeed: 8
+  swingRange: 2.5
+  jumpForce: 10
+  jumpInterval: 1.5
+  crouchDuration: 0.4
+  crouchScaleY: 0.5
+  groundedIgnoreTime: 0.4

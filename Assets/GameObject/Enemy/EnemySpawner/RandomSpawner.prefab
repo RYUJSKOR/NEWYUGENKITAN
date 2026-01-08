@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4004165000110044090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1684207337258998065}
+  - component: {fileID: 6624800210073136599}
+  m_Layer: 0
+  m_Name: RandomSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1684207337258998065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004165000110044090}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -34.542896, y: 3.998634, z: -2.2063475}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6624800210073136599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4004165000110044090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 352ca260342faa741aaca9343d738de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnInfos:
+  - enemyPrefab: {fileID: 259085687795708762, guid: 64265cea03c0851449dd9f4e56d77b5f, type: 3}
+    viewportOffset: {x: -0.8, y: 0, z: 0}
+    spawnProbability: 0.25
+  - enemyPrefab: {fileID: 2137932655360439774, guid: 3e6c3a52d555f2f45b76532657fbc00b, type: 3}
+    viewportOffset: {x: 0.1, y: 0.5, z: 0}
+    spawnProbability: 0.3
+  - enemyPrefab: {fileID: 2546210310497219067, guid: bfcbc6abff27d76418c67c70d8b4a34f, type: 3}
+    viewportOffset: {x: -0.8, y: 0.25, z: 0}
+    spawnProbability: 0.1
+  - enemyPrefab: {fileID: 2546210310497219067, guid: a6df21335feeb8b449c8edf72a289a3a, type: 3}
+    viewportOffset: {x: 0.8, y: 0.25, z: 0}
+    spawnProbability: 0.1
+  - enemyPrefab: {fileID: 259085687795708762, guid: 64265cea03c0851449dd9f4e56d77b5f, type: 3}
+    viewportOffset: {x: 0.8, y: 0, z: 0}
+    spawnProbability: 0.25
+  - enemyPrefab: {fileID: 2137932655360439774, guid: 3e6c3a52d555f2f45b76532657fbc00b, type: 3}
+    viewportOffset: {x: -0.1, y: 0.5, z: 0}
+    spawnProbability: 0.25
+  maxEnemiesInView: 5
+  spawnInterval: 2

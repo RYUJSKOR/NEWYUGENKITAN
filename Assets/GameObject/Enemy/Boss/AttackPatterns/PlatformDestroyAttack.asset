@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f118f5f354286774b90e917180bcad5a, type: 3}
+  m_Name: PlatformDestroyAttack
+  m_EditorClassIdentifier: 
+  prepareHandState: 2
+  actionHandState: 2
+  returnHandState: 0
+  hitCount: 4
+  chargeTime: 0.5
+  timeBetweenHits: 0.05
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 32768
+  hoverMoveSpeed: 100
+  smashSpeed: 200
+  returnSpeed: 100
+  hoverHeight: 6

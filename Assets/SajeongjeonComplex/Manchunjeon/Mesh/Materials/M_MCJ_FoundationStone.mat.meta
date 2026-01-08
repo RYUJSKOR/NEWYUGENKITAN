@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 768d820bc01419746bb34d2c0b6c2e08
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Manchunjeon/Mesh/Materials/M_MCJ_FoundationStone.mat
+  uploadId: 645695

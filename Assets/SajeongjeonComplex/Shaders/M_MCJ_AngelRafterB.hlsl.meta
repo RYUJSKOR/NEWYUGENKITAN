@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 83caf77143799ff41b4c0f89b72f762b
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Shaders/M_MCJ_AngelRafterB.hlsl
+  uploadId: 645695

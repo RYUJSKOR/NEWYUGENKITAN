@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0942dc38cc651174699f47d43d5d1fb6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Sajeongjeon/Mesh/Materials/M_SJJ_wall_insulator.mat
+  uploadId: 645695

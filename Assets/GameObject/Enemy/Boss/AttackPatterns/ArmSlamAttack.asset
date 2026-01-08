@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c35c961b6c933d46823445b80a8b029, type: 3}
+  m_Name: ArmSlamAttack
+  m_EditorClassIdentifier: 
+  prepareHandState: 1
+  actionHandState: 1
+  returnHandState: 2
+  armAimSpeed: 100
+  attackTellDuration: 1
+  attackChargeTime: 1
+  postChargePauseDuration: 0.15
+  attackImpactStunTime: 1.5
+  armSlamSpeed: 100
+  armReturnSpeed: 50
+  armSlamInitialForce: 40
+  groundMarkerPrefab: {fileID: 0}
+  chargeUpVFXPrefab: {fileID: 987006226175528151, guid: 02aac555818834c43a2413ef7786924f, type: 3}
+  vfxAnchorName: VFX_Anchor

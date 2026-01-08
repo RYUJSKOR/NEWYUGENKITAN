@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6410211ac1dfbfe4db5323e6e85fdf53, type: 3}
+  m_Name: DoubleArmSlamAttack
+  m_EditorClassIdentifier: 
+  prepareHandState: 2
+  actionHandState: 2
+  returnHandState: 0
+  stunFollowUpAttack: {fileID: 11400000, guid: 7fea2285462c1b242be46af3829d098a, type: 2}
+  armAimSpeed: 20
+  attackHeight: 10
+  attackChargeTime: 2
+  impactDowntime: 1
+  armReturnSpeed: 15
+  armSlamInitialForce: 60
+  stunDuration: 3.5
+  screenEdgeHorizontalOffset: 2
+  distanceToCamera: 25
+  groundMarkerPrefab: {fileID: 0}
+  impactEffectPrefab: {fileID: 0}
+  shakeDuration: 0.3
+  shakeMagnitude: 0.4
+  chargeShakeIntensity: 0.1
+  chargeShakeSpeed: 50

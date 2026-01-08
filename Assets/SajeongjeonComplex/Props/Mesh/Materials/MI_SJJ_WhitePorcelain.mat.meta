@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 87b3dcea034a17e46832929fc1dfd557
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Props/Mesh/Materials/MI_SJJ_WhitePorcelain.mat
+  uploadId: 645695

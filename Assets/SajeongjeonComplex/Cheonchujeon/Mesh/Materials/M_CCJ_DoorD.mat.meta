@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b02a81343954ea14791bb4a08140110c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Cheonchujeon/Mesh/Materials/M_CCJ_DoorD.mat
+  uploadId: 645695

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 661d86dd43e85c3429f737b135c7b2e1
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Shaders/M_MCJ_RoofGypsum.hlsl
+  uploadId: 645695

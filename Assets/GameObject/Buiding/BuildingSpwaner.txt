@@ -1,0 +1,5 @@
+BuildingType,PositionX,PositionY,PositionZ,RotX,RotY,RotZ
+lantern,-69,0.22,2.5,-11.7,0,0
+yuukaku,-30,0.13,0.77,0,180,0
+yuukaku,35,0.13,0.77,0,180,0
+yuukaku,100,0.13,0.77,0,180,0
