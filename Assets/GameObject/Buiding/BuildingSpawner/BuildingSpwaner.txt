@@ -1,0 +1,5 @@
+BuildingType,PositionX,PositionY,PositionZ
+lantern,-69, 0.22, 2.5
+yuukaku,-30, 6.5, -5.64
+yuukaku,35, 6.5, -5.64
+yuukaku,100, 6.5, -5.64
