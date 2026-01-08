@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4983201347955225987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7189404019967988136}
+  - component: {fileID: -7738196366517365424}
+  - component: {fileID: 3165260324710660128}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7189404019967988136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983201347955225987}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7738196366517365424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983201347955225987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30771418e4473a4da1641f9f307cb7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerObject: {fileID: 0}
+  spawnDistanceThreshold: 20
+  spawnOnce: 1
+  csvFile: {fileID: 4900000, guid: 71bd603d5995f844ab3043cd88542040, type: 3}
+  prefabMappings:
+  - enemyType: BalloonEnemy
+    prefab: {fileID: 2546210310497219067, guid: a6df21335feeb8b449c8edf72a289a3a, type: 3}
+  - enemyType: BlueBoundEnemy
+    prefab: {fileID: 259085687795708762, guid: 64265cea03c0851449dd9f4e56d77b5f, type: 3}
+  - enemyType: BlueEnemy
+    prefab: {fileID: 6547823444182862139, guid: eca68e469bcaae3479bbb20438a1a976, type: 3}
+  - enemyType: RoketEnemy
+    prefab: {fileID: 2911384175743723885, guid: 45b5584fa3c146a489cebabd640edc48, type: 3}
+  - enemyType: KarakasaGhost
+    prefab: {fileID: 2137932655360439774, guid: 3e6c3a52d555f2f45b76532657fbc00b, type: 3}
+  - enemyType: FallEnemy
+    prefab: {fileID: 1232370684811509116, guid: 2adb163bf26af45408559d2ba45bd8c1, type: 3}
+  - enemyType: HomingEnemy
+    prefab: {fileID: 2007925763090862115, guid: 6e8dcb2826c50954d9a36a8095b010c9, type: 3}
+--- !u!114 &3165260324710660128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4983201347955225987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08f06d201d792f40ae0af47b3ad5852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

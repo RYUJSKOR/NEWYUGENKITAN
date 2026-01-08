@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8768e43313e19ab438e45b617e5d0d7f
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Shaders/M_CCJ_RoofTileE.hlsl
+  uploadId: 645695

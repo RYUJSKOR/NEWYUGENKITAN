@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3e2262d6b0337144d9829ab9a35c514d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Sajeongjeon/Mesh/Materials/M_SJJ_GanpoOutside_shortA.mat
+  uploadId: 645695

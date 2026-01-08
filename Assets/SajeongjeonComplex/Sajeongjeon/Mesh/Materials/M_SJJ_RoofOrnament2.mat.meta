@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b2477f4080c16b547b68b2645538e32b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Sajeongjeon/Mesh/Materials/M_SJJ_RoofOrnament2.mat
+  uploadId: 645695

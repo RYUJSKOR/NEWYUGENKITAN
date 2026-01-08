@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afafa0fc88ab7d4189226f444c283d3, type: 3}
+  m_Name: DoubleArmPressAttack
+  m_EditorClassIdentifier: 
+  prepareHandState: 2
+  actionHandState: 2
+  returnHandState: 0
+  windUpSpeed: 80
+  pressSpeed: 130
+  returnSpeed: 20
+  impactPauseTime: 1
+  screenEdgeOffset: 2
+  pressArmSpacing: 3
+  chargeTime: 1
+  chargeShakeIntensity: 0.1
+  chargeShakeSpeed: 50

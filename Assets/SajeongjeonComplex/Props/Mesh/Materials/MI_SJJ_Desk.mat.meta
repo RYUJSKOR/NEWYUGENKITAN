@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b87c53972741fd6469f83e43dc976f7f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271917
+  packageName: 'NHA - Gyeongbokgung Palace Vol.2: Sajeongjeon Hall'
+  packageVersion: 1.0
+  assetPath: Assets/SajeongjeonComplex/Props/Mesh/Materials/MI_SJJ_Desk.mat
+  uploadId: 645695
