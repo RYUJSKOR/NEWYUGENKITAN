@@ -64729,6 +64729,10 @@ PrefabInstance:
       propertyPath: stateMachine
       value: 
       objectReference: {fileID: 7880054802364016651}
+    - target: {fileID: 3663308441870665939, guid: 3344621fba4fee74085da8b42fae007f, type: 3}
+      propertyPath: targetSideScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5779744475770092088, guid: 3344621fba4fee74085da8b42fae007f, type: 3}
       propertyPath: m_Camera
       value: 
