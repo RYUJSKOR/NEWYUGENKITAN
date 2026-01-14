@@ -13,6 +13,9 @@ public class SEController : MonoBehaviour
     private void Awake()
     {
         source = GetComponent<AudioSource>();
+        source.playOnAwake = false;
+        source.loop = false;
+        source.spatialBlend = 0f;
 
         foreach (var se in profile.seList)
         {
@@ -21,18 +24,23 @@ public class SEController : MonoBehaviour
         }
     }
 
-    public void Play(string id)
+    /// <summary>
+    /// SE‚ğÄ¶‚µA‚»‚ÌSE‚ÌÄ¶ŠÔ‚ğ•Ô‚·
+    /// </summary>
+    public float Play(string id)
     {
-        if (!dict.TryGetValue(id, out var data))
+        if (!dict.TryGetValue(id, out var data) || data.clip == null)
         {
             Debug.LogWarning($"SE ID not found : {id}", this);
-            return;
+            return 0.1f;
         }
 
         if (Time.time < lastPlay[id] + data.cooldown)
-            return;
+            return 0f;
 
         lastPlay[id] = Time.time;
         source.PlayOneShot(data.clip, data.volume);
+
+        return data.clip.length;
     }
 }
