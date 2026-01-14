@@ -65896,11 +65896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfdf9945da2842a4493f0231c702326a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seList:
-  - type: 0
-    clip: {fileID: 8300000, guid: 751771a2c92a7ff4c93e20f1a4bff3f3, type: 3}
-    volume: 1
-    cooldown: 0
+  profile: {fileID: 11400000, guid: 64e632476950c7c499541ba504b3a674, type: 2}
 --- !u!1001 &9147907988603984288
 PrefabInstance:
   m_ObjectHideFlags: 0

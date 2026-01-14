@@ -55,7 +55,7 @@ public class PlayerDash : IPlayerState
                         isAirDashUsed = true;
 
                     animator.SetBool("IsDashing", true);
-					SEcontroller?.Play(PlayerSEType.Dash);
+					SEcontroller?.Play("Player.Dash");
 					dashDirection = new Vector3(moveInput, 0f, 0f).normalized;
                     isDashing = true;
                     dashStartTime = Time.time;
