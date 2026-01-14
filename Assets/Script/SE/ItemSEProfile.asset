@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 345b5b85c852a7f4a9924123a61bf88d, type: 3}
-  m_Name: PlayerSEProfile
+  m_Name: ItemSEProfile
   m_EditorClassIdentifier: 
   seList:
-  - id: Player.Dash
-    clip: {fileID: 8300000, guid: 751771a2c92a7ff4c93e20f1a4bff3f3, type: 3}
+  - id: Item.Heel
+    clip: {fileID: 8300000, guid: 00511f3205b4cdd4ebbd960baa08bd8b, type: 3}
     volume: 1
     cooldown: 0
