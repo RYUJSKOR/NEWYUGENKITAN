@@ -8,7 +8,7 @@ public class SEProfile : ScriptableObject
     {
         public string id;              // —á: "Player.Jump"
         public AudioClip clip;
-        [Range(0f, 1f)] public float volume = 1f;
+        [Range(0f, 5f)] public float volume = 1f;
         public float cooldown = 0f;
     }
 

@@ -471,29 +471,9 @@ Assets/GameObject/Player/RT_PlayerSilhouette.renderTexture
 Assets/GameObject/Realroad.prefab
 Assets/GameObject/Resources/1488403298774-image03.png
 Assets/GameObject/Resources/1488403298774-image03.webp
-Assets/GameObject/Resources/BackGround
-Assets/GameObject/Resources/Bullet
-Assets/GameObject/Resources/Bullet/Explosion
 Assets/GameObject/Resources/Enemy
-Assets/GameObject/Resources/Enemy/BlueBoundEnemy
-Assets/GameObject/Resources/Enemy/BlueEnemy
 Assets/GameObject/Resources/Enemy/RoketEnemy
 Assets/GameObject/Resources/Enemy/RoketEnemy/EyeMaterial.mat
-Assets/GameObject/Resources/GameScreen
-Assets/GameObject/Resources/Manager
-Assets/GameObject/Resources/Materials
-Assets/GameObject/Resources/Player
-Assets/GameObject/Resources/TreeModel
-Assets/GameObject/Resources/TreeModel/3DNatureAssetsPack(Lite)
-Assets/GameObject/Resources/TreeModel/3DNatureAssetsPack(Lite)/materials
-Assets/GameObject/Resources/TreeModel/3DNatureAssetsPack(Lite)/Meshes
-Assets/GameObject/Resources/TreeModel/3DNatureAssetsPack(Lite)/Prefabs
-Assets/GameObject/Resources/TreeModel/3DNatureAssetsPack(Lite)/Prefabs/Bush
-Assets/GameObject/Resources/TreeModel/3DNatureAssetsPack(Lite)/Prefabs/Foliage
-Assets/GameObject/Resources/TreeModel/3DNatureAssetsPack(Lite)/Prefabs/Log
-Assets/GameObject/Resources/TreeModel/3DNatureAssetsPack(Lite)/Prefabs/Log2
-Assets/GameObject/Resources/TreeModel/3DNatureAssetsPack(Lite)/Scene
-Assets/GameObject/Resources/TreeModel/3DNatureAssetsPack(Lite)/Textures
 Assets/GameObject/Rocky_Ground_15_Albedo.png
 Assets/GameObject/SkyBox/61be7fe5ee805865.png
 Assets/GameObject/SkyBox/a393ab517427128c.png
@@ -507,9 +487,15 @@ Assets/GameObject/SoundEffect/AS_1412276_膨らむ_大きくなるB.mp3
 Assets/GameObject/SoundEffect/AS_1642467_ふわふわと浮かんでいる音_7.mp3
 Assets/GameObject/SoundEffect/AudioTimeScaler.cs
 Assets/GameObject/SoundEffect/MasterMixer.mixer
+Assets/GameObject/SoundEffect/ジャンプ１.mp3
+Assets/GameObject/SoundEffect/ジャンプ２.mp3
 Assets/GameObject/SoundEffect/ダッシュ.mp3
 Assets/GameObject/SoundEffect/バルーン爆発.mp3
 Assets/GameObject/SoundEffect/ペン書き.mp3
+Assets/GameObject/SoundEffect/炎.mp3
+Assets/GameObject/SoundEffect/回復１.mp3
+Assets/GameObject/SoundEffect/凧 1.mp3
+Assets/GameObject/SoundEffect/能面.mp3
 Assets/GameObject/ToonRealroad.mat
 Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/materials/appletree 1.mat
 Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/materials/appletree.mat
@@ -2170,7 +2156,11 @@ Assets/Script/Player/Player.cs
 Assets/Script/Player/PlayerManager.cs
 Assets/Script/Player/PlayerStateMachine.cs
 Assets/Script/Player/SkillModeManager.cs
+Assets/Script/SE/ItemSEProfile.asset
+Assets/Script/SE/MapSEProfile.asset
+Assets/Script/SE/PlayerSEProfile.asset
 Assets/Script/SE/SEController.cs
+Assets/Script/SE/SEProfile.cs
 Assets/Script/Shooting/Bullet.cs
 Assets/Script/Shooting/FoxBullet.cs
 Assets/Script/Shooting/HomingEnemyBullet.cs

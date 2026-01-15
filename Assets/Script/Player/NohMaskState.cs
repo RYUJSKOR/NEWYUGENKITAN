@@ -28,5 +28,6 @@ public class NohMaskState : PlayerShooting
     {
         shooting.SetDirection(shootingDirection);
         shooting.RequestShoot();
+        SE.Play("Player.NohMaskShoot");
     }
 }

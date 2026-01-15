@@ -17,3 +17,19 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 751771a2c92a7ff4c93e20f1a4bff3f3, type: 3}
     volume: 1
     cooldown: 0
+  - id: Player.DemonShoot
+    clip: {fileID: 8300000, guid: 62519c82f3a249a4abd81e44879208e4, type: 3}
+    volume: 1
+    cooldown: 0.3
+  - id: Player.NohMaskShoot
+    clip: {fileID: 8300000, guid: 5189c907da8852343bd71ccba2713fb8, type: 3}
+    volume: 4
+    cooldown: 0.5
+  - id: Player.Jump1
+    clip: {fileID: 8300000, guid: 37d8c71946fcee94f92e8fa104b17954, type: 3}
+    volume: 2
+    cooldown: 0
+  - id: Player.Jump2
+    clip: {fileID: 8300000, guid: 3a5fa8ba54a0f85458bc58a5d9f7942d, type: 3}
+    volume: 5
+    cooldown: 0

@@ -15,5 +15,5 @@ MonoBehaviour:
   seList:
   - id: Item.Heel
     clip: {fileID: 8300000, guid: 00511f3205b4cdd4ebbd960baa08bd8b, type: 3}
-    volume: 1
+    volume: 3
     cooldown: 0
