@@ -1,15 +1,32 @@
-Assets/100BestEffectPack/Texture&Material/Kunai Texture&Mateiral/Kunai5.png
-Assets/GameObject/SkyBox/kumo.png
-Assets/100BestEffectPack/Texture&Material/Kunai Texture&Mateiral/Kunai4.png
-Assets/100BestEffectPack/Texture&Material/Kunai Texture&Mateiral/Kunai2.png
-Assets/Asian Style Trees/Source/Textures/Leaves/Korean_Type_Uncolored.png
-Assets/Erbeilo3D/3D Model/Plant/Texture/Kurdish_Ivy_BillBoard_alphamask.png
-Assets/100BestEffectPack/Texture&Material/Kunai Texture&Mateiral/Kunai3.png
-Assets/Erbeilo3D/3D Model/Plant/Texture/Kurdish_Ivy_BillBoard_normal 1.png
-Assets/Asian Style Trees/Source/Textures/Leaves/Korean_Type.png
-Assets/Asian Style Trees/Source/Textures/Leaves/Korean_Type_Normal.png
-Assets/Erbeilo3D/3D Model/Plant/Texture/Kurdish_Ivy_BillBoard_Tr_Albedo.png
-Assets/Asian Style Trees/Source/Textures/Leaves/Korean_Type_Leaf_1.png
-Assets/100BestEffectPack/Texture&Material/Kunai Texture&Mateiral/Kunai1.png
-Assets/GameObject/SkyBox/kumo2.png
-Assets/GameObject/SkyBox/kumo3.png
+Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/Textures/Leaf_Aesculus-hippocastanum_Diffuse.png
+Assets/100BestEffectPack/Texture&Material/Light Texture&Material/Light.png
+Assets/100BestEffectPack/Texture&Material/Light Texture&Material/Lightning2.png
+Assets/Model/Light/Light/Tex/Light_Light_BaseMap.png
+Assets/Erbeilo3D/3D Model/Katana/Texture/Leaves/leaf_BaseColor.png
+Assets/Model/Light/Light/Tex/Light_Main_Red_BaseMap.png
+Assets/Model/Light/Light/Tex/Light_Wood_Metal_Normal.png
+Assets/Model/Light/Light/Tex/Light_Wood_Metal_MaskMap.png
+Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/Textures/Leaf_Robinia-pseudoacacia_Diffuse.png
+Assets/Model/Light/Light/Tex/Light_Wood_Normal.png
+Assets/100BestEffectPack/Texture&Material/Light Texture&Material/Lightning4.png
+Assets/Model/Light/Light/Tex/Light_Wood_MaskMap.png
+Assets/Erbeilo3D/3D Model/Lamp/Texture/Lamp1_1_MaskMap.png
+Assets/Model/Light/Light/Tex/Light_Wood_Metal_BaseMap.png
+Assets/Erbeilo3D/3D Model/Lamp/Texture/Lamp1_1_BaseMap.png
+Assets/Model/Light/Light/Tex/Light_Wood_BaseMap.png
+Assets/100BestEffectPack/Texture&Material/Light Texture&Material/Lightning3.png
+Assets/Erbeilo3D/3D Model/Lamp/Texture/Lamp_._MaskMap.png
+Assets/Erbeilo3D/3D Model/Lamp/Texture/Lamp2_2_MaskMap.png
+Assets/Erbeilo3D/3D Model/Lamp/Texture/Lamp2_2_BaseMap.png
+Assets/Erbeilo3D/3D Model/Lamp/Texture/Lamp1_1_Normal.png
+Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/Textures/Leaf_Abies-concolor_Diffuse.png
+Assets/Model/Light/Light/Tex/Light_Roof_BaseMap.png
+Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/Textures/Leaf_Aesculus-hippocastanum_Normal.png
+Assets/100BestEffectPack/Texture&Material/Light Texture&Material/Light2.png
+Assets/100BestEffectPack/Texture&Material/Light Texture&Material/Lightning5.png
+Assets/Erbeilo3D/3D Model/Lamp/Texture/Lamp_._Normal.png
+Assets/Erbeilo3D/3D Model/Lamp/Texture/Lamp2_2_Normal.png
+Assets/100BestEffectPack/Texture&Material/Light Texture&Material/Lightning.png
+Assets/Erbeilo3D/3D Model/Lamp/Texture/Lamp_._BaseMap.png
+Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/Textures/Leaf_Robinia-pseudoacacia_Normal.png
+Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/Textures/Leaf_Abies-concolor_Normal.png
