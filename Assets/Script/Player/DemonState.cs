@@ -37,6 +37,7 @@ public class DemonState : PlayerShooting
             float angle = startAngle + (angleStep * i);
             Vector3 spreadDir = Quaternion.Euler(0, 0, angle) * shootingDirection.normalized;
 
+            SE.Play("Player.DemonShoot");
             shooting.SetDirection(spreadDir);
             shooting.RequestShoot();
         }

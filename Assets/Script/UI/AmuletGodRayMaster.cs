@@ -27,7 +27,7 @@ public class AmuletGodRayMaster : MonoBehaviour
 
     [Header("演出設定 (遅延ありバースト)")]
     [Tooltip("ゲージが溜まってから発動するまでの「タメ」時間（秒）")]
-    public float startDelay = 0.2f; // ★ 0.1 ~ 0.3秒くらいが自然です
+    public float startDelay = 0.2f; // ★ 0.1 ~ 0.3秒くらい
 
     [Tooltip("拡大して消えるまでの時間（秒）")]
     public float burstDuration = 0.5f;
