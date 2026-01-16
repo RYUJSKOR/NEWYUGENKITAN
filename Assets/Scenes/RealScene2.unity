@@ -14826,6 +14826,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603843744}
     m_Modifications:
+    - target: {fileID: 158221933803648456, guid: 3344621fba4fee74085da8b42fae007f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: da52f620097df374386b3b85b4231a14, type: 3}
+    - target: {fileID: 1274469406185052477, guid: 3344621fba4fee74085da8b42fae007f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 3663308441870665939, guid: 3344621fba4fee74085da8b42fae007f, type: 3}
       propertyPath: shooting
       value: 
@@ -14834,10 +14842,18 @@ PrefabInstance:
       propertyPath: stateMachine
       value: 
       objectReference: {fileID: 1525465910}
+    - target: {fileID: 5632648631875668291, guid: 3344621fba4fee74085da8b42fae007f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 5779744475770092088, guid: 3344621fba4fee74085da8b42fae007f, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1093335031}
+    - target: {fileID: 6198605017213703673, guid: 3344621fba4fee74085da8b42fae007f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 42698f1f625f92d44830af5b6b191ec1, type: 3}
     - target: {fileID: 6763941625138815033, guid: 3344621fba4fee74085da8b42fae007f, type: 3}
       propertyPath: m_Camera
       value: 
