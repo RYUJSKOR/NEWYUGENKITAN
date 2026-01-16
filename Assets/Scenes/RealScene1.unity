@@ -64930,6 +64930,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AllofUI
       objectReference: {fileID: 0}
+    - target: {fileID: 9014982291697480879, guid: 3344621fba4fee74085da8b42fae007f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -65566,6 +65570,10 @@ PrefabInstance:
     - target: {fileID: 3471924889485791099, guid: 219176191c0a5f243abe63caa721c272, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3471924889485791099, guid: 219176191c0a5f243abe63caa721c272, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3572832249545719541, guid: 219176191c0a5f243abe63caa721c272, type: 3}
       propertyPath: m_LocalPosition.x
