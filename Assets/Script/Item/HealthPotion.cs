@@ -22,7 +22,6 @@ public class HealthPotion : BaseItem
         {
             // 体力を回復させる
             healthManager.Recovery(recoveryValue);
-
             Debug.Log(user.name + " のHPが " + recoveryValue + " 回復した！");
 
             // もしピックアップエフェクトが設定されていれば、アイテムの位置に生成する
@@ -33,7 +32,7 @@ public class HealthPotion : BaseItem
             }
 
             // アイテムは消費されたので、シーンからオブジェクトを破棄する
-            Destroy(gameObject);
+            PickupAndDestroyAfterSE("Item.Heel");
         }
         else
         {

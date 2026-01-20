@@ -591,6 +591,9 @@ public class BossController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// KOKOGA 問題になっているところ
+    /// </summary>
     public void SpawnPhaseExitObjects()
     {
         if (stageExitTriggerPrefab != null && stageExitTriggerSpawnPoint != null)
@@ -602,7 +605,7 @@ public class BossController : MonoBehaviour
                 string sceneToLoad = phases[currentPhaseIndex].nextSceneName;
                 if (triggerScript != null && !string.IsNullOrEmpty(sceneToLoad))
                 {
-                    triggerScript.nextSceneName = sceneToLoad;
+                    //triggerScript.nextSceneName = sceneToLoad;
                 }
             }
         }

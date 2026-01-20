@@ -9,6 +9,7 @@ public class PlayerJumping : IPlayerState
     private Rigidbody rb;
     private Animator animator;
     private DemonAnimation demonAnimation;
+    private SEController SE;
 
    [Header("ÉWÉÉÉìÉvê›íË")]
     public float jumpForce = 21.5f;
@@ -26,6 +27,7 @@ public class PlayerJumping : IPlayerState
         rb = player.GetComponent<Rigidbody>();
         animator = player.GetComponent<Animator>();
         demonAnimation = player.GetComponent<DemonAnimation>();
+        SE = player.GetComponent<SEController>();
 
         // èdóÕÇÃã≠Ç≥Çê›íË
         Physics.gravity = new Vector3(0, -20f, 0);
@@ -91,6 +93,8 @@ public class PlayerJumping : IPlayerState
         velocity.y = force;
         rb.linearVelocity = velocity;
         animator.SetBool("IsJumping", true);
+        SE.Play("Player.Jump1");
+        SE.Play("Player.Jump2");
     }
 
     private void JumpCorrection()

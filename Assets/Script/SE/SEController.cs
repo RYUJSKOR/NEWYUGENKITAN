@@ -4,59 +4,43 @@ using System.Collections.Generic;
 [RequireComponent(typeof(AudioSource))]
 public class SEController : MonoBehaviour
 {
-	[System.Serializable]
-	public struct SEData
-	{
-		public PlayerSEType type;
-		public AudioClip clip;
+    [SerializeField] private SEProfile profile;
 
-		[Range(0f, 1f)]
-		public float volume;
+    private AudioSource source;
+    private Dictionary<string, SEProfile.SEData> dict = new();
+    private Dictionary<string, float> lastPlay = new();
 
-		[Header("Cooldown (sec)")]
-		public float cooldown;
-	}
+    private void Awake()
+    {
+        source = GetComponent<AudioSource>();
+        source.playOnAwake = false;
+        source.loop = false;
+        source.spatialBlend = 0f;
 
-	[Header("SE Settings")]
-	[SerializeField] private SEData[] seList;
+        foreach (var se in profile.seList)
+        {
+            dict[se.id] = se;
+            lastPlay[se.id] = -Mathf.Infinity;
+        }
+    }
 
-	private AudioSource seSource;
-	private Dictionary<PlayerSEType, SEData> seDict;
-	private Dictionary<PlayerSEType, float> lastPlayTimeDict;
+    /// <summary>
+    /// SEを再生し、そのSEの再生時間を返す
+    /// </summary>
+    public float Play(string id)
+    {
+        if (!dict.TryGetValue(id, out var data) || data.clip == null)
+        {
+            Debug.LogWarning($"SE ID not found : {id}", this);
+            return 0.1f;
+        }
 
-	private void Awake()
-	{
-		seSource = GetComponent<AudioSource>();
-		seSource.playOnAwake = false;
-		seSource.loop = false;
-		seSource.spatialBlend = 0f; // 2D
+        if (Time.time < lastPlay[id] + data.cooldown)
+            return 0f;
 
-		seDict = new Dictionary<PlayerSEType, SEData>();
-		lastPlayTimeDict = new Dictionary<PlayerSEType, float>();
+        lastPlay[id] = Time.time;
+        source.PlayOneShot(data.clip, data.volume);
 
-		foreach (var se in seList)
-		{
-			seDict[se.type] = se;
-			lastPlayTimeDict[se.type] = -Mathf.Infinity;
-		}
-	}
-
-	/// <summary>
-	/// SE再生（クールタイム考慮）
-	/// </summary>
-	public void Play(PlayerSEType type)
-	{
-		if (!seDict.TryGetValue(type, out var data))
-			return;
-
-		if (data.clip == null)
-			return;
-
-		float lastTime = lastPlayTimeDict[type];
-		if (Time.time < lastTime + data.cooldown)
-			return; // クールタイム中
-
-		lastPlayTimeDict[type] = Time.time;
-		seSource.PlayOneShot(data.clip, data.volume);
-	}
+        return data.clip.length;
+    }
 }
