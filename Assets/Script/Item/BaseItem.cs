@@ -33,6 +33,8 @@ public abstract class BaseItem : MonoBehaviour
 
     private Vector3 startPosition; // アイテムの初期位置を保存する変数
 
+    protected SEController SE;
+
     /// <summary>
     /// アイテムを使用した時の効果を定義する抽象メソッド。
     /// 派生クラスで具体的な処理を実装する。
@@ -44,6 +46,16 @@ public abstract class BaseItem : MonoBehaviour
     {
         // 起動した時のオブジェクトのY軸を含めた位置を記憶しておく
         startPosition = transform.position;
+
+        if (SE == null)
+        {
+            SE = GetComponentInChildren<SEController>();
+        }
+
+        if (SE == null)
+        {
+            Debug.LogError($"{name} に SEController が設定されていません。");
+        }
     }
 
     void Update()
@@ -69,5 +81,26 @@ public abstract class BaseItem : MonoBehaviour
                 Use(other.gameObject);
             }
         }
+    }
+
+    protected void PickupAndDestroyAfterSE(string seKey)
+    {
+        // 1. 見た目と当たり判定を消す
+        foreach (var r in GetComponentsInChildren<Renderer>())
+            r.enabled = false;
+
+        foreach (var c in GetComponents<Collider>())
+            c.enabled = false;
+
+        // 2. SE 再生
+        float seLength = 0f;
+
+        if (SE != null)
+        {
+            seLength = SE.Play(seKey);
+        }
+
+        // 3. 再生完了後に Destroy
+        Destroy(gameObject, seLength > 0 ? seLength : 0.1f);
     }
 }
