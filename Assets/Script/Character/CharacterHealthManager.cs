@@ -25,7 +25,7 @@ public class CharacterHealthManager : MonoBehaviour
     public event Action OnDeath;
     public event Action OnDamageTaken;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         maxHealth = Health;
     }
@@ -38,7 +38,7 @@ public class CharacterHealthManager : MonoBehaviour
         }
     }
 
-    public void ApplyDamage(float value, bool bypassInvincibility = false)
+    public virtual void ApplyDamage(float value, bool bypassInvincibility = false)
     {
         if (IsInvincible && !bypassInvincibility)
         {
@@ -96,7 +96,7 @@ public class CharacterHealthManager : MonoBehaviour
     }
 
 
-    public void Recovery(float value)
+    public virtual void Recovery(float value)
     {
         Health += value;
         if (Health > maxHealth)
@@ -105,17 +105,17 @@ public class CharacterHealthManager : MonoBehaviour
         }
     }
 
-    public void ResetHealth()
+    public virtual void ResetHealth()
     {
         Health = maxHealth;
     }
 
-    public void ActivateInvincibility(float duration)
+    public virtual void ActivateInvincibility(float duration)
     {
         invincibleTimer = duration;
     }
 
-    public void InstantKill()
+    public virtual void InstantKill()
     {
         ApplyDamage(Health, true);
     }
