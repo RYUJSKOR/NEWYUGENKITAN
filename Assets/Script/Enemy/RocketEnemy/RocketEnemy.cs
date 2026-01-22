@@ -158,7 +158,7 @@ public class RocketEnemy : TargetingEnemy
         }
 
         // --- 4. SE再生と再生時間の取得 ---
-        float soundDuration = 1.0f; // デフォルトの待機時間
+        float soundDuration = 0.0f; // デフォルトの待機時間
         if (SE != null)
         {
             // AudiostockなどのSE再生時間を取得

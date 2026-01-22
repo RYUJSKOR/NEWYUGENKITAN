@@ -103,7 +103,7 @@ public class BlueBoundEnemy : TargetingEnemy
         // --- 3. 演出実行とSE再生 ---
         Explode(); // 既存の爆発演出
 
-        float soundDuration = 1.0f; // デフォルトの待機時間
+        float soundDuration = 0.0f; // デフォルトの待機時間
         if (SE != null)
         {
             // AudiostockなどのSE再生時間を取得
