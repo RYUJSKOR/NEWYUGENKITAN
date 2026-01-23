@@ -9,10 +9,17 @@ public class OrotiController : MonoBehaviour
     [Header("Phase")]
     [SerializeField] private OrotiPhaseController phaseController;
 
-    [Header("Attack")]
-    [SerializeField] private OrotiAttackManager attackManager;
+
+    [Header("Necks")]
     [SerializeField] private List<OrotiNeck> necks;
+
+    [Header("Attacks")]
+    [SerializeField] private List<OrotiAttackBase> attacks;
+
     [SerializeField] private Transform player;
+
+    private float attackCooldown = 2f;
+    private float attackTimer;
 
     private void Awake()
     {
@@ -30,10 +37,13 @@ public class OrotiController : MonoBehaviour
     private void Update()
     {
         // UŒ‚ƒtƒF[ƒY’†‚Ì‚ÝUŒ‚
-        if (!phaseController.IsAttackPhase)
-            return;
+        if (!phaseController.IsAttackPhase) return;
+
+        attackTimer -= Time.deltaTime;
+        if (attackTimer > 0) return;
 
         ExecuteAttack();
+        attackTimer = attackCooldown;
     }
 
     /// <summary>
@@ -45,16 +55,34 @@ public class OrotiController : MonoBehaviour
         healthManager.ApplyDamage(damage, true);
     }
 
+
     private void ExecuteAttack()
     {
-        var attacks = attackManager.GetAvailableAttacks(GetHPPercent());
         if (attacks.Count == 0) return;
 
-        OrotiAttackBase attack = attacks[Random.Range(0, attacks.Count)];
-        OrotiNeck neck = necks[Random.Range(0, necks.Count)];
+        var attack = attacks[Random.Range(0, attacks.Count)];
+        var selected = GetRandomNecks(attack.UseNeckCount);
 
-        attack.Execute(neck, player);
+        attack.Execute(selected, player);
         phaseController.OnAttackExecuted();
+    }
+
+
+    private List<OrotiNeck> GetRandomNecks(int count)
+    {
+        List<OrotiNeck> pool = new(necks);
+        List<OrotiNeck> result = new();
+
+        count = Mathf.Min(count, pool.Count);
+
+        for (int i = 0; i < count; i++)
+        {
+            int idx = Random.Range(0, pool.Count);
+            result.Add(pool[idx]);
+            pool.RemoveAt(idx);
+        }
+
+        return result;
     }
 
     private void OnBossDamaged()

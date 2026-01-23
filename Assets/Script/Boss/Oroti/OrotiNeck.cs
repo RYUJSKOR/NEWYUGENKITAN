@@ -1,41 +1,30 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OrotiNeck : MonoBehaviour
 {
-    private OrotiController oroti;
-    private Animator animator;
+    [SerializeField] private NeckAttackType neckType;
+    public NeckAttackType Type => neckType;
 
-    private bool damagedThisFrame;
+    private Animator animator;
+    private OrotiAttackRunner runner;
 
     private void Awake()
     {
-        oroti = GetComponentInParent<OrotiController>();
         animator = GetComponent<Animator>();
+        runner = new OrotiAttackRunner(
+            animator,
+            GetComponentInChildren<OrotiDamageDealer>()
+        );
     }
 
-    /// <summary>
-    /// 攻撃アニメを再生（Idleは自動復帰）
-    /// </summary>
-    public void PlayAttackAnimation(string animName)
+    private void Update()
     {
-        animator.Play(animName);
+        runner.Tick();
     }
 
-    /// <summary>
-    /// プレイヤー攻撃が当たったときに呼ばれる
-    /// </summary>
-    public void TakeDamage(float damage)
+    public void PlayAttack(string anim, float start, float end)
     {
-        if (damagedThisFrame) return;
-
-        damagedThisFrame = true;
-        oroti.ApplyDamageToBoss(damage);
-        StartCoroutine(ResetDamageFlag());
-    }
-
-    private System.Collections.IEnumerator ResetDamageFlag()
-    {
-        yield return null; // 1フレームで解除
-        damagedThisFrame = false;
+        runner.Play(anim, start, end);
     }
 }
