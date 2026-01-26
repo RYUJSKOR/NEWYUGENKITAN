@@ -80,7 +80,7 @@ public class BlueBoundEnemy : TargetingEnemy
         var rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
-            // 爆발이나 이동 관성이 남지 않도록 물리挙動を静止させる
+            
             rb.isKinematic = true;
             rb.linearVelocity = Vector3.zero;
         }
