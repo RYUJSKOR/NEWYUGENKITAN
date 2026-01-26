@@ -11,6 +11,7 @@ public class RocketEnemy : TargetingEnemy
 
     private ParticleSystem effect;
     private RocketEnemyMovement enemyMovement;
+    private SEController SE;
 
     void Awake()
     {
@@ -30,6 +31,7 @@ public class RocketEnemy : TargetingEnemy
         {
             InitializeNormalBehavior();
         }
+        SE = GetComponent<SEController>();
     }
 
     private void InitializeNormalBehavior()
@@ -118,13 +120,54 @@ public class RocketEnemy : TargetingEnemy
     }
     override protected void Explode()
     {
+        // --- 1. 移動および物理演算의 정지 ---
+        if (enemyMovement != null)
+        {
+            enemyMovement.enabled = false;
+        }
+
+        var rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+            rb.linearVelocity = Vector3.zero;
+        }
+
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        foreach (Renderer r in renderers)
+        {
+            r.enabled = false;
+        }
+
+        Collider col = GetComponent<Collider>();
+        if (col != null)
+        {
+            col.enabled = false;
+        }
+
+        if (effect != null)
+        {
+            effect.Stop();
+        }
+
         for (int i = 0; i < GomiNum; i++)
         {
             GameObject gomi = Instantiate(piecesPrefab, transform.position, Quaternion.identity);
             gomi.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(-10f, 10f), Random.Range(10f, 30f), 0.0f));
             Destroy(gomi, GomiLifeTime);
         }
-        Destroy(gameObject);
+
+        // --- 4. SE再生と再生時間の取得 ---
+        float soundDuration = 0.0f; // デフォルトの待機時間
+        if (SE != null)
+        {
+            // AudiostockなどのSE再生時間を取得
+            soundDuration = SE.Play("Enemy.RocketExplode");
+        }
+
+        // --- 5. SE再生完了後にオブジェクトを完全に破棄 ---
+        // 音が途切れないよう、再生完了を待ってからGameObjectを削除する
+        Destroy(gameObject, soundDuration > 0 ? soundDuration : 0.1f);
     }
     void OnCollisionEnter(Collision collision)
     {
