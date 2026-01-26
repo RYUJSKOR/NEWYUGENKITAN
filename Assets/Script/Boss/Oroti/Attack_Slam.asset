@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38eb418741ee194f82ae3d3c2621aae, type: 3}
   m_Name: Attack_Slam
   m_EditorClassIdentifier: 
+  selectType: 2
   useNeckCount: 1
-  animName: Slam
-  damageStart: 0.4
-  damageEnd: 0.5
+  specificNeckIds: 000000000100000004000000
