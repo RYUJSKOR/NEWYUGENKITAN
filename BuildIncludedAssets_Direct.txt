@@ -426,7 +426,6 @@ Assets/GameObject/Lift/Nurikabe.prefab
 Assets/GameObject/Lift/RL_Lift.prefab
 Assets/GameObject/Manager/ShootingManager.prefab
 Assets/GameObject/Map/broken_bridge2.fbx
-Assets/GameObject/Map/broken_bridge2.png
 Assets/GameObject/Map/broken_bridge2.prefab
 Assets/GameObject/Map/building 1.prefab
 Assets/GameObject/Map/EnemyMissingCube.prefab
@@ -436,10 +435,13 @@ Assets/GameObject/Map/house5.prefab
 Assets/GameObject/Map/length_house.prefab
 Assets/GameObject/Map/lid.fbx
 Assets/GameObject/Map/lid.prefab
-Assets/GameObject/Map/lid_paint.png
+Assets/GameObject/Map/Materials/broken_bridge.mat
 Assets/GameObject/Map/Materials/broken_bridge2.mat
 Assets/GameObject/Map/Materials/lid_paint.mat
+Assets/GameObject/Map/Materials/New Material.mat
 Assets/GameObject/Map/store_house.prefab
+Assets/GameObject/Map/texture/broken_bridge2.png
+Assets/GameObject/Map/texture/lid_paint.png
 Assets/GameObject/Map/yuukaku_bridge.prefab
 Assets/GameObject/Map/yuukaku2.prefab
 Assets/GameObject/Player/eff_pfb_Barrier 1.prefab
@@ -487,14 +489,18 @@ Assets/GameObject/SoundEffect/AS_1412276_膨らむ_大きくなるB.mp3
 Assets/GameObject/SoundEffect/AS_1642467_ふわふわと浮かんでいる音_7.mp3
 Assets/GameObject/SoundEffect/AudioTimeScaler.cs
 Assets/GameObject/SoundEffect/MasterMixer.mixer
+Assets/GameObject/SoundEffect/からかさ折る.mp3
 Assets/GameObject/SoundEffect/ジャンプ１.mp3
 Assets/GameObject/SoundEffect/ジャンプ２.mp3
 Assets/GameObject/SoundEffect/ダッシュ.mp3
+Assets/GameObject/SoundEffect/バウンドエネミー運命.mp3
 Assets/GameObject/SoundEffect/バルーン爆発.mp3
 Assets/GameObject/SoundEffect/ペン書き.mp3
+Assets/GameObject/SoundEffect/ロケットエネミー爆発音.mp3
 Assets/GameObject/SoundEffect/炎.mp3
 Assets/GameObject/SoundEffect/回復１.mp3
 Assets/GameObject/SoundEffect/凧 1.mp3
+Assets/GameObject/SoundEffect/敵スポナー.mp3
 Assets/GameObject/SoundEffect/能面.mp3
 Assets/GameObject/ToonRealroad.mat
 Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/materials/appletree 1.mat
@@ -2156,6 +2162,7 @@ Assets/Script/Player/Player.cs
 Assets/Script/Player/PlayerManager.cs
 Assets/Script/Player/PlayerStateMachine.cs
 Assets/Script/Player/SkillModeManager.cs
+Assets/Script/SE/EnemySEProfile.asset
 Assets/Script/SE/ItemSEProfile.asset
 Assets/Script/SE/MapSEProfile.asset
 Assets/Script/SE/PlayerSEProfile.asset

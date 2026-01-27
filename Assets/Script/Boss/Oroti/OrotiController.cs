@@ -3,61 +3,69 @@ using UnityEngine;
 
 public class OrotiController : MonoBehaviour
 {
-    [Header("HP")]
-    [SerializeField] private CharacterHealthManager healthManager;
+	[Header("HP")]
+	[SerializeField] private CharacterHealthManager healthManager;
 
-    [Header("Phase")]
-    [SerializeField] private OrotiPhaseController phaseController;
+	[Header("Phase")]
+	[SerializeField] private OrotiPhaseController phaseController;
 
-    [Header("Attack")]
-    [SerializeField] private OrotiAttackManager attackManager;
-    [SerializeField] private List<OrotiNeck> necks;
-    [SerializeField] private Transform player;
+	[Header("Necks")]
+	[SerializeField] private List<OrotiNeck> necks;
 
-    private void Awake()
-    {
-        // HPイベント購読
-        healthManager.OnDamageTaken += OnBossDamaged;
-        healthManager.OnDeath += OnBossDead;
-    }
+	[Header("Attacks")]
+	[SerializeField] private List<OrotiAttackBase> attacks;
 
-    private void OnDestroy()
-    {
-        healthManager.OnDamageTaken -= OnBossDamaged;
-        healthManager.OnDeath -= OnBossDead;
-    }
+	[SerializeField] private Transform player;
 
-    private void Update()
-    {
-        // 攻撃フェーズ中のみ攻撃
-        if (!phaseController.IsAttackPhase)
-            return;
+	[Header("Attack Interval")]
+	[SerializeField] private float attackCooldown = 2f;
+	private float attackTimer;
 
-        ExecuteAttack();
-    }
+	private void Awake()
+	{
+		healthManager.OnDamageTaken += OnBossDamaged;
+		healthManager.OnDeath += OnBossDead;
+	}
 
-    /// <summary>
-    /// 首経由で呼ばれるボスへのダメージ
-    /// </summary>
-    public void ApplyDamageToBoss(float damage)
-    {
-        // 無敵を完全無視
-        healthManager.ApplyDamage(damage, true);
-    }
+	private void OnDestroy()
+	{
+		healthManager.OnDamageTaken -= OnBossDamaged;
+		healthManager.OnDeath -= OnBossDead;
+	}
 
-    private void ExecuteAttack()
-    {
-        var attacks = attackManager.GetAvailableAttacks(GetHPPercent());
-        if (attacks.Count == 0) return;
+	private void Update()
+	{
+		if (!phaseController.IsAttackPhase)
+			return;
 
-        OrotiAttackBase attack = attacks[Random.Range(0, attacks.Count)];
-        OrotiNeck neck = necks[Random.Range(0, necks.Count)];
+		attackTimer -= Time.deltaTime;
+		if (attackTimer > 0f)
+			return;
 
-        attack.Execute(neck, player);
-        phaseController.OnAttackExecuted();
-    }
+		ExecuteAttack();
+		attackTimer = attackCooldown;
+	}
 
-    private void OnBossDamaged()
+	private void ExecuteAttack()
+	{
+		if (attacks.Count == 0) return;
+
+		var attack = attacks[Random.Range(0, attacks.Count)];
+
+		// ★ 成功したときだけカウント増やす
+		bool executed = attack.Execute(necks, player);
+		if (executed)
+		{
+			phaseController.OnAttackExecuted();
+		}
+	}
+
+	public void ApplyDamageToBoss(float damage)
+	{
+		healthManager.ApplyDamage(damage, true);
+	}
+
+	private void OnBossDamaged()
     {
         float hpPercent = GetHPPercent();
 
