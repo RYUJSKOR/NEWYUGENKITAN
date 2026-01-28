@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
     private CapsuleCollider capsuleCollider;
     private DemonAnimation demonAnimation;
+    private SEController SE;
 
 
     [Header("地面チェック設定")]
@@ -96,6 +97,7 @@ public class Player : MonoBehaviour
         shakeManager = UnityEngine.Camera.main.GetComponent<CameraShakeManager>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         demonAnimation = GetComponent<DemonAnimation>();
+        SE = GetComponent<SEController>();
 
         playerStateMachine = GetComponent<PlayerStateMachine>();
 
@@ -308,6 +310,7 @@ public class Player : MonoBehaviour
         gameObject.layer = playerinvincibleLayer;
         StartCoroutine(ResetLayerAfterInvincibility());
         shakeManager.TriggerShake(0.15f, 0.25f);
+        SE.Play("Player.Damage");
     }
     private IEnumerator ResetLayerAfterInvincibility()
     {

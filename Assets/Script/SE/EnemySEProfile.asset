@@ -33,3 +33,15 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c83cb9c8a70e7d74ab74d6f7e442d388, type: 3}
     volume: 3
     cooldown: 0
+  - id: Enemy.HitSoundNormal
+    clip: {fileID: 8300000, guid: fcd6b5c4130741f489cf1723a2d148ab, type: 3}
+    volume: 5
+    cooldown: 0
+  - id: Enemy.HitSounddevil
+    clip: {fileID: 8300000, guid: fcd6b5c4130741f489cf1723a2d148ab, type: 3}
+    volume: 5
+    cooldown: 0
+  - id: Enemy.HitSoundfox
+    clip: {fileID: 8300000, guid: 5bce818661822f24f98ba05645df49ed, type: 3}
+    volume: 5
+    cooldown: 0
