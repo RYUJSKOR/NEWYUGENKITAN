@@ -1,41 +1,38 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OrotiNeck : MonoBehaviour
 {
-    private OrotiController oroti;
-    private Animator animator;
+	[Header("Neck ID")]
+	public int neckId;
 
-    private bool damagedThisFrame;
+	private Animator animator;
+	private OrotiDamageDealer dealer;
 
-    private void Awake()
-    {
-        oroti = GetComponentInParent<OrotiController>();
-        animator = GetComponent<Animator>();
-    }
+	private static readonly int AttackTrigger = Animator.StringToHash("Attack");
 
-    /// <summary>
-    /// 攻撃アニメを再生（Idleは自動復帰）
-    /// </summary>
-    public void PlayAttackAnimation(string animName)
-    {
-        animator.Play(animName);
-    }
+	private void Awake()
+	{
+		animator = GetComponent<Animator>();
+		dealer = GetComponentInChildren<OrotiDamageDealer>();
+	}
 
-    /// <summary>
-    /// プレイヤー攻撃が当たったときに呼ばれる
-    /// </summary>
-    public void TakeDamage(float damage)
-    {
-        if (damagedThisFrame) return;
+	public void PlayAttack()
+	{
+		dealer.DisableDamage();
+		animator.ResetTrigger(AttackTrigger);
+		animator.SetTrigger(AttackTrigger);
+	}
 
-        damagedThisFrame = true;
-        oroti.ApplyDamageToBoss(damage);
-        StartCoroutine(ResetDamageFlag());
-    }
+	// Animator StateMachineBehaviour から呼ばれる
+	public void EnableDamage()
+	{
+		dealer.EnableDamage();
+	}
 
-    private System.Collections.IEnumerator ResetDamageFlag()
-    {
-        yield return null; // 1フレームで解除
-        damagedThisFrame = false;
-    }
+	public void DisableDamage()
+	{
+		dealer.DisableDamage();
+	}
 }
