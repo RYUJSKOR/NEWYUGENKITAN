@@ -22,8 +22,8 @@ MonoBehaviour:
     volume: 3
     cooldown: 0
   - id: Enemy.KarakasaDie
-    clip: {fileID: 8300000, guid: ef82736404151b2458a0b633f8d0c390, type: 3}
-    volume: 3
+    clip: {fileID: 8300000, guid: 4353c1ec9284d7644a9fb260ba0cbd7d, type: 3}
+    volume: 5
     cooldown: 0
   - id: Enemy.RocketExplode
     clip: {fileID: 8300000, guid: 377bfd0636e942e46b489d9bf7c42b93, type: 3}
