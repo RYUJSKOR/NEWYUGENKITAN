@@ -29,6 +29,7 @@ public class HomingEnemy : TargetingEnemy
     private Animator animator;
     private float attackTimer;
     private bool isTargetDetected = false; // 発見状態を管理するフラグ
+    private SEController SE;
 
     // Animatorのパラメータハッシュ
     private static readonly int RiseTriggerHash = Animator.StringToHash("Rise");
@@ -72,7 +73,10 @@ public class HomingEnemy : TargetingEnemy
             healthManager.OnDeath += Dead;
             healthManager.OnDamageTaken += OnDamaged; // 必要に応じてコメント解除
         }
-    }
+
+        SE = GetComponent<SEController>();
+
+	}
 
     void Update()
     {
@@ -160,18 +164,58 @@ public class HomingEnemy : TargetingEnemy
         }
     }
 
-    // --- Private Methods ---
-    private void Dead()
-    {
-        GameObject pieces = Instantiate(piecesPrefab, transform.position, Quaternion.identity);
-        Destroy(pieces, GomiLifeTime);
-        Destroy(gameObject);
-        DropItem();
-    }
+	// --- Private Methods ---
+	private void Dead()
+	{
+		// --- 1. 移動機能と物理演算の停止 ---
+		if (attackModule != null) attackModule.enabled = false;
+		if (animator != null) animator.enabled = false;
 
-    // --- Editor Gizmos ---
-    // Sceneビューで索敵半径を視覚的に確認するための処理
-    private void OnDrawGizmosSelected()
+		var rb = GetComponent<Rigidbody>();
+		if (rb != null)
+		{
+			rb.isKinematic = true;
+			rb.linearVelocity = Vector3.zero;
+		}
+
+		// --- 2. 外見と当たり判定 非表示・無効化 ---
+		Renderer[] renderers = GetComponentsInChildren<Renderer>();
+		foreach (Renderer r in renderers)
+		{
+			r.enabled = false;
+		}
+
+		Collider col = GetComponent<Collider>();
+		if (col != null)
+		{
+			col.enabled = false;
+		}
+
+		// --- 3. 演出実行とアイテムドロップ ---
+		if (piecesPrefab != null)
+		{
+			GameObject pieces = Instantiate(piecesPrefab, transform.position, Quaternion.identity);
+			Destroy(pieces, GomiLifeTime);
+		}
+		DropItem();
+
+		// --- 4. SE再生 (戻り値を変数に代入) ---
+		float soundDuration = 0.0f;
+		if (SE != null)
+		{
+			// SE.Playの戻り値（再生時間）を必ず代入する
+			soundDuration = SE.Play("Enemy.HomingDie");
+		}
+
+		// --- 5. SE再生完了後に破棄 ---
+		// soundDuration分待機してから削除することで、音が途切れるのを防ぐ
+		// 万が一0が返ってきた場合のために、最小0.5秒の待機時間を設定
+		Destroy(gameObject, soundDuration > 0 ? soundDuration : 0.5f);
+	}
+
+	// --- Editor Gizmos ---
+	// Sceneビューで索敵半径を視覚的に確認するための処理
+	private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectionRadius);
