@@ -33,3 +33,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 3a5fa8ba54a0f85458bc58a5d9f7942d, type: 3}
     volume: 5
     cooldown: 0
+  - id: Player.Damage
+    clip: {fileID: 8300000, guid: 92058db5649a7834a92612651fc0e639, type: 3}
+    volume: 1
+    cooldown: 0
