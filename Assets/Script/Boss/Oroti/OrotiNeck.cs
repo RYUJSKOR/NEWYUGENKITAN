@@ -1,30 +1,38 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class OrotiNeck : MonoBehaviour
 {
-    [SerializeField] private NeckAttackType neckType;
-    public NeckAttackType Type => neckType;
+	[Header("Neck ID")]
+	public int neckId;
 
-    private Animator animator;
-    private OrotiAttackRunner runner;
+	private Animator animator;
+	private OrotiDamageDealer dealer;
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-        runner = new OrotiAttackRunner(
-            animator,
-            GetComponentInChildren<OrotiDamageDealer>()
-        );
-    }
+	private static readonly int AttackTrigger = Animator.StringToHash("Attack");
 
-    private void Update()
-    {
-        runner.Tick();
-    }
+	private void Awake()
+	{
+		animator = GetComponent<Animator>();
+		dealer = GetComponentInChildren<OrotiDamageDealer>();
+	}
 
-    public void PlayAttack(string anim, float start, float end)
-    {
-        runner.Play(anim, start, end);
-    }
+	public void PlayAttack()
+	{
+		dealer.DisableDamage();
+		animator.ResetTrigger(AttackTrigger);
+		animator.SetTrigger(AttackTrigger);
+	}
+
+	// Animator StateMachineBehaviour ‚©‚çŒÄ‚Î‚ê‚é
+	public void EnableDamage()
+	{
+		dealer.EnableDamage();
+	}
+
+	public void DisableDamage()
+	{
+		dealer.DisableDamage();
+	}
 }
