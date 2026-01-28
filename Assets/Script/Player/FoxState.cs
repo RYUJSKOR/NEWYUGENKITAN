@@ -26,6 +26,7 @@ public class FoxState : PlayerShooting
     protected override void Fire()
     {
         shooting.SetDirection(shootingDirection);
+        SE.Play("Player.FoxShoot");
         shooting.RequestShoot();
     }
 }
