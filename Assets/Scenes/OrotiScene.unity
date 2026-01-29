@@ -534,6 +534,10 @@ PrefabInstance:
       propertyPath: neckId
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3674494642097933715, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
+      propertyPath: idleStartOffset
+      value: 0.818
+      objectReference: {fileID: 0}
     - target: {fileID: 8632197815550385827, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
       propertyPath: m_Name
       value: idle (2)
@@ -693,6 +697,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 308377212}
     m_Modifications:
+    - target: {fileID: -3414381972462184687, guid: 9c22e23935de07f4e884702661aea0ea, type: 3}
+      propertyPath: idleStartOffset
+      value: 0.175
+      objectReference: {fileID: 0}
     - target: {fileID: 3093705666326214767, guid: 9c22e23935de07f4e884702661aea0ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6041,6 +6049,10 @@ PrefabInstance:
       propertyPath: neckId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -3414381972462184687, guid: 9c22e23935de07f4e884702661aea0ea, type: 3}
+      propertyPath: idleStartOffset
+      value: 0.923
+      objectReference: {fileID: 0}
     - target: {fileID: 2424304688515834581, guid: 9c22e23935de07f4e884702661aea0ea, type: 3}
       propertyPath: m_Name
       value: idle2 (2)
@@ -10902,6 +10914,10 @@ PrefabInstance:
       propertyPath: neckId
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3674494642097933715, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
+      propertyPath: idleStartOffset
+      value: 0.105
+      objectReference: {fileID: 0}
     - target: {fileID: 8632197815550385827, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
       propertyPath: m_Name
       value: idle (4)
@@ -11300,6 +11316,10 @@ PrefabInstance:
     - target: {fileID: 3674494642097933715, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
       propertyPath: neckId
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674494642097933715, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
+      propertyPath: idleStartOffset
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8632197815550385827, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
       propertyPath: m_Name
@@ -12019,6 +12039,10 @@ PrefabInstance:
       propertyPath: neckId
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3674494642097933715, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
+      propertyPath: idleStartOffset
+      value: 0.336
+      objectReference: {fileID: 0}
     - target: {fileID: 8632197815550385827, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
       propertyPath: m_Name
       value: idle (3)
@@ -12546,6 +12570,10 @@ PrefabInstance:
     - target: {fileID: 3674494642097933715, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
       propertyPath: neckId
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674494642097933715, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
+      propertyPath: idleStartOffset
+      value: 0.559
       objectReference: {fileID: 0}
     - target: {fileID: 8632197815550385827, guid: 75915e6c6eb91284cae257bcc7ab4101, type: 3}
       propertyPath: m_Name
@@ -17301,6 +17329,10 @@ PrefabInstance:
     - target: {fileID: -3414381972462184687, guid: 9c22e23935de07f4e884702661aea0ea, type: 3}
       propertyPath: neckId
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3414381972462184687, guid: 9c22e23935de07f4e884702661aea0ea, type: 3}
+      propertyPath: idleStartOffset
+      value: 0.517
       objectReference: {fileID: 0}
     - target: {fileID: 2424304688515834581, guid: 9c22e23935de07f4e884702661aea0ea, type: 3}
       propertyPath: m_Name
