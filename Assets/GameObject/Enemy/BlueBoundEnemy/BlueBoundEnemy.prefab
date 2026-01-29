@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1004999843964579261}
   - component: {fileID: -2120088539751977158}
   - component: {fileID: -7824550128967725055}
+  - component: {fileID: 8257775218917313118}
   m_Layer: 7
   m_Name: BlueBoundEnemy
   m_TagString: Enemy
@@ -309,6 +310,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 36a2e299e8bb8be49ad9622070ecb197, type: 2}
+--- !u!114 &8257775218917313118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259085687795708762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d39e7b7b8c836d4aab13821af31bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletNormal: {fileID: 6347013360028792297, guid: ca1a8c9ab5cf0704da41ece903816817, type: 3}
+  bulletDevil: {fileID: 6347013360028792297, guid: c58ba03ba0a94e842a12ca851dee0098, type: 3}
+  bulletFox: {fileID: 6347013360028792297, guid: 081d651f48a70cd40836695de8061882, type: 3}
 --- !u!1 &1993672585915536257
 GameObject:
   m_ObjectHideFlags: 0
