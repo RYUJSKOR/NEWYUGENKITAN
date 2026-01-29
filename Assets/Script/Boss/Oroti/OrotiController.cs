@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +22,9 @@ public class OrotiController : MonoBehaviour
 	[SerializeField] private float attackCooldown = 2f;
 	private float attackTimer;
 
-	private void Awake()
+    private Coroutine sequentialRoutine;
+
+    private void Awake()
 	{
 		healthManager.OnDamageTaken += OnBossDamaged;
 		healthManager.OnDeath += OnBossDead;
@@ -48,19 +51,27 @@ public class OrotiController : MonoBehaviour
 
 	private void ExecuteAttack()
 	{
-		if (attacks.Count == 0) return;
+        if (attacks.Count == 0) return;
 
-		var attack = attacks[Random.Range(0, attacks.Count)];
+        var attack = attacks[Random.Range(0, attacks.Count)];
 
-		// Åö ê¨å˜ÇµÇΩÇ∆Ç´ÇæÇØÉJÉEÉìÉgëùÇ‚Ç∑
-		bool executed = attack.Execute(necks, player);
-		if (executed)
-		{
-			phaseController.OnAttackExecuted();
-		}
-	}
+        bool executed = attack.Execute(necks, player, this);
+        if (executed)
+        {
+            phaseController.OnAttackExecuted();
+        }
+    }
 
-	public void ApplyDamageToBoss(float damage)
+    // AttackBase Ç©ÇÁåƒÇŒÇÍÇÈ
+    public void StartSequentialAttack(IEnumerator routine)
+    {
+        if (sequentialRoutine != null)
+            StopCoroutine(sequentialRoutine);
+
+        sequentialRoutine = StartCoroutine(routine);
+    }
+
+    public void ApplyDamageToBoss(float damage)
 	{
 		healthManager.ApplyDamage(damage, true);
 	}

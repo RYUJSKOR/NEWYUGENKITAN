@@ -4,19 +4,28 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Oroti/Attack/Slam")]
 public class OrotiAttack_Slam : OrotiAttackBase
 {
-	public override bool Execute(
-		 List<OrotiNeck> allNecks,
-		 Transform player)
-	{
-		var targets = SelectNecks(allNecks);
-		if (targets.Count == 0)
-			return false;
+    public override bool Execute(
+            List<OrotiNeck> allNecks,
+            Transform player,
+            OrotiController controller)
+    {
+        var selected = SelectNecks(allNecks);
+        var attackable = FilterAttackable(selected);
 
-		foreach (var neck in targets)
-		{
-			neck.PlayAttack();
-		}
+        if (attackable.Count == 0)
+            return false;
 
-		return true;
-	}
+        if (attackOrder == NeckAttackOrderType.Simultaneous)
+        {
+            ExecuteSimultaneous(attackable);
+        }
+        else
+        {
+            controller.StartSequentialAttack(
+                ExecuteSequential(attackable)
+            );
+        }
+
+        return true;
+    }
 }

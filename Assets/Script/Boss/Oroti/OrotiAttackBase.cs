@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,39 +13,66 @@ public abstract class OrotiAttackBase : ScriptableObject
 	[Tooltip("SpecificIDséûÇ…égÇ§éÒID")]
 	public List<int> specificNeckIds = new();
 
-	public abstract bool Execute(
-		List<OrotiNeck> allNecks,
-		Transform player
-	);
+    [Header("Attack Order")]
+    public NeckAttackOrderType attackOrder = NeckAttackOrderType.Simultaneous;
 
-	protected List<OrotiNeck> SelectNecks(List<OrotiNeck> allNecks)
-	{
-		if (allNecks == null || allNecks.Count == 0)
-			return new();
+    [Tooltip("èáî‘çUåÇéûÇÃë“Çøéûä‘")]
+    public float sequentialInterval = 0.3f;
 
-		switch (selectType)
-		{
-			case NeckSelectType.All:
-				return new(allNecks);
+    /// <summary>
+    /// çUåÇÇ™é¿ç€Ç…çsÇÌÇÍÇΩèÍçá true
+    /// </summary>
+    public abstract bool Execute(
+            List<OrotiNeck> allNecks,
+            Transform player,
+            OrotiController controller   // ñæé¶ìIàÀë∂
+        );
 
-			case NeckSelectType.SpecificIDs:
-				return allNecks.FindAll(
-					n => specificNeckIds.Contains(n.neckId)
-				);
+    protected List<OrotiNeck> SelectNecks(List<OrotiNeck> allNecks)
+    {
+        switch (selectType)
+        {
+            case NeckSelectType.All:
+                return new(allNecks);
 
-			case NeckSelectType.Random:
-			default:
-				List<OrotiNeck> pool = new(allNecks);
-				List<OrotiNeck> result = new();
+            case NeckSelectType.SpecificIDs:
+                return allNecks.FindAll(
+                    n => specificNeckIds.Contains(n.neckId)
+                );
 
-				int count = Mathf.Min(useNeckCount, pool.Count);
-				for (int i = 0; i < count; i++)
-				{
-					int idx = Random.Range(0, pool.Count);
-					result.Add(pool[idx]);
-					pool.RemoveAt(idx);
-				}
-				return result;
-		}
-	}
+            case NeckSelectType.Random:
+            default:
+                List<OrotiNeck> pool = new(allNecks);
+                List<OrotiNeck> result = new();
+
+                int count = Mathf.Min(useNeckCount, pool.Count);
+                for (int i = 0; i < count; i++)
+                {
+                    int idx = Random.Range(0, pool.Count);
+                    result.Add(pool[idx]);
+                    pool.RemoveAt(idx);
+                }
+                return result;
+        }
+    }
+
+    protected List<OrotiNeck> FilterAttackable(List<OrotiNeck> necks)
+    {
+        return necks.FindAll(n => n.CanAttack);
+    }
+
+    protected void ExecuteSimultaneous(List<OrotiNeck> necks)
+    {
+        foreach (var neck in necks)
+            neck.PlayAttack();
+    }
+
+    protected IEnumerator ExecuteSequential(List<OrotiNeck> necks)
+    {
+        foreach (var neck in necks)
+        {
+            neck.PlayAttack();
+            yield return new WaitForSeconds(sequentialInterval);
+        }
+    }
 }
