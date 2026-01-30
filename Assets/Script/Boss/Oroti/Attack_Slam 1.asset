@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c38eb418741ee194f82ae3d3c2621aae, type: 3}
-  m_Name: Attack_Slam
+  m_Name: Attack_Slam 1
   m_EditorClassIdentifier: 
   selectType: 2
   useNeckCount: 1
-  specificNeckIds: 000000000100000002000000
-  priorityType: 1
-  attackOrder: 1
+  specificNeckIds: 0000000001000000
+  priorityType: 0
+  attackOrder: 0
   sequentialInterval: 0.7
   allowRepeat: 0

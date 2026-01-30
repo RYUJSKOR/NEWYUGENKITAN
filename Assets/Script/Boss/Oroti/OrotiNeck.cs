@@ -7,6 +7,9 @@ public class OrotiNeck : MonoBehaviour
 	[Header("Neck ID")]
 	public int neckId;
 
+    [Header("Distance")]
+    [SerializeField] private Transform distancePoint;
+
     [Header("Attack Cooldown")]
     [SerializeField] private float attackCooldown = 3f;
 
@@ -17,11 +20,18 @@ public class OrotiNeck : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletPower = 1f;
 
+    [Header("Phase Bullet Settings")]
+    [SerializeField] private OrotiBulletSetting phase1Setting;
+    [SerializeField] private OrotiBulletSetting phase2Setting;
+    [SerializeField] private OrotiBulletSetting phase3Setting;
+
     [Header("Idle Random Range")]
     [SerializeField] private Vector2 idleSpeedRange = new Vector2(0.8f, 1.2f);
 
     [SerializeField] private Vector2 idleOffsetRange = new Vector2(0f, 1f);
     public float IdleSpeed => idleSpeed;
+    public bool CanAttack =>
+    Time.time >= lastAttackTime + attackCooldown;
 
     private float idleSpeed;
     private float idleOffset;
@@ -47,8 +57,19 @@ public class OrotiNeck : MonoBehaviour
         ApplyIdleOffset();
     }
 
-    public bool CanAttack =>
-        Time.time >= lastAttackTime + attackCooldown;
+    public Vector3 GetDistancePosition()
+    {
+        return distancePoint != null
+            ? distancePoint.position
+            : transform.position; // フォールバック
+    }
+
+    // Player との距離
+    public float GetSqrDistanceToPlayer(Transform player)
+    {
+        if (player == null) return float.MaxValue;
+        return (GetDistancePosition() - player.position).sqrMagnitude;
+    }
 
     public void PlayAttack()
 	{
@@ -65,28 +86,28 @@ public class OrotiNeck : MonoBehaviour
         animator.SetTrigger(ShootTrigger);
     }
 
-    public void SpawnBullet(Transform target)
+    public void SpawnBullet(Transform target, OrotiPhase phase)
     {
-        if (shootPoint == null || bulletPrefab == null)
-            return;
-
         var bulletObj = Instantiate(
             bulletPrefab,
             shootPoint.position,
             Quaternion.identity
         );
 
-        var dir = (target.position - shootPoint.position).normalized;
+        OrotiBulletSetting setting = phase switch
+        {
+            OrotiPhase.Phase2 => phase2Setting,
+            OrotiPhase.Phase3 => phase3Setting,
+            _ => phase1Setting
+        };
 
         var bullet = bulletObj.GetComponent<OrotiBullet>();
-        if (bullet != null)
-        {
-            bullet.Initialize(
-                dir,
-                gameObject,   // Owner
-                bulletPower
-            );
-        }
+        bullet.Initialize(
+            (target.position - shootPoint.position),
+            gameObject,
+            setting,
+            target
+        );
     }
 
     /// <summary>
@@ -99,13 +120,6 @@ public class OrotiNeck : MonoBehaviour
     }
 
     // Animator StateMachineBehaviour から呼ばれる
-    public void EnableDamage()
-	{
-		dealer.EnableDamage();
-	}
-
-	public void DisableDamage()
-	{
-		dealer.DisableDamage();
-	}
+    public void EnableDamage() => dealer.EnableDamage();
+    public void DisableDamage() => dealer.DisableDamage();
 }

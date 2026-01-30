@@ -5,27 +5,21 @@ using UnityEngine;
 public class OrotiAttack_Slam : OrotiAttackBase
 {
     public override bool Execute(
-            List<OrotiNeck> allNecks,
-            Transform player,
-            OrotiController controller)
+         List<OrotiNeck> allNecks,
+         Transform player,
+         OrotiController controller)
     {
+        // 首選択
         var selected = SelectNecks(allNecks);
+
+        // 攻撃可能チェック
         var attackable = FilterAttackable(selected);
 
-        if (attackable.Count == 0)
-            return false;
-
-        if (attackOrder == NeckAttackOrderType.Simultaneous)
-        {
-            ExecuteSimultaneous(attackable);
-        }
-        else
-        {
-            controller.StartSequentialAttack(
-                ExecuteSequential(attackable)
-            );
-        }
-
-        return true;
+        // Priority + Order 実行
+        return ExecuteByOrder(
+            attackable,
+            player,
+            controller
+        );
     }
 }

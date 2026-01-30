@@ -2,24 +2,34 @@ using UnityEngine;
 
 public class OrotiBullet : Bullet
 {
-    [SerializeField] private float speed = 8f;
-
     private Vector3 direction;
+    private float speed;
+    private bool homing;
+    private Transform target;
 
     public void Initialize(
         Vector3 dir,
         GameObject owner,
-        float powerOverride)
+        OrotiBulletSetting setting,
+        Transform targetTransform)
     {
         direction = dir.normalized;
+        speed = setting.speed;
+        homing = setting.homing;
+        target = targetTransform;
 
         SetOwner(owner);
-        SetPower(powerOverride);
+        SetPower(setting.power);
     }
 
     protected override void Update()
     {
         base.Update();
+
+        if (homing && target != null)
+        {
+            direction = (target.position - transform.position).normalized;
+        }
 
         transform.position += direction * speed * Time.deltaTime;
     }
