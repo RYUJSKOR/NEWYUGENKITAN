@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selectType: 2
   useNeckCount: 1
-  specificNeckIds: 000000000100000004000000
+  specificNeckIds: 000000000100000002000000
+  attackOrder: 1
+  sequentialInterval: 0.3

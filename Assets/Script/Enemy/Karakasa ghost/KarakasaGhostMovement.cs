@@ -16,6 +16,7 @@ public class KarakasaGhostMovement : MonoBehaviour
     private TargetingEnemy targetingEnemy;
     private GroundCheck groundChecker;
     private Vector3 originalScale;
+    private SEController SE;
 
     [Header("Crouch Settings")]
     [SerializeField] private float crouchScaleY = 0.5f;
@@ -33,6 +34,11 @@ public class KarakasaGhostMovement : MonoBehaviour
 
     public bool IsActuallyGrounded =>
         groundChecker != null && groundChecker.IsGrounded && !JustJumped();
+
+    private void Start()
+    {
+        SE = GetComponent<SEController>();
+    }
 
     public bool JustJumped()
     {
@@ -137,6 +143,8 @@ public class KarakasaGhostMovement : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         // ジャンプ力に倍率を適用
         rb.AddForce(jumpDir * jumpForce * currentSpeedModifier, ForceMode.VelocityChange);
+
+        SE.Play("Enemy.KasaJump");
 
         justJumped = true;
         justJumpedTime = Time.time;

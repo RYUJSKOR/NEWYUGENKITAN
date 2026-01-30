@@ -19,6 +19,7 @@ public class BalloonEnemy : EnemyBase
     [SerializeField] private AudioClip inflateSound; // 膨らむ音
     [SerializeField] private AudioClip explodeSound; // 爆発音
     private AudioSource audioSource; // 音を再生するコンポーネント
+    private SEController SE;
 
     void Awake()
     {
@@ -66,6 +67,8 @@ public class BalloonEnemy : EnemyBase
         {
             audioSource.Play();
         }
+
+        SE = GetComponent<SEController>();
 
         // --- 追加ここから ---
         // lifetime秒後にVanishメソッドを呼び出すように予約する
@@ -119,19 +122,19 @@ public class BalloonEnemy : EnemyBase
         if (isDead) return;
         isDead = true;
 
-        // --- 追加 ---
-        // Invokeで予約したVanishが呼ばれないようにキャンセルする
         CancelInvoke("Vanish");
 
         if (rb != null) rb.linearVelocity = Vector3.zero;
         if (movement != null) movement.Freeze();
 
+        // 既存のAudioSource（膨らむ音など）は止める
         if (audioSource != null)
         {
             audioSource.Stop();
         }
 
-        if (inflateSound != null)
+        // 膨らむ瞬間の演出音があれば再生
+        if (inflateSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(inflateSound);
         }
@@ -139,6 +142,7 @@ public class BalloonEnemy : EnemyBase
         Vector3 finalScale = transform.localScale * config.explosionScaleMultiplier;
         Vector3 peakScale = finalScale * config.peakScaleFactor;
 
+        // 膨らむアニメーション開始
         LeanTween.scale(gameObject, peakScale, config.explosionDuration)
             .setOnComplete(() =>
             {
@@ -147,14 +151,13 @@ public class BalloonEnemy : EnemyBase
                     LeanTween.scale(gameObject, finalScale, 0.1f)
                         .setOnComplete(() =>
                         {
-                            if (explodeSound != null)
-                            {
-                                audioSource.PlayOneShot(explodeSound);
-                            }
+                            // --- ここから死亡確定時の処理 ---
+
+                            // 1. 弾を発射
                             EmitBulletsInPattern(config.pattern);
 
+                            // 2. 見た目と当たり判定を先に消す (Visuals OFF)
                             MeshRenderer[] allRenderers = GetComponentsInChildren<MeshRenderer>();
-
                             foreach (MeshRenderer renderer in allRenderers)
                             {
                                 renderer.enabled = false;
@@ -162,11 +165,26 @@ public class BalloonEnemy : EnemyBase
 
                             var collider = GetComponent<Collider>();
                             if (collider != null) collider.enabled = false;
-
                             if (rb != null) rb.isKinematic = true;
 
-                            float soundDuration = (explodeSound != null) ? explodeSound.length : 0.1f;
-                            Destroy(gameObject, soundDuration);
+                            // 3. 爆発SEを再生し、長さを取得 (Play Sound & Get Duration)
+                            float soundDuration = 0.0f;
+
+                            // SEController優先
+                            if (SE != null)
+                            {
+                                soundDuration = SE.Play("Enemy.BalloonDie");
+                            }
+                            // SEControllerがない場合はAudioClipを使用
+                            else if (explodeSound != null && audioSource != null)
+                            {
+                                audioSource.PlayOneShot(explodeSound);
+                                soundDuration = explodeSound.length;
+                            }
+
+                            // 4. 音が鳴り終わるまで待ってから完全に削除 (Destroy Delay)
+                            // soundDurationが0の場合は最低0.5秒待つ
+                            Destroy(gameObject, soundDuration > 0 ? soundDuration : 0.5f);
                         });
                 });
             });
