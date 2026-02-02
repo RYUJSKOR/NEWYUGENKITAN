@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     private float Timer = 0.0f;
 
+    private SEController SE;
+
     // private float GoalTimer = 3.0f; // 未使用なら削除可
 
     private void Awake()
@@ -46,7 +48,9 @@ public class GameManager : MonoBehaviour
         timerManager = FindFirstObjectByType<TimerManager>();
         _playerHP = FindFirstObjectByType<PlayerHP>();
         bossTimerManager = FindFirstObjectByType<BossTimerManager>();
-    }
+		SE = FindAnyObjectByType<SEController>();
+
+	}
 
     void Update()
     {
@@ -108,8 +112,9 @@ public class GameManager : MonoBehaviour
 
         Instantiate(ClearUIPrefab, UIParent.transform);
 
-        // 演出のために時間を止める
-        Time.timeScale = 0.0f;
+        SE.Play("Player.Win");
+		// 演出のために時間を止める
+		Time.timeScale = 0.0f;
 
         // ★重要: シーン遷移は Player.cs の OnTriggerEnter で行われるため、
         // ここでの遷移命令（LoadNextSceneAfterDelay）は削除しました。
@@ -131,8 +136,9 @@ public class GameManager : MonoBehaviour
 
         Instantiate(ClearUIPrefab, UIParent.transform);
 
-        // 演出のために時間を止める
-        Time.timeScale = 0.0f;
+		SE.Play("Player.Win");
+		// 演出のために時間を止める
+		Time.timeScale = 0.0f;
 
         // ★重要: 同様にここも削除
     }
