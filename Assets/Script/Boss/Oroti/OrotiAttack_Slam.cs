@@ -4,34 +4,22 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Oroti/Attack/Slam")]
 public class OrotiAttack_Slam : OrotiAttackBase
 {
-    [Header("Allowed Neck")]
-    [SerializeField] private NeckAttackType allowedNeck = NeckAttackType.Slam;
-
-    [Header("Animation")]
-    [SerializeField] private string animName = "Oroti_Slam";
-
-    [Header("Damage Timing")]
-    [SerializeField, Range(0f, 1f)]
-    private float damageStart = 0.4f;
-
-    [SerializeField, Range(0f, 1f)]
-    private float damageEnd = 0.5f;
-
-    public override void Execute(
-        List<OrotiNeck> necks,
-        Transform player)
+    public override bool Execute(
+         List<OrotiNeck> allNecks,
+         Transform player,
+         OrotiController controller)
     {
-        foreach (var neck in necks)
-        {
-            // 対応していない首は無視
-            if (neck.Type != allowedNeck)
-                continue;
+        // 首選択
+        var selected = SelectNecks(allNecks);
 
-            neck.PlayAttack(
-                animName,
-                damageStart,
-                damageEnd
-            );
-        }
+        // 攻撃可能チェック
+        var attackable = FilterAttackable(selected);
+
+        // Priority + Order 実行
+        return ExecuteByOrder(
+            attackable,
+            player,
+            controller
+        );
     }
 }

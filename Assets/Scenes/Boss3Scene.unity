@@ -21687,7 +21687,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3471924889485791099, guid: 219176191c0a5f243abe63caa721c272, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2003364377}
   m_SourcePrefab: {fileID: 100100000, guid: 219176191c0a5f243abe63caa721c272, type: 3}
 --- !u!4 &495209302 stripped
 Transform:
@@ -21699,12 +21702,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5134964973327173739, guid: 219176191c0a5f243abe63caa721c272, type: 3}
   m_PrefabInstance: {fileID: 495209301}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 495209304}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0691ebfa7d31af44ab088662a2be02af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &495209304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3471924889485791099, guid: 219176191c0a5f243abe63caa721c272, type: 3}
+  m_PrefabInstance: {fileID: 495209301}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &500876895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59838,6 +59846,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 636535401}
     - target: {fileID: 8178275513656564758, guid: 85dd54c5138c88b4e9ff8bb662f65dec, type: 3}
+      propertyPath: stageExitTriggerPrefab
+      value: 
+      objectReference: {fileID: 1579020820405530355, guid: a00c2d5d1cd5724419773e79e1762400, type: 3}
+    - target: {fileID: 8178275513656564758, guid: 85dd54c5138c88b4e9ff8bb662f65dec, type: 3}
       propertyPath: stageExitTriggerSpawnPoint
       value: 
       objectReference: {fileID: 347113741}
@@ -59847,7 +59859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8178275513656564758, guid: 85dd54c5138c88b4e9ff8bb662f65dec, type: 3}
       propertyPath: phases.Array.data[2].nextSceneName
-      value: Boss3Scene
+      value: FinalResult
       objectReference: {fileID: 0}
     - target: {fileID: 8178275513656564758, guid: 85dd54c5138c88b4e9ff8bb662f65dec, type: 3}
       propertyPath: phases.Array.data[2].attackPatterns.Array.size
@@ -80110,12 +80122,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7108763024675268576, guid: 219176191c0a5f243abe63caa721c272, type: 3}
   m_PrefabInstance: {fileID: 495209301}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 495209304}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed2875a748dff2a4f880ceca33778e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2003364377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495209304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdf9945da2842a4493f0231c702326a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 64e632476950c7c499541ba504b3a674, type: 2}
 --- !u!1001 &2009406028
 PrefabInstance:
   m_ObjectHideFlags: 0
