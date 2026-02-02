@@ -36,6 +36,7 @@ public class BlueBoundEnemyMovement : MonoBehaviour
     public PreparingState preparingState;
     public JumpingState jumpingState;
     public StuckRecoveryState stuckRecoveryState;
+    private SEController SE;
 
     // --- ì‡ïîïœêî ---
     private float defaultMaxAngularVelocity;
@@ -62,6 +63,7 @@ public class BlueBoundEnemyMovement : MonoBehaviour
     {
         currentState = idleState;
         currentState.EnterState();
+        SE = GetComponent<SEController>();
     }
 
     void Update()
@@ -137,6 +139,7 @@ public class BlueBoundEnemyMovement : MonoBehaviour
             Rb.AddForce(direction * totalJumpPower * CurrentSpeedModifier, ForceMode.VelocityChange);
             Rb.useGravity = false;
             ChangeState(jumpingState);
+            SE.Play("Enemy.BoundJump");
         }
     }
 

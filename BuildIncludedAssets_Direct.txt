@@ -488,20 +488,29 @@ Assets/GameObject/SkyBox/夜空Sample.png
 Assets/GameObject/SoundEffect/AS_1412276_膨らむ_大きくなるB.mp3
 Assets/GameObject/SoundEffect/AS_1642467_ふわふわと浮かんでいる音_7.mp3
 Assets/GameObject/SoundEffect/AudioTimeScaler.cs
+Assets/GameObject/SoundEffect/Clean Paper Rip Sound (mp3cut.net).mp3
 Assets/GameObject/SoundEffect/MasterMixer.mixer
-Assets/GameObject/SoundEffect/からかさ折る.mp3
+Assets/GameObject/SoundEffect/MP_Branch Wood Stress Cracking (mp3cut.net).mp3
+Assets/GameObject/SoundEffect/uaaaa.mp3
+Assets/GameObject/SoundEffect/uhaha.mp3
+Assets/GameObject/SoundEffect/からかさジャンプ 1.mp3
 Assets/GameObject/SoundEffect/ジャンプ１.mp3
 Assets/GameObject/SoundEffect/ジャンプ２.mp3
 Assets/GameObject/SoundEffect/ダッシュ.mp3
-Assets/GameObject/SoundEffect/バウンドエネミー運命.mp3
+Assets/GameObject/SoundEffect/バウンドエネミージャンプ.mp3
+Assets/GameObject/SoundEffect/バウンドエネミー死ぬ音 (mp3cut.net).mp3
+Assets/GameObject/SoundEffect/バルーン死亡.mp3
 Assets/GameObject/SoundEffect/バルーン爆発.mp3
+Assets/GameObject/SoundEffect/プレイヤー被弾.mp3
 Assets/GameObject/SoundEffect/ペン書き.mp3
-Assets/GameObject/SoundEffect/ロケットエネミー爆発音.mp3
+Assets/GameObject/SoundEffect/ロケットエネミー作業完了.mp3
+Assets/GameObject/SoundEffect/怨念のイメージビデオ作成 1.mp3
 Assets/GameObject/SoundEffect/炎.mp3
 Assets/GameObject/SoundEffect/回復１.mp3
+Assets/GameObject/SoundEffect/狐被弾.mp3
 Assets/GameObject/SoundEffect/凧 1.mp3
 Assets/GameObject/SoundEffect/敵スポナー.mp3
-Assets/GameObject/SoundEffect/能面.mp3
+Assets/GameObject/SoundEffect/被弾効果音.mp3
 Assets/GameObject/ToonRealroad.mat
 Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/materials/appletree 1.mat
 Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/materials/appletree.mat
@@ -2133,6 +2142,7 @@ Assets/Script/Enemy/BlueEnemy/BlueEnemyMoving.cs
 Assets/Script/Enemy/EnemyDeathNotifier.cs
 Assets/Script/Enemy/FallEnemy/FallEnemy.cs
 Assets/Script/Enemy/FallEnemy/FallEnemyMovement.cs
+Assets/Script/Enemy/GlobalEnemyHitSounder.cs
 Assets/Script/Enemy/HomingEnemy/HomingEnemy.cs
 Assets/Script/Enemy/HomingEnemy/HomingEnemyAttacking.cs
 Assets/Script/Enemy/HomingEnemy/HomingEnemyConfig.cs

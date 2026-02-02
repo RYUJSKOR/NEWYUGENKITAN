@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf869e2f062b8243bacef66056c2df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 60
+  Health: 1
   invincibleDuration: 0
   DesignationTag: []
 --- !u!54 &1502906820766392966
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf869e2f062b8243bacef66056c2df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 1000
+  Health: 600
   invincibleDuration: 0
   DesignationTag: []
 --- !u!65 &2561987678236594911
@@ -1957,7 +1957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf869e2f062b8243bacef66056c2df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 60
+  Health: 1
   invincibleDuration: 0
   DesignationTag: []
 --- !u!54 &8403975026176269418
@@ -2304,7 +2304,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 7fea2285462c1b242be46af3829d098a, type: 2}
     attackInterval: 2.5
     transitionHealthThreshold: 0
-    nextSceneName: Boss3Scene
+    nextSceneName: FinalResult
   stunDuration: 10
   deathModelObject: {fileID: 4019606097734362982}
   bodyMeshObject: {fileID: 919132149155446097}

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -8339540987999622622}
   - component: {fileID: 243877728657366647}
   - component: {fileID: -2596347892871677415}
+  - component: {fileID: -4453143384017547209}
   m_Layer: 24
   m_Name: BalloonEnemy
   m_TagString: BalloonEnemy
@@ -272,6 +273,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fe2240637c43049b932d4dbdb4d8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4453143384017547209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546210310497219067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d39e7b7b8c836d4aab13821af31bed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletNormal: {fileID: 6347013360028792297, guid: ca1a8c9ab5cf0704da41ece903816817, type: 3}
+  bulletDevil: {fileID: 6347013360028792297, guid: c58ba03ba0a94e842a12ca851dee0098, type: 3}
+  bulletFox: {fileID: 6347013360028792297, guid: 081d651f48a70cd40836695de8061882, type: 3}
 --- !u!1001 &481865438185802926
 PrefabInstance:
   m_ObjectHideFlags: 0
