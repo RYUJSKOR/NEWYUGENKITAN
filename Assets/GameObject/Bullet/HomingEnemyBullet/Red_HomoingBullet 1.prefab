@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96982c614cfdb654487d7666e4ec20f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 3
+  power: 1
   lifeTime: 2
   ExplosionObject: {fileID: 599091092812773393, guid: c25cf98e9cae4274f90fd8783d5d29ad, type: 3}
   ignoreTags: []

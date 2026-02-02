@@ -34,12 +34,12 @@ MonoBehaviour:
     volume: 2
     cooldown: 0
   - id: Enemy.RocketExplode
-    clip: {fileID: 8300000, guid: 377bfd0636e942e46b489d9bf7c42b93, type: 3}
+    clip: {fileID: 8300000, guid: e85f9088dc5d76648a5faa4500c78790, type: 3}
     volume: 3
     cooldown: 0
   - id: Enemy.HomingDie
-    clip: {fileID: 8300000, guid: 521c9ee65dd875041a71fb5b2da73235, type: 3}
-    volume: 3
+    clip: {fileID: 8300000, guid: c2fe5bf225cb95e48bfdb1288f494ac8, type: 3}
+    volume: 5
     cooldown: 0
   - id: Enemy.BalloonDie
     clip: {fileID: 8300000, guid: 8d9cfc72188e9a847ac088f3b468f76f, type: 3}
