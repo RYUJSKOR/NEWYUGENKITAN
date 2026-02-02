@@ -299,6 +299,7 @@ public class Player : MonoBehaviour
     private void PlayerDeath()
     {
         playerStateMachine.InputHandler.Disable();
+        SE.Play("Player.Die");
         Invoke(nameof(DisablePlayer), 3f);
     }
     private void DisablePlayer()

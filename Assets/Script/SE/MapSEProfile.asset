@@ -16,4 +16,4 @@ MonoBehaviour:
   - id: Map.Trampoline
     clip: {fileID: 8300000, guid: e7b611be67d12fe4a9ee507d6e3e45ad, type: 3}
     volume: 2
-    cooldown: 0
+    cooldown: 0.5
