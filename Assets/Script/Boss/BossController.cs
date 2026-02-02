@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using UnityEngine.SceneManagement;
 
 // アニメーションのenum定義
 public enum ArmAnimationState
@@ -177,7 +178,7 @@ public class BossController : MonoBehaviour
 
         GetComponentsInChildren(true, weakPoints);
 
-        if (BossGameManager.Instance != null && BossGameManager.Instance.HasSavedData)
+        if (BossGameManager.Instance != null)
         {
             currentPhaseIndex = BossGameManager.Instance.SavedBossPhase;
             Debug.Log("保存されたボスのフェーズを復元しました: " + currentPhaseIndex);
@@ -208,7 +209,7 @@ public class BossController : MonoBehaviour
 
         InitializeBoss();
 
-        UpdatePhaseColor();
+        //UpdatePhaseColor();
     }
 
     /// <summary>
@@ -295,12 +296,19 @@ public class BossController : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.BossClear();
-            gameObject.SetActive(false);
         }
-    }
+
+		yield return new WaitForSecondsRealtime(3f);
+		gameObject.SetActive(false);
+
+		// リザルトシーンへ移動
+		GameObject triggerInstance = Instantiate(stageExitTriggerPrefab, stageExitTriggerSpawnPoint.position, stageExitTriggerSpawnPoint.rotation);
+		StageExitTrigger triggerScript = triggerInstance.GetComponent<StageExitTrigger>();
+        triggerScript.NextScene();
+	}
 
 
-    private void OnWeakPointDamaged(BossWeakPoint weakPoint)
+	private void OnWeakPointDamaged(BossWeakPoint weakPoint)
     {
         // (前回の修正) 現在のフェーズの色を取得
         Color currentPhaseColor = phases[currentPhaseIndex].phaseColor;
@@ -505,7 +513,7 @@ public class BossController : MonoBehaviour
         currentAttackPatternIndex = 0;
         stateMachine.ChangeState(new BossPhaseTransitionState(stateMachine, this));
 
-        UpdatePhaseColor();
+        //UpdatePhaseColor();
         UpdateHealthGate();
     }
 
