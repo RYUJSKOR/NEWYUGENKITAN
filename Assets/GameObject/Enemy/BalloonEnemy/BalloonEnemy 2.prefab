@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -8339540987999622622}
   - component: {fileID: 243877728657366647}
   - component: {fileID: -127701972022054020}
+  - component: {fileID: 8289681252427054548}
   m_Layer: 24
   m_Name: BalloonEnemy 2
   m_TagString: BalloonEnemy
@@ -272,6 +273,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61fe2240637c43049b932d4dbdb4d8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8289681252427054548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546210310497219067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfdf9945da2842a4493f0231c702326a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 36a2e299e8bb8be49ad9622070ecb197, type: 2}
 --- !u!1001 &481865438185802926
 PrefabInstance:
   m_ObjectHideFlags: 0

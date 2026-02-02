@@ -10,12 +10,21 @@ public class StageExitTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!hasBeenTriggered && other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
+        {
+            NextScene();
+		}
+    }
+
+    public void NextScene()
+    {
+        if (!hasBeenTriggered)
         {
             hasBeenTriggered = true;
             Debug.Log(nextSceneName + " ‚Ö‚Ì‘JˆÚ‚ğŠJn‚µ‚Ü‚·B");
 
             BossGameManager.Instance.GoToNextStage(nextSceneName);
         }
-    }
+	}
+
 }

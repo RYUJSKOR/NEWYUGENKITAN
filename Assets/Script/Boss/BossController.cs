@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 // アニメーションのenum定義
 public enum ArmAnimationState
@@ -67,6 +69,7 @@ public class BossController : MonoBehaviour
     private BossAttackPattern runningAttackPattern = null;
     private List<Transform> explosionPoints = new List<Transform>();
     private List<MeshFilter> bodyMeshFilters = new List<MeshFilter>();
+    private static bool hasLoadedSavedData = false;
 
     private Animator animator;
     private Animator leftArmAnimator;
@@ -177,16 +180,21 @@ public class BossController : MonoBehaviour
 
         GetComponentsInChildren(true, weakPoints);
 
-        if (BossGameManager.Instance != null && BossGameManager.Instance.HasSavedData)
+        if (BossGameManager.Instance != null)
         {
-            currentPhaseIndex = BossGameManager.Instance.SavedBossPhase;
-            Debug.Log("保存されたボスのフェーズを復元しました: " + currentPhaseIndex);
-            if (bodyHealthManager != null)
+            if (hasLoadedSavedData)
             {
-                bodyHealthManager.SetHealth(BossGameManager.Instance.SavedBossHealth);
-                Debug.Log("保存されたボスの体力を復元しました: " + bodyHealthManager.GetHealth());
+                currentPhaseIndex = BossGameManager.Instance.SavedBossPhase;
+                Debug.Log("保存されたボスのフェーズを復元しました: " + currentPhaseIndex);
+                if (bodyHealthManager != null)
+                {
+                    bodyHealthManager.SetHealth(BossGameManager.Instance.SavedBossHealth);
+                    Debug.Log("保存されたボスの体力を復元しました: " + bodyHealthManager.GetHealth());
+                }
             }
-        }
+            hasLoadedSavedData = true;
+
+		}
 
         foreach (var wp in weakPoints)
         {
@@ -208,7 +216,7 @@ public class BossController : MonoBehaviour
 
         InitializeBoss();
 
-        UpdatePhaseColor();
+        //UpdatePhaseColor();
     }
 
     /// <summary>
@@ -295,12 +303,19 @@ public class BossController : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.BossClear();
-            gameObject.SetActive(false);
         }
-    }
+
+		yield return new WaitForSecondsRealtime(3f);
+		gameObject.SetActive(false);
+
+		// リザルトシーンへ移動
+		GameObject triggerInstance = Instantiate(stageExitTriggerPrefab, stageExitTriggerSpawnPoint.position, stageExitTriggerSpawnPoint.rotation);
+		StageExitTrigger triggerScript = triggerInstance.GetComponent<StageExitTrigger>();
+		triggerScript.NextScene();
+	}
 
 
-    private void OnWeakPointDamaged(BossWeakPoint weakPoint)
+	private void OnWeakPointDamaged(BossWeakPoint weakPoint)
     {
         // (前回の修正) 現在のフェーズの色を取得
         Color currentPhaseColor = phases[currentPhaseIndex].phaseColor;
@@ -505,7 +520,7 @@ public class BossController : MonoBehaviour
         currentAttackPatternIndex = 0;
         stateMachine.ChangeState(new BossPhaseTransitionState(stateMachine, this));
 
-        UpdatePhaseColor();
+        //UpdatePhaseColor();
         UpdateHealthGate();
     }
 
