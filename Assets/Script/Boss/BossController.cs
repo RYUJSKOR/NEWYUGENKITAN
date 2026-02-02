@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 // アニメーションのenum定義
 public enum ArmAnimationState
@@ -68,6 +69,7 @@ public class BossController : MonoBehaviour
     private BossAttackPattern runningAttackPattern = null;
     private List<Transform> explosionPoints = new List<Transform>();
     private List<MeshFilter> bodyMeshFilters = new List<MeshFilter>();
+    private static bool hasLoadedSavedData = false;
 
     private Animator animator;
     private Animator leftArmAnimator;
@@ -180,14 +182,19 @@ public class BossController : MonoBehaviour
 
         if (BossGameManager.Instance != null)
         {
-            currentPhaseIndex = BossGameManager.Instance.SavedBossPhase;
-            Debug.Log("保存されたボスのフェーズを復元しました: " + currentPhaseIndex);
-            if (bodyHealthManager != null)
+            if (hasLoadedSavedData)
             {
-                bodyHealthManager.SetHealth(BossGameManager.Instance.SavedBossHealth);
-                Debug.Log("保存されたボスの体力を復元しました: " + bodyHealthManager.GetHealth());
+                currentPhaseIndex = BossGameManager.Instance.SavedBossPhase;
+                Debug.Log("保存されたボスのフェーズを復元しました: " + currentPhaseIndex);
+                if (bodyHealthManager != null)
+                {
+                    bodyHealthManager.SetHealth(BossGameManager.Instance.SavedBossHealth);
+                    Debug.Log("保存されたボスの体力を復元しました: " + bodyHealthManager.GetHealth());
+                }
             }
-        }
+            hasLoadedSavedData = true;
+
+		}
 
         foreach (var wp in weakPoints)
         {
@@ -304,7 +311,7 @@ public class BossController : MonoBehaviour
 		// リザルトシーンへ移動
 		GameObject triggerInstance = Instantiate(stageExitTriggerPrefab, stageExitTriggerSpawnPoint.position, stageExitTriggerSpawnPoint.rotation);
 		StageExitTrigger triggerScript = triggerInstance.GetComponent<StageExitTrigger>();
-        triggerScript.NextScene();
+		triggerScript.NextScene();
 	}
 
 
