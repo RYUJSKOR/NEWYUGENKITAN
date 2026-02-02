@@ -66,7 +66,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log("【ステートマシン】FixedUpdate 実行中...");
+        //Debug.Log("【ステートマシン】FixedUpdate 実行中...");
 
         for (int i = 0; i < activeStates.Count; i++)
         {

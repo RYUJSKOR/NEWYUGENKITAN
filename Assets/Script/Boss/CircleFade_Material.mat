@@ -28,7 +28,7 @@ Material:
     - _Amplitude: 0.05
     - _Cutoff: 1.3
     - _Frequency: 10
-    - _Inverse: 1
+    - _Inverse: 0
     - _Speed: 3
     m_Colors:
     - _MainColor: {r: 0, g: 0, b: 0, a: 1}
