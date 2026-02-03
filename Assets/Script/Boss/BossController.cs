@@ -88,6 +88,7 @@ public class BossController : MonoBehaviour
 
     public event Action OnBossDefeated;
     public event Action OnDeathSequenceStart;
+    private SEController SE;
 
     public bool IsAttacking { get; private set; } = false;
     public bool IsLeftArmAttacking { get; private set; } = false;
@@ -213,6 +214,8 @@ public class BossController : MonoBehaviour
                 explosionPoints.Add(child);
             }
         }
+
+        SE = FindAnyObjectByType<SEController>();
 
         InitializeBoss();
 

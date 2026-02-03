@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345b5b85c852a7f4a9924123a61bf88d, type: 3}
+  m_Name: BOSSSEProfile 1
+  m_EditorClassIdentifier: 
+  seList:
+  - id: Boss.Slam
+    clip: {fileID: 8300000, guid: 4221b8b52daaa0741b51d16fef676e4b, type: 3}
+    volume: 5
+    cooldown: 0
+  - id: Boss.Press
+    clip: {fileID: 8300000, guid: 2fb33cebf0141314fb6a6e1d355c5a98, type: 3}
+    volume: 3
+    cooldown: 0
+  - id: Boss.Swipe
+    clip: {fileID: 8300000, guid: 5874f473ea8655740ad1b3317549f616, type: 3}
+    volume: 3
+    cooldown: 0
+  - id: Boss.Charge
+    clip: {fileID: 8300000, guid: 00511f3205b4cdd4ebbd960baa08bd8b, type: 3}
+    volume: 0
+    cooldown: 0

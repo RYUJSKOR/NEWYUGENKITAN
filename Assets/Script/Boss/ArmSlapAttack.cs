@@ -4,14 +4,14 @@ using System.Collections;
 [CreateAssetMenu(fileName = "NewSlapAttack", menuName = "Boss Attacks/Slap Attack")]
 public class ArmSlapAttack : BossAttackPattern
 {
-    [Header("ビンタ攻撃の設定")]
+    [Header("ビン?攻撃の設定")]
     public float attackHeightOffset = 1.0f;
     public float screenEdgeOffset = 2.0f;
     public float swipeSpeed = 40f;
     public float returnSpeed = 20f;
     public float windUpTime = 0.8f;
 
-    [Header("タメの演出設定")]
+    [Header("?メの演出設定")]
     public bool enableChargeShake = true;
     public float shakeAmount = 0.1f;
     public float shakeSpeed = 30f;
@@ -44,6 +44,9 @@ public class ArmSlapAttack : BossAttackPattern
 
     private IEnumerator SlapRoutine(BossController boss, Transform arm, Transform restPosition, bool isLeftArm)
     {
+
+        var SE = FindAnyObjectByType<SEController>();
+
         boss.SetAttackingState(true, isLeftArm);
         Rigidbody armRb = arm.GetComponent<Rigidbody>();
         Transform damageZoneTransform = arm.Find("DamageZone");
@@ -85,6 +88,8 @@ public class ArmSlapAttack : BossAttackPattern
                 yield return null;
             }
 
+            if (SE != null) SE.Play("Boss.Charge");
+
             // --- 溜め (Charge) ---
             float timer = 0f;
             Vector3 chargePosition = arm.position;
@@ -101,7 +106,9 @@ public class ArmSlapAttack : BossAttackPattern
             }
             armRb.MovePosition(chargePosition);
 
-            // --- ビンタ (Swipe) ---
+            if (SE != null) SE.Play("Boss.Swipe");
+
+            // --- ビン? (Swipe) ---
             boss.SetArmAnimation(isLeftArm, actionHandState);
             while (Vector3.Distance(arm.position, endPos) > 0.1f)
             {
@@ -109,7 +116,7 @@ public class ArmSlapAttack : BossAttackPattern
                 yield return null;
             }
 
-            // --- 待機位置に戻る ---
+            // --- 待?位置に戻る ---
             yield return new WaitForSeconds(0.5f);
 
             if (damageCollider != null) damageCollider.enabled = false;
