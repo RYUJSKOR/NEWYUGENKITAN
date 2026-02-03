@@ -37,23 +37,23 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e85f9088dc5d76648a5faa4500c78790, type: 3}
     volume: 3
     cooldown: 0
-  - id: Enemy.HomingDie
-    clip: {fileID: 8300000, guid: c2fe5bf225cb95e48bfdb1288f494ac8, type: 3}
-    volume: 5
-    cooldown: 0
   - id: Enemy.BalloonDie
     clip: {fileID: 8300000, guid: 8d9cfc72188e9a847ac088f3b468f76f, type: 3}
     volume: 5
     cooldown: 0
+  - id: Enemy.HomingDie
+    clip: {fileID: 8300000, guid: c2fe5bf225cb95e48bfdb1288f494ac8, type: 3}
+    volume: 5
+    cooldown: 0
   - id: Enemy.HitSoundNormal
     clip: {fileID: 8300000, guid: 00228cc4b6d99b64faf07d79cc3745c8, type: 3}
-    volume: 5
-    cooldown: 0
+    volume: 1
+    cooldown: 0.5
   - id: Enemy.HitSounddevil
     clip: {fileID: 8300000, guid: fd056ac555db12f4d8543fa8d3ee7538, type: 3}
-    volume: 5
-    cooldown: 0
+    volume: 3
+    cooldown: 0.5
   - id: Enemy.HitSoundfox
     clip: {fileID: 8300000, guid: 10025a43d74a0de4e8d72d041f9afb04, type: 3}
-    volume: 5
-    cooldown: 0
+    volume: 1
+    cooldown: 0.5
