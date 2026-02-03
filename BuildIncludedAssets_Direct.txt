@@ -94,8 +94,8 @@ Assets/GameObject/AssetModel/yuukaku/Toonlambert9.mat
 Assets/GameObject/AssetModel/yuukaku/ToonstandardSurface1.mat
 Assets/GameObject/AssetModel/yuukaku/Toonyuukaku (3).prefab
 Assets/GameObject/AssetModel/yuukaku/yuukaku.fbx
-Assets/GameObject/BGM/TitleBGM.1.mp3
 Assets/GameObject/BGM/駆け抜ける和のBGM.mp3
+Assets/GameObject/BGM/TitleBGM.1.mp3
 Assets/GameObject/Buiding/tree3/lambert2.mat
 Assets/GameObject/Buiding/tree3/lambert4.mat
 Assets/GameObject/Buiding/tree3/tree3.fbx
@@ -216,6 +216,7 @@ Assets/GameObject/Enemy/Boss/Gate1.prefab
 Assets/GameObject/Enemy/Boss/Ladder.prefab
 Assets/GameObject/Enemy/Boss/RainBone.prefab
 Assets/GameObject/Enemy/Boss/StageExitTrigger 1.prefab
+Assets/GameObject/Enemy/Boss/StageExitTrigger 2.prefab
 Assets/GameObject/Enemy/Boss/StageExitTrigger.prefab
 Assets/GameObject/Enemy/Boss/standardSurface1.mat
 Assets/GameObject/Enemy/EnemyCollider.prefab
@@ -240,6 +241,7 @@ Assets/GameObject/Enemy/RoketEnemy/RocketEnemyMovementConfig.asset
 Assets/GameObject/Enemy/RoketEnemy/RoketEnemy.prefab
 Assets/GameObject/Enemy/RoketEnemy/texture.png
 Assets/GameObject/Enemy/roketto/RoketEnemy.prefab
+Assets/GameObject/GameScreen/看板白黒反転 1.png
 Assets/GameObject/GameScreen/1d3f2ae07b6bc307.png
 Assets/GameObject/GameScreen/26513869.png
 Assets/GameObject/GameScreen/8no1.png
@@ -395,22 +397,21 @@ Assets/GameObject/GameScreen/MoonMaterial.mat
 Assets/GameObject/GameScreen/noumask_amulet_Test.png
 Assets/GameObject/GameScreen/nowLoading1.png
 Assets/GameObject/GameScreen/nowLoading2.png
-Assets/GameObject/GameScreen/nowLoading3.png
+Assets/GameObject/GameScreen/nowLoading3ver2.png
 Assets/GameObject/GameScreen/onimask__amulet.png
 Assets/GameObject/GameScreen/onimask__amulet_Test.png
 Assets/GameObject/GameScreen/OptionScreen.png
 Assets/GameObject/GameScreen/result_prototype.png
+Assets/GameObject/GameScreen/能面_灰.png
+Assets/GameObject/GameScreen/鬼面_灰.png
 Assets/GameObject/GameScreen/TitleLogo/サウンドオプション_フレームサンプル.png
 Assets/GameObject/GameScreen/TitleLogo/タイトルロゴ改良案 三日月ver2.png
-Assets/GameObject/GameScreen/TitleLogo/メニューカバー_金.png
 Assets/GameObject/GameScreen/TitleLogo/メニューカバー_黒.png
+Assets/GameObject/GameScreen/TitleLogo/メニューカバー_金.png
 Assets/GameObject/GameScreen/Z.png
-Assets/GameObject/GameScreen/看板白黒反転 1.png
-Assets/GameObject/GameScreen/鬼面_灰.png
+Assets/GameObject/GameScreen/秀 コンポジション 1_00094.png
 Assets/GameObject/GameScreen/月 (1).png
 Assets/GameObject/GameScreen/狐面_灰.png
-Assets/GameObject/GameScreen/秀 コンポジション 1_00094.png
-Assets/GameObject/GameScreen/能面_灰.png
 Assets/GameObject/GameScreen/和雲.png
 Assets/GameObject/Goal.prefab
 Assets/GameObject/gomi/gomi.prefab
@@ -425,6 +426,8 @@ Assets/GameObject/Item/makimono (1).prefab
 Assets/GameObject/Lift/Nurikabe.prefab
 Assets/GameObject/Lift/RL_Lift.prefab
 Assets/GameObject/Manager/ShootingManager.prefab
+Assets/GameObject/Map/bridge.fbx
+Assets/GameObject/Map/bridge.prefab
 Assets/GameObject/Map/broken_bridge2.fbx
 Assets/GameObject/Map/broken_bridge2.prefab
 Assets/GameObject/Map/building 1.prefab
@@ -440,8 +443,13 @@ Assets/GameObject/Map/Materials/broken_bridge2.mat
 Assets/GameObject/Map/Materials/lid_paint.mat
 Assets/GameObject/Map/Materials/New Material.mat
 Assets/GameObject/Map/store_house.prefab
+Assets/GameObject/Map/texture/bridge.png
 Assets/GameObject/Map/texture/broken_bridge2.png
 Assets/GameObject/Map/texture/lid_paint.png
+Assets/GameObject/Map/texture/light_leg.png
+Assets/GameObject/Map/texture/light_middle.png
+Assets/GameObject/Map/texture/light_top.png
+Assets/GameObject/Map/texture/Materials/bridge.mat
 Assets/GameObject/Map/yuukaku_bridge.prefab
 Assets/GameObject/Map/yuukaku2.prefab
 Assets/GameObject/Player/eff_pfb_Barrier 1.prefab
@@ -485,32 +493,37 @@ Assets/GameObject/SkyBox/kumo3 1.png
 Assets/GameObject/SkyBox/Night.mat
 Assets/GameObject/SkyBox/NightSkyBox.mat
 Assets/GameObject/SkyBox/夜空Sample.png
+Assets/GameObject/SoundEffect/凧 1.mp3
 Assets/GameObject/SoundEffect/AS_1412276_膨らむ_大きくなるB.mp3
 Assets/GameObject/SoundEffect/AS_1642467_ふわふわと浮かんでいる音_7.mp3
 Assets/GameObject/SoundEffect/AudioTimeScaler.cs
+Assets/GameObject/SoundEffect/born.mp3
 Assets/GameObject/SoundEffect/Clean Paper Rip Sound (mp3cut.net).mp3
+Assets/GameObject/SoundEffect/daemonattack.mp3
+Assets/GameObject/SoundEffect/Foxattack.mp3
 Assets/GameObject/SoundEffect/MasterMixer.mixer
 Assets/GameObject/SoundEffect/MP_Branch Wood Stress Cracking (mp3cut.net).mp3
-Assets/GameObject/SoundEffect/uaaaa.mp3
-Assets/GameObject/SoundEffect/uhaha.mp3
+Assets/GameObject/SoundEffect/能面attacked.mp3
+Assets/GameObject/SoundEffect/炎.mp3
+Assets/GameObject/SoundEffect/敵スポナー.mp3
 Assets/GameObject/SoundEffect/からかさジャンプ 1.mp3
 Assets/GameObject/SoundEffect/ジャンプ１.mp3
 Assets/GameObject/SoundEffect/ジャンプ２.mp3
 Assets/GameObject/SoundEffect/ダッシュ.mp3
-Assets/GameObject/SoundEffect/バウンドエネミージャンプ.mp3
+Assets/GameObject/SoundEffect/のうめん発射.mp3
 Assets/GameObject/SoundEffect/バウンドエネミー死ぬ音 (mp3cut.net).mp3
+Assets/GameObject/SoundEffect/バウンドエネミージャンプ.mp3
 Assets/GameObject/SoundEffect/バルーン死亡.mp3
 Assets/GameObject/SoundEffect/バルーン爆発.mp3
-Assets/GameObject/SoundEffect/プレイヤー被弾.mp3
+Assets/GameObject/SoundEffect/プレイヤーダメージ 1.mp3
 Assets/GameObject/SoundEffect/ペン書き.mp3
-Assets/GameObject/SoundEffect/ロケットエネミー作業完了.mp3
-Assets/GameObject/SoundEffect/怨念のイメージビデオ作成 1.mp3
-Assets/GameObject/SoundEffect/炎.mp3
+Assets/GameObject/SoundEffect/ボス地面攻撃.mp3
+Assets/GameObject/SoundEffect/ボス片手攻撃.mp3
+Assets/GameObject/SoundEffect/ゆうたピック.mp3
+Assets/GameObject/SoundEffect/ゆうたロケット.mp3
+Assets/GameObject/SoundEffect/リザルト_勝利.mp3
+Assets/GameObject/SoundEffect/リザルト_敗北.mp3
 Assets/GameObject/SoundEffect/回復１.mp3
-Assets/GameObject/SoundEffect/狐被弾.mp3
-Assets/GameObject/SoundEffect/凧 1.mp3
-Assets/GameObject/SoundEffect/敵スポナー.mp3
-Assets/GameObject/SoundEffect/被弾効果音.mp3
 Assets/GameObject/ToonRealroad.mat
 Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/materials/appletree 1.mat
 Assets/GameObject/TreeModel/3DNatureAssetsPack(Lite)/materials/appletree.mat
@@ -550,611 +563,6 @@ Assets/GameObject/UI/FoxAmuletMaterial.mat
 Assets/GameObject/UI/NouAmuletMaterial.mat
 Assets/GameObject/UI/OniAmuletMaterial.mat
 Assets/GameObject/UI/Particle.mat
-Assets/GameObject/UI/PlayerHPUI/Bule_HP.prefab
-Assets/GameObject/UI/PlayerHPUI/Red_HP.prefab
-Assets/GameObject/UI/PlayerHPUI/Yellow_HP.prefab
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00000.controller
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00000.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00001.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00002.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00003.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00004.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00005.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00006.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00007.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00008.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00009.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00010.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00011.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00012.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00013.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00014.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00015.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00016.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00017.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00018.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00019.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00020.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00021.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00022.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00023.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00024.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00025.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00026.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00027.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00028.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00029.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00030.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00031.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00032.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00033.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00034.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00035.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00036.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00037.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00038.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00039.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00040.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00041.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00042.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00043.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00044.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00045.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00046.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00047.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00048.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00049.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00050.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00051.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00052.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00053.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00054.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00055.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00056.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00057.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00058.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00059.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00060.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00061.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00062.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00063.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00064.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00065.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00066.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00067.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00068.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00069.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00070.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00071.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00072.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00073.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00074.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00075.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00076.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00077.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00078.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00079.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00080.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00081.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00082.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00083.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00084.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00085.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00086.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00087.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00088.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00089.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00090.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00091.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00092.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00093.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00094.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00095.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00096.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00097.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00098.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00099.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00100.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00101.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00102.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00103.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00104.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00105.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00106.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00107.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00108.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00109.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00110.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00111.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00112.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00113.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00114.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00115.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00116.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00117.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00118.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00119.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00120.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00121.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00122.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00123.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00124.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00125.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00126.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00127.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00128.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00129.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00130.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00131.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00132.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00133.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00134.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00135.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00136.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00137.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00138.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00139.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00140.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00141.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00142.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00143.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00144.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00145.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00146.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00147.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00148.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00149.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00150.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00151.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00152.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00153.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00154.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00155.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00156.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00157.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00158.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00159.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00160.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00161.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00162.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00163.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00164.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00165.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00166.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00167.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00168.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00169.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00170.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00171.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00172.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00173.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00174.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00175.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00176.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00177.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00178.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00179.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00180.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00181.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00182.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00183.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00184.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00185.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00186.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00187.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00188.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00189.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00190.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00191.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00192.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00193.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00194.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00195.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00196.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00197.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00198.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00199.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00200.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00201.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00202.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00203.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00204.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00205.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00206.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00207.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00208.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00209.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00210.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00211.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00212.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00213.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00214.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00215.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00216.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00217.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00218.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00219.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00220.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00221.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00222.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00223.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00224.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00225.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00226.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00227.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00228.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00229.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00230.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00231.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00232.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00233.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00234.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00235.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00236.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00237.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00238.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00239.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00240.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00241.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00242.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00243.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00244.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00245.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00246.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00247.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00248.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00249.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00250.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00251.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00252.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00253.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00254.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00255.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00256.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00257.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00258.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00259.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00260.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00261.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00262.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00263.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00264.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00265.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00266.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00267.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00268.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00269.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00270.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00271.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00272.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00273.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00274.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00275.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00276.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00277.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00278.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00279.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00280.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00281.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00282.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00283.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00284.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00285.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00286.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00287.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00288.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00289.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00290.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00291.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00292.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00293.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00294.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00295.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00296.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00297.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00298.png
-Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00299.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00000 (1).controller
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00000.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00001.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00002.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00003.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00004.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00005.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00006.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00007.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00008.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00009.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00010.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00011.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00012.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00013.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00014.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00015.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00016.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00017.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00018.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00019.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00020.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00021.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00022.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00023.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00024.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00025.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00026.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00027.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00028.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00029.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00030.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00031.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00032.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00033.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00034.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00035.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00036.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00037.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00038.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00039.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00040.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00041.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00042.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00043.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00044.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00045.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00046.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00047.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00048.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00049.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00050.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00051.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00052.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00053.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00054.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00055.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00056.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00057.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00058.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00059.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00060.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00061.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00062.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00063.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00064.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00065.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00066.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00067.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00068.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00069.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00070.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00071.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00072.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00073.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00074.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00075.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00076.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00077.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00078.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00079.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00080.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00081.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00082.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00083.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00084.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00085.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00086.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00087.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00088.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00089.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00090.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00091.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00092.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00093.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00094.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00095.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00096.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00097.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00098.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00099.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00100.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00101.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00102.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00103.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00104.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00105.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00106.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00107.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00108.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00109.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00110.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00111.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00112.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00113.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00114.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00115.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00116.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00117.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00118.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00119.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00120.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00121.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00122.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00123.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00124.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00125.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00126.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00127.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00128.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00129.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00130.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00131.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00132.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00133.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00134.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00135.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00136.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00137.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00138.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00139.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00140.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00141.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00142.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00143.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00144.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00145.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00146.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00147.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00148.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00149.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00150.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00151.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00152.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00153.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00154.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00155.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00156.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00157.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00158.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00159.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00160.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00161.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00162.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00163.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00164.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00165.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00166.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00167.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00168.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00169.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00170.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00171.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00172.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00173.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00174.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00175.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00176.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00177.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00178.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00179.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00180.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00181.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00182.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00183.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00184.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00185.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00186.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00187.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00188.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00189.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00190.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00191.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00192.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00193.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00194.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00195.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00196.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00197.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00198.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00199.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00200.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00201.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00202.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00203.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00204.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00205.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00206.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00207.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00208.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00209.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00210.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00211.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00212.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00213.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00214.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00215.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00216.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00217.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00218.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00219.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00220.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00221.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00222.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00223.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00224.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00225.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00226.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00227.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00228.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00229.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00230.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00231.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00232.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00233.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00234.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00235.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00236.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00237.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00238.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00239.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00240.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00241.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00242.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00243.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00244.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00245.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00246.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00247.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00248.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00249.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00250.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00251.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00252.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00253.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00254.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00255.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00256.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00257.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00258.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00259.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00260.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00261.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00262.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00263.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00264.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00265.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00266.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00267.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00268.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00269.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00270.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00271.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00272.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00273.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00274.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00275.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00276.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00277.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00278.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00279.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00280.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00281.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00282.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00283.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00284.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00285.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00286.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00287.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00288.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00289.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00290.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00291.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00292.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00293.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00294.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00295.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00296.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00297.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00298.png
-Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00299.png
 Assets/GameObject/UI/PlayerHPUI/緑/Green_Animation.anim
 Assets/GameObject/UI/PlayerHPUI/緑/Red_Animation.anim
 Assets/GameObject/UI/PlayerHPUI/緑/Yellow_Animation.anim
@@ -1459,7 +867,694 @@ Assets/GameObject/UI/PlayerHPUI/緑/コンポ 4_00296.png
 Assets/GameObject/UI/PlayerHPUI/緑/コンポ 4_00297.png
 Assets/GameObject/UI/PlayerHPUI/緑/コンポ 4_00298.png
 Assets/GameObject/UI/PlayerHPUI/緑/コンポ 4_00299.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00000.controller
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00000.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00001.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00002.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00003.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00004.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00005.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00006.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00007.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00008.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00009.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00010.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00011.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00012.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00013.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00014.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00015.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00016.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00017.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00018.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00019.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00020.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00021.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00022.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00023.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00024.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00025.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00026.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00027.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00028.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00029.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00030.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00031.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00032.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00033.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00034.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00035.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00036.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00037.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00038.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00039.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00040.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00041.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00042.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00043.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00044.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00045.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00046.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00047.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00048.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00049.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00050.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00051.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00052.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00053.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00054.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00055.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00056.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00057.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00058.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00059.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00060.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00061.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00062.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00063.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00064.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00065.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00066.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00067.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00068.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00069.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00070.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00071.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00072.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00073.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00074.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00075.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00076.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00077.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00078.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00079.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00080.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00081.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00082.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00083.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00084.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00085.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00086.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00087.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00088.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00089.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00090.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00091.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00092.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00093.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00094.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00095.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00096.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00097.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00098.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00099.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00100.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00101.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00102.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00103.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00104.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00105.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00106.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00107.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00108.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00109.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00110.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00111.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00112.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00113.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00114.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00115.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00116.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00117.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00118.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00119.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00120.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00121.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00122.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00123.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00124.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00125.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00126.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00127.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00128.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00129.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00130.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00131.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00132.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00133.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00134.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00135.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00136.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00137.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00138.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00139.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00140.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00141.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00142.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00143.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00144.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00145.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00146.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00147.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00148.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00149.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00150.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00151.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00152.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00153.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00154.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00155.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00156.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00157.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00158.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00159.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00160.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00161.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00162.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00163.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00164.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00165.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00166.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00167.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00168.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00169.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00170.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00171.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00172.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00173.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00174.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00175.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00176.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00177.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00178.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00179.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00180.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00181.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00182.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00183.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00184.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00185.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00186.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00187.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00188.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00189.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00190.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00191.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00192.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00193.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00194.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00195.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00196.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00197.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00198.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00199.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00200.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00201.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00202.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00203.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00204.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00205.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00206.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00207.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00208.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00209.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00210.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00211.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00212.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00213.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00214.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00215.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00216.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00217.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00218.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00219.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00220.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00221.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00222.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00223.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00224.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00225.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00226.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00227.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00228.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00229.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00230.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00231.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00232.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00233.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00234.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00235.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00236.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00237.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00238.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00239.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00240.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00241.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00242.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00243.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00244.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00245.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00246.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00247.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00248.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00249.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00250.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00251.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00252.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00253.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00254.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00255.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00256.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00257.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00258.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00259.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00260.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00261.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00262.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00263.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00264.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00265.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00266.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00267.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00268.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00269.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00270.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00271.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00272.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00273.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00274.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00275.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00276.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00277.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00278.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00279.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00280.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00281.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00282.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00283.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00284.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00285.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00286.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00287.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00288.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00289.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00290.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00291.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00292.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00293.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00294.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00295.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00296.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00297.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00298.png
+Assets/GameObject/UI/PlayerHPUI/黄色/コンポ 4_00299.png
+Assets/GameObject/UI/PlayerHPUI/Bule_HP.prefab
+Assets/GameObject/UI/PlayerHPUI/Red_HP.prefab
+Assets/GameObject/UI/PlayerHPUI/Yellow_HP.prefab
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00000 (1).controller
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00000.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00001.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00002.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00003.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00004.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00005.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00006.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00007.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00008.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00009.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00010.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00011.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00012.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00013.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00014.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00015.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00016.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00017.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00018.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00019.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00020.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00021.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00022.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00023.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00024.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00025.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00026.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00027.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00028.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00029.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00030.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00031.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00032.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00033.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00034.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00035.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00036.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00037.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00038.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00039.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00040.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00041.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00042.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00043.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00044.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00045.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00046.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00047.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00048.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00049.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00050.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00051.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00052.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00053.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00054.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00055.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00056.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00057.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00058.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00059.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00060.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00061.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00062.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00063.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00064.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00065.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00066.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00067.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00068.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00069.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00070.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00071.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00072.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00073.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00074.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00075.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00076.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00077.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00078.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00079.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00080.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00081.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00082.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00083.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00084.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00085.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00086.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00087.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00088.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00089.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00090.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00091.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00092.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00093.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00094.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00095.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00096.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00097.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00098.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00099.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00100.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00101.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00102.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00103.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00104.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00105.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00106.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00107.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00108.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00109.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00110.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00111.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00112.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00113.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00114.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00115.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00116.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00117.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00118.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00119.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00120.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00121.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00122.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00123.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00124.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00125.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00126.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00127.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00128.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00129.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00130.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00131.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00132.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00133.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00134.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00135.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00136.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00137.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00138.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00139.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00140.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00141.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00142.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00143.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00144.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00145.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00146.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00147.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00148.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00149.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00150.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00151.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00152.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00153.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00154.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00155.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00156.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00157.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00158.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00159.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00160.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00161.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00162.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00163.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00164.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00165.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00166.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00167.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00168.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00169.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00170.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00171.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00172.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00173.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00174.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00175.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00176.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00177.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00178.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00179.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00180.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00181.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00182.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00183.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00184.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00185.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00186.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00187.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00188.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00189.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00190.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00191.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00192.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00193.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00194.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00195.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00196.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00197.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00198.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00199.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00200.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00201.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00202.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00203.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00204.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00205.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00206.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00207.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00208.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00209.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00210.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00211.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00212.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00213.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00214.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00215.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00216.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00217.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00218.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00219.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00220.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00221.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00222.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00223.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00224.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00225.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00226.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00227.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00228.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00229.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00230.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00231.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00232.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00233.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00234.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00235.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00236.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00237.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00238.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00239.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00240.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00241.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00242.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00243.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00244.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00245.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00246.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00247.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00248.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00249.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00250.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00251.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00252.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00253.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00254.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00255.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00256.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00257.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00258.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00259.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00260.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00261.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00262.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00263.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00264.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00265.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00266.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00267.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00268.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00269.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00270.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00271.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00272.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00273.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00274.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00275.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00276.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00277.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00278.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00279.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00280.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00281.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00282.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00283.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00284.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00285.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00286.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00287.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00288.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00289.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00290.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00291.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00292.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00293.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00294.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00295.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00296.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00297.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00298.png
+Assets/GameObject/UI/PlayerHPUI/赤色/コンポ 4_00299.png
 Assets/GameObject/UI/Ray.mat
+Assets/GameObject/UI/result/可/Ka_Animation.anim
+Assets/GameObject/UI/result/可/コンポ 1_00000.png
+Assets/GameObject/UI/result/可/コンポ 1_00001.png
+Assets/GameObject/UI/result/可/コンポ 1_00002.png
+Assets/GameObject/UI/result/可/コンポ 1_00003.png
+Assets/GameObject/UI/result/可/コンポ 1_00004.png
+Assets/GameObject/UI/result/可/コンポ 1_00005.png
+Assets/GameObject/UI/result/可/コンポ 1_00006.png
+Assets/GameObject/UI/result/可/コンポ 1_00007.png
+Assets/GameObject/UI/result/可/コンポ 1_00008.png
+Assets/GameObject/UI/result/可/コンポ 1_00009.png
+Assets/GameObject/UI/result/可/コンポ 1_00010.png
+Assets/GameObject/UI/result/可/コンポ 1_00011.png
+Assets/GameObject/UI/result/可/コンポ 1_00012.png
+Assets/GameObject/UI/result/可/コンポ 1_00013.png
+Assets/GameObject/UI/result/可/コンポ 1_00014.png
+Assets/GameObject/UI/result/可/コンポ 1_00015.png
+Assets/GameObject/UI/result/可/コンポ 1_00016.png
+Assets/GameObject/UI/result/可/コンポ 1_00017.png
+Assets/GameObject/UI/result/可/コンポ 1_00018.png
+Assets/GameObject/UI/result/可/コンポ 1_00019.png
+Assets/GameObject/UI/result/可/コンポ 1_00020.png
+Assets/GameObject/UI/result/可/コンポ 1_00021.png
+Assets/GameObject/UI/result/可/コンポ 1_00022.png
+Assets/GameObject/UI/result/可/コンポ 1_00023.png
+Assets/GameObject/UI/result/可/コンポ 1_00024.png
+Assets/GameObject/UI/result/可/コンポ 1_00025.png
+Assets/GameObject/UI/result/可/コンポ 1_00026.png
+Assets/GameObject/UI/result/可/コンポ 1_00027.png
+Assets/GameObject/UI/result/可/コンポ 1_00028.png
+Assets/GameObject/UI/result/可/コンポ 1_00029.png
+Assets/GameObject/UI/result/可/コンポ 1_00030.png
+Assets/GameObject/UI/result/可/コンポ 1_00031.png
+Assets/GameObject/UI/result/可/コンポ 1_00032.png
+Assets/GameObject/UI/result/可/コンポ 1_00033.png
+Assets/GameObject/UI/result/可/コンポ 1_00034.png
+Assets/GameObject/UI/result/可/コンポ 1_00035.png
+Assets/GameObject/UI/result/可/コンポ 1_00036.png
+Assets/GameObject/UI/result/可/コンポ 1_00037.png
+Assets/GameObject/UI/result/可/コンポ 1_00038.png
+Assets/GameObject/UI/result/可/コンポ 1_00039.png
+Assets/GameObject/UI/result/良/Ryo_Animation.anim
+Assets/GameObject/UI/result/良/コンポ 1_00000.png
+Assets/GameObject/UI/result/良/コンポ 1_00001.png
+Assets/GameObject/UI/result/良/コンポ 1_00002.png
+Assets/GameObject/UI/result/良/コンポ 1_00003.png
+Assets/GameObject/UI/result/良/コンポ 1_00004.png
+Assets/GameObject/UI/result/良/コンポ 1_00005.png
+Assets/GameObject/UI/result/良/コンポ 1_00006.png
+Assets/GameObject/UI/result/良/コンポ 1_00007.png
+Assets/GameObject/UI/result/良/コンポ 1_00008.png
+Assets/GameObject/UI/result/良/コンポ 1_00009.png
+Assets/GameObject/UI/result/良/コンポ 1_00010.png
+Assets/GameObject/UI/result/良/コンポ 1_00011.png
+Assets/GameObject/UI/result/良/コンポ 1_00012.png
+Assets/GameObject/UI/result/良/コンポ 1_00013.png
+Assets/GameObject/UI/result/良/コンポ 1_00014.png
+Assets/GameObject/UI/result/良/コンポ 1_00015.png
+Assets/GameObject/UI/result/良/コンポ 1_00016.png
+Assets/GameObject/UI/result/良/コンポ 1_00017.png
+Assets/GameObject/UI/result/良/コンポ 1_00018.png
+Assets/GameObject/UI/result/良/コンポ 1_00019.png
+Assets/GameObject/UI/result/良/コンポ 1_00020.png
+Assets/GameObject/UI/result/良/コンポ 1_00021.png
+Assets/GameObject/UI/result/良/コンポ 1_00022.png
+Assets/GameObject/UI/result/良/コンポ 1_00023.png
+Assets/GameObject/UI/result/良/コンポ 1_00024.png
+Assets/GameObject/UI/result/良/コンポ 1_00025.png
+Assets/GameObject/UI/result/良/コンポ 1_00026.png
+Assets/GameObject/UI/result/良/コンポ 1_00027.png
+Assets/GameObject/UI/result/良/コンポ 1_00028.png
+Assets/GameObject/UI/result/良/コンポ 1_00029.png
+Assets/GameObject/UI/result/良/コンポ 1_00030.png
+Assets/GameObject/UI/result/良/コンポ 1_00031.png
+Assets/GameObject/UI/result/良/コンポ 1_00032.png
+Assets/GameObject/UI/result/良/コンポ 1_00033.png
+Assets/GameObject/UI/result/良/コンポ 1_00034.png
+Assets/GameObject/UI/result/良/コンポ 1_00035.png
+Assets/GameObject/UI/result/良/コンポ 1_00036.png
+Assets/GameObject/UI/result/良/コンポ 1_00037.png
+Assets/GameObject/UI/result/良/コンポ 1_00038.png
+Assets/GameObject/UI/result/良/コンポ 1_00039.png
 Assets/GameObject/UI/result/1.prefab
 Assets/GameObject/UI/result/1/1.controller
 Assets/GameObject/UI/result/1/Result_1_Animation.anim
@@ -1597,47 +1692,6 @@ Assets/GameObject/UI/result/3/コンポ 1_00044.png
 Assets/GameObject/UI/result/3/コンポ 1_00045.png
 Assets/GameObject/UI/result/3/コンポ 1_00046.png
 Assets/GameObject/UI/result/Yu.prefab
-Assets/GameObject/UI/result/可/Ka_Animation.anim
-Assets/GameObject/UI/result/可/コンポ 1_00000.png
-Assets/GameObject/UI/result/可/コンポ 1_00001.png
-Assets/GameObject/UI/result/可/コンポ 1_00002.png
-Assets/GameObject/UI/result/可/コンポ 1_00003.png
-Assets/GameObject/UI/result/可/コンポ 1_00004.png
-Assets/GameObject/UI/result/可/コンポ 1_00005.png
-Assets/GameObject/UI/result/可/コンポ 1_00006.png
-Assets/GameObject/UI/result/可/コンポ 1_00007.png
-Assets/GameObject/UI/result/可/コンポ 1_00008.png
-Assets/GameObject/UI/result/可/コンポ 1_00009.png
-Assets/GameObject/UI/result/可/コンポ 1_00010.png
-Assets/GameObject/UI/result/可/コンポ 1_00011.png
-Assets/GameObject/UI/result/可/コンポ 1_00012.png
-Assets/GameObject/UI/result/可/コンポ 1_00013.png
-Assets/GameObject/UI/result/可/コンポ 1_00014.png
-Assets/GameObject/UI/result/可/コンポ 1_00015.png
-Assets/GameObject/UI/result/可/コンポ 1_00016.png
-Assets/GameObject/UI/result/可/コンポ 1_00017.png
-Assets/GameObject/UI/result/可/コンポ 1_00018.png
-Assets/GameObject/UI/result/可/コンポ 1_00019.png
-Assets/GameObject/UI/result/可/コンポ 1_00020.png
-Assets/GameObject/UI/result/可/コンポ 1_00021.png
-Assets/GameObject/UI/result/可/コンポ 1_00022.png
-Assets/GameObject/UI/result/可/コンポ 1_00023.png
-Assets/GameObject/UI/result/可/コンポ 1_00024.png
-Assets/GameObject/UI/result/可/コンポ 1_00025.png
-Assets/GameObject/UI/result/可/コンポ 1_00026.png
-Assets/GameObject/UI/result/可/コンポ 1_00027.png
-Assets/GameObject/UI/result/可/コンポ 1_00028.png
-Assets/GameObject/UI/result/可/コンポ 1_00029.png
-Assets/GameObject/UI/result/可/コンポ 1_00030.png
-Assets/GameObject/UI/result/可/コンポ 1_00031.png
-Assets/GameObject/UI/result/可/コンポ 1_00032.png
-Assets/GameObject/UI/result/可/コンポ 1_00033.png
-Assets/GameObject/UI/result/可/コンポ 1_00034.png
-Assets/GameObject/UI/result/可/コンポ 1_00035.png
-Assets/GameObject/UI/result/可/コンポ 1_00036.png
-Assets/GameObject/UI/result/可/コンポ 1_00037.png
-Assets/GameObject/UI/result/可/コンポ 1_00038.png
-Assets/GameObject/UI/result/可/コンポ 1_00039.png
 Assets/GameObject/UI/result/不/Fuka_Animation.anim
 Assets/GameObject/UI/result/不/コンポ 1_00000.png
 Assets/GameObject/UI/result/不/コンポ 1_00001.png
@@ -1679,48 +1733,6 @@ Assets/GameObject/UI/result/不/コンポ 1_00036.png
 Assets/GameObject/UI/result/不/コンポ 1_00037.png
 Assets/GameObject/UI/result/不/コンポ 1_00038.png
 Assets/GameObject/UI/result/不/コンポ 1_00039.png
-Assets/GameObject/UI/result/優_サンプル/Yu.controller
-Assets/GameObject/UI/result/優_サンプル/YuAnimation.anim
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00000.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00001.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00002.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00003.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00004.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00005.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00006.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00007.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00008.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00009.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00010.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00011.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00012.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00013.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00014.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00015.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00016.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00017.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00018.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00019.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00020.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00021.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00022.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00023.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00024.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00025.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00026.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00027.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00028.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00029.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00030.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00031.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00032.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00033.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00034.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00035.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00036.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00037.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00038.png
-Assets/GameObject/UI/result/優_サンプル/コンポ 1_00039.png
 Assets/GameObject/UI/result/優_演出あり/Image.controller
 Assets/GameObject/UI/result/優_演出あり/Yu_animation.anim
 Assets/GameObject/UI/result/優_演出あり/コンポ 1_00000.png
@@ -1763,47 +1775,48 @@ Assets/GameObject/UI/result/優_演出あり/コンポ 1_00036.png
 Assets/GameObject/UI/result/優_演出あり/コンポ 1_00037.png
 Assets/GameObject/UI/result/優_演出あり/コンポ 1_00038.png
 Assets/GameObject/UI/result/優_演出あり/コンポ 1_00039.png
-Assets/GameObject/UI/result/良/Ryo_Animation.anim
-Assets/GameObject/UI/result/良/コンポ 1_00000.png
-Assets/GameObject/UI/result/良/コンポ 1_00001.png
-Assets/GameObject/UI/result/良/コンポ 1_00002.png
-Assets/GameObject/UI/result/良/コンポ 1_00003.png
-Assets/GameObject/UI/result/良/コンポ 1_00004.png
-Assets/GameObject/UI/result/良/コンポ 1_00005.png
-Assets/GameObject/UI/result/良/コンポ 1_00006.png
-Assets/GameObject/UI/result/良/コンポ 1_00007.png
-Assets/GameObject/UI/result/良/コンポ 1_00008.png
-Assets/GameObject/UI/result/良/コンポ 1_00009.png
-Assets/GameObject/UI/result/良/コンポ 1_00010.png
-Assets/GameObject/UI/result/良/コンポ 1_00011.png
-Assets/GameObject/UI/result/良/コンポ 1_00012.png
-Assets/GameObject/UI/result/良/コンポ 1_00013.png
-Assets/GameObject/UI/result/良/コンポ 1_00014.png
-Assets/GameObject/UI/result/良/コンポ 1_00015.png
-Assets/GameObject/UI/result/良/コンポ 1_00016.png
-Assets/GameObject/UI/result/良/コンポ 1_00017.png
-Assets/GameObject/UI/result/良/コンポ 1_00018.png
-Assets/GameObject/UI/result/良/コンポ 1_00019.png
-Assets/GameObject/UI/result/良/コンポ 1_00020.png
-Assets/GameObject/UI/result/良/コンポ 1_00021.png
-Assets/GameObject/UI/result/良/コンポ 1_00022.png
-Assets/GameObject/UI/result/良/コンポ 1_00023.png
-Assets/GameObject/UI/result/良/コンポ 1_00024.png
-Assets/GameObject/UI/result/良/コンポ 1_00025.png
-Assets/GameObject/UI/result/良/コンポ 1_00026.png
-Assets/GameObject/UI/result/良/コンポ 1_00027.png
-Assets/GameObject/UI/result/良/コンポ 1_00028.png
-Assets/GameObject/UI/result/良/コンポ 1_00029.png
-Assets/GameObject/UI/result/良/コンポ 1_00030.png
-Assets/GameObject/UI/result/良/コンポ 1_00031.png
-Assets/GameObject/UI/result/良/コンポ 1_00032.png
-Assets/GameObject/UI/result/良/コンポ 1_00033.png
-Assets/GameObject/UI/result/良/コンポ 1_00034.png
-Assets/GameObject/UI/result/良/コンポ 1_00035.png
-Assets/GameObject/UI/result/良/コンポ 1_00036.png
-Assets/GameObject/UI/result/良/コンポ 1_00037.png
-Assets/GameObject/UI/result/良/コンポ 1_00038.png
-Assets/GameObject/UI/result/良/コンポ 1_00039.png
+Assets/GameObject/UI/result/優_サンプル/Yu.controller
+Assets/GameObject/UI/result/優_サンプル/YuAnimation.anim
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00000.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00001.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00002.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00003.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00004.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00005.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00006.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00007.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00008.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00009.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00010.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00011.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00012.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00013.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00014.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00015.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00016.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00017.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00018.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00019.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00020.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00021.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00022.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00023.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00024.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00025.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00026.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00027.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00028.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00029.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00030.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00031.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00032.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00033.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00034.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00035.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00036.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00037.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00038.png
+Assets/GameObject/UI/result/優_サンプル/コンポ 1_00039.png
 Assets/Idyllic Fantasy Nature/Materials/Trees/Willow_Branch_Red.mat
 Assets/Idyllic Fantasy Nature/Models/Trees/WillowTree_03.fbx
 Assets/Idyllic Fantasy Nature/Prefabs/lambert4.mat
@@ -1910,10 +1923,14 @@ Assets/Model/Lantan/lambert4.mat
 Assets/Model/Lantan/lambert6.mat
 Assets/Model/Lantan/lantern.fbx
 Assets/Model/Lantan/standardSurface1.mat
+Assets/Model/Light_Fin/Broken_Light_Head 1.fbx
+Assets/Model/Light_Fin/Broken_Light_Head 1.prefab
 Assets/Model/Light_Fin/Broken_Light_Head.fbx
 Assets/Model/Light_Fin/Broken_Light_Head.prefab
-Assets/Model/Light_Fin/Broken_Light_Stand.fbx
-Assets/Model/Light_Fin/Broken_Light_Stand.prefab
+Assets/Model/Light_Fin/Broken_Light_Stand 1.fbx
+Assets/Model/Light_Fin/Broken_Light_Stand 1.prefab
+Assets/Model/Light_Fin/light 1.fbx
+Assets/Model/Light_Fin/light 1.prefab
 Assets/Model/Light_Fin/Light.fbx
 Assets/Model/Light_Fin/Light.prefab
 Assets/Model/Light_Fin/Tex/Light_Light_BaseMap.png
@@ -1925,14 +1942,11 @@ Assets/Model/Light_Fin/Tex/Light_Wood_Metal_BaseMap.png
 Assets/Model/Light_Fin/Tex/Light_Wood_Metal_MaskMap.png
 Assets/Model/Light_Fin/Tex/Light_Wood_Metal_Normal.png
 Assets/Model/Light_Fin/Tex/Light_Wood_Normal.png
-Assets/Model/Light_Fin/Tex/Materials/Metal.mat
-Assets/Model/Light_Fin/Tex/Materials/Red.mat
 Assets/Model/Light_Fin/Tex/Materials/ToonLght.mat
 Assets/Model/Light_Fin/Tex/Materials/ToonMetal.mat
 Assets/Model/Light_Fin/Tex/Materials/ToonRed.mat
 Assets/Model/Light_Fin/Tex/Materials/ToonRoot.mat
 Assets/Model/Light_Fin/Tex/Materials/ToonWood.mat
-Assets/Model/Light_Fin/Tex/Materials/Wood.mat
 Assets/Model/Light_Fin/ToonstandardSurface1.mat
 Assets/Model/Map/aa.mat
 Assets/Model/Map/big_gate 1.prefab
@@ -2172,6 +2186,7 @@ Assets/Script/Player/Player.cs
 Assets/Script/Player/PlayerManager.cs
 Assets/Script/Player/PlayerStateMachine.cs
 Assets/Script/Player/SkillModeManager.cs
+Assets/Script/SE/BOSSSEProfile 1.asset
 Assets/Script/SE/EnemySEProfile.asset
 Assets/Script/SE/ItemSEProfile.asset
 Assets/Script/SE/MapSEProfile.asset

@@ -29,6 +29,8 @@ public class DoubleArmPressAttack : BossAttackPattern
 
     private IEnumerator PressRoutine(BossController boss)
     {
+        var SE = FindAnyObjectByType<SEController>();
+
         boss.SetBothArmsAttacking(true);
 
         Rigidbody leftArmRb = boss.leftArmObject.GetComponent<Rigidbody>();
@@ -39,7 +41,7 @@ public class DoubleArmPressAttack : BossAttackPattern
         try
         {
             // --- 1. 振りかぶり (Wind-up) ---
-            // ▼▼▼ アニメーション設定 ▼▼▼
+            // ▼▼▼ アニメ?ション設定 ▼▼▼
             boss.SetArmAnimation(true, prepareHandState);
             boss.SetArmAnimation(false, prepareHandState);
 
@@ -63,6 +65,8 @@ public class DoubleArmPressAttack : BossAttackPattern
                 yield return null;
             }
 
+            if (SE != null) SE.Play("Boss.Charge");
+
             // --- 2. 溜め（プルプル演出） ---
             float chargeTimer = 0f;
             Vector3 leftChargePos = boss.leftArmObject.transform.position;
@@ -84,7 +88,7 @@ public class DoubleArmPressAttack : BossAttackPattern
             rightArmRb.MovePosition(rightChargePos);
 
             // --- 3. プレス ---
-            // ▼▼▼ アニメーション設定 ▼▼▼
+            // ▼▼▼ アニメ?ション設定 ▼▼▼
             boss.SetArmAnimation(true, actionHandState);
             boss.SetArmAnimation(false, actionHandState);
             if (leftDamageCollider != null) leftDamageCollider.enabled = true;
@@ -101,11 +105,13 @@ public class DoubleArmPressAttack : BossAttackPattern
                 yield return null;
             }
 
+            if (SE != null) SE.Play("Boss.Press");
+
             // --- 4. 硬直 ---
             yield return new WaitForSeconds(impactPauseTime);
 
-            // --- 5. 待機位置に戻る ---
-            // ▼▼▼ アニメーション設定 ▼▼▼
+            // --- 5. 待?位置に戻る ---
+            // ▼▼▼ アニメ?ション設定 ▼▼▼
             boss.SetArmAnimation(true, returnHandState);
             boss.SetArmAnimation(false, returnHandState);
             if (leftDamageCollider != null) leftDamageCollider.enabled = false;
@@ -132,7 +138,7 @@ public class DoubleArmPressAttack : BossAttackPattern
         }
         finally
         {
-            // ▼▼▼ アニメーションをリセット ▼▼▼
+            // ▼▼▼ アニメ?ションをリセット ▼▼▼
             boss.SetArmAnimation(true, ArmAnimationState.Default);
             boss.SetArmAnimation(false, ArmAnimationState.Default);
             if (leftDamageCollider != null) leftDamageCollider.enabled = true;
