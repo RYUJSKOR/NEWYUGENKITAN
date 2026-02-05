@@ -83,6 +83,7 @@ public class OrotiNeck : MonoBehaviour
 
     public void PlayShoot()
     {
+        lastAttackTime = Time.time;
         animator.SetTrigger(ShootTrigger);
     }
 

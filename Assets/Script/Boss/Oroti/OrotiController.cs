@@ -180,4 +180,6 @@ public class OrotiController : MonoBehaviour
     {
         return healthManager.GetHealth() / healthManager.GetMaxHealth();
     }
+
+    public Transform PlayerTransform => player;
 }

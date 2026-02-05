@@ -337,12 +337,12 @@ MonoBehaviour:
   neckId: 0
   distancePoint: {fileID: 2652911771687475476}
   attackCooldown: 3
-  shootPoint: {fileID: 0}
-  bulletPrefab: {fileID: 0}
+  shootPoint: {fileID: 3110026604891507139}
+  bulletPrefab: {fileID: 6347013360028792297, guid: 1d1c9690b48f0f24bb9694fd4edef048, type: 3}
   bulletPower: 1
-  phase1Setting: {fileID: 0}
-  phase2Setting: {fileID: 0}
-  phase3Setting: {fileID: 0}
+  phase1Setting: {fileID: 11400000, guid: 0b732dec3d683884b89825098b1ec6a7, type: 2}
+  phase2Setting: {fileID: 11400000, guid: 8170754347628874694f5008cc717375, type: 2}
+  phase3Setting: {fileID: 11400000, guid: 092aaadbb077a1742bce79ac6b8938d8, type: 2}
   idleSpeedRange: {x: 0.8, y: 1.2}
   idleOffsetRange: {x: 0, y: 1}
 --- !u!95 &1634209767240563047
