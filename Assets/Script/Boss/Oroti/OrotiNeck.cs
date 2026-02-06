@@ -25,7 +25,11 @@ public class OrotiNeck : MonoBehaviour
     [SerializeField] private OrotiBulletSetting phase2Setting;
     [SerializeField] private OrotiBulletSetting phase3Setting;
 
-    [Header("Idle Random Range")]
+	private int remainingShots;
+	private float shotInterval;
+	private Coroutine shootRoutine;
+
+	[Header("Idle Random Range")]
     [SerializeField] private Vector2 idleSpeedRange = new Vector2(0.8f, 1.2f);
 
     [SerializeField] private Vector2 idleOffsetRange = new Vector2(0f, 1f);
@@ -81,40 +85,83 @@ public class OrotiNeck : MonoBehaviour
         animator.SetTrigger(AttackTrigger);
     }
 
-    public void PlayShoot()
-    {
-        lastAttackTime = Time.time;
-        animator.SetTrigger(ShootTrigger);
-    }
+	// 攻撃開始（AttackScript から呼ばれる）
+	public void PlayShoot(int bulletCount, float interval)
+	{
+		lastAttackTime = Time.time;
 
-    public void SpawnBullet(Transform target, OrotiPhase phase)
-    {
-        var bulletObj = Instantiate(
-            bulletPrefab,
-            shootPoint.position,
-            Quaternion.identity
-        );
+		remainingShots = bulletCount;
+		shotInterval = interval;
 
-        OrotiBulletSetting setting = phase switch
-        {
-            OrotiPhase.Phase2 => phase2Setting,
-            OrotiPhase.Phase3 => phase3Setting,
-            _ => phase1Setting
-        };
+		animator.SetTrigger(ShootTrigger);
+	}
 
-        var bullet = bulletObj.GetComponent<OrotiBullet>();
-        bullet.Initialize(
-            (target.position - shootPoint.position),
-            gameObject,
-            setting,
-            target
-        );
-    }
+	// Animation Event から呼ばれる
+	public void OnShootAnimationEvent()
+	{
+		if (remainingShots <= 0)
+			return;
 
-    /// <summary>
-    /// Idle の再生位置をずらす
-    /// </summary>
-    public void ApplyIdleOffset()
+		if (shootRoutine != null)
+			StopCoroutine(shootRoutine);
+
+		shootRoutine = StartCoroutine(ShootCoroutine());
+	}
+
+	private IEnumerator ShootCoroutine()
+	{
+		while (remainingShots > 0)
+		{
+			FireOneShot();
+			remainingShots--;
+
+			yield return new WaitForSeconds(shotInterval);
+		}
+	}
+
+	private void FireOneShot()
+	{
+		var controller = FindAnyObjectByType<OrotiController>();
+		if (controller == null) return;
+
+		SpawnBullet(
+			controller.PlayerTransform,
+			controller.GetPhase()
+		);
+	}
+
+	public void SpawnBullet(
+		   Transform target,
+		   OrotiPhase phase)
+	{
+		var bulletObj = Instantiate(
+			bulletPrefab,
+			shootPoint.position,
+			Quaternion.identity
+		);
+
+		var bullet = bulletObj.GetComponent<OrotiBullet>();
+		bullet.Initialize(
+			(target.position - shootPoint.position),
+			gameObject,
+			GetSettingByPhase(phase),
+			target
+		);
+	}
+	private OrotiBulletSetting GetSettingByPhase(OrotiPhase phase)
+	{
+		return phase switch
+		{
+			OrotiPhase.Phase2 => phase2Setting,
+			OrotiPhase.Phase3 => phase3Setting,
+			_ => phase1Setting
+		};
+	}
+
+	/// <summary>
+	/// Idle の再生位置をずらす
+	/// </summary>
+	public void ApplyIdleOffset()
     {
         animator.Play(0, 0, idleOffset);
         animator.Update(0f);

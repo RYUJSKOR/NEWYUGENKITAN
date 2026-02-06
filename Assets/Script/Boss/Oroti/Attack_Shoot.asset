@@ -19,3 +19,6 @@ MonoBehaviour:
   attackOrder: 1
   sequentialInterval: 0.3
   allowRepeat: 0
+  bulletsPerNeck: 3
+  bulletInterval: 0.7
+  shootInterval: 0.4
