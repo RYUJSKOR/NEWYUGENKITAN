@@ -6014,7 +6014,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -244354694412377190, guid: 57f21af59f170c347b87b42838eeac35, type: 3}
       propertyPath: neckId
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5846472170002618429, guid: 57f21af59f170c347b87b42838eeac35, type: 3}
       propertyPath: m_LocalScale.x
