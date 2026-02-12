@@ -11238,9 +11238,29 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -3153036319468264912, guid: 07e85630dac1dd54e93d4b52ff271f2e, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2972392977303283589, guid: 8e488cf2ca7dcd041880588edb0bb7b8, type: 3}
+    - target: {fileID: -3153036319468264912, guid: 07e85630dac1dd54e93d4b52ff271f2e, type: 3}
       propertyPath: bulletEntries.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3153036319468264912, guid: 07e85630dac1dd54e93d4b52ff271f2e, type: 3}
+      propertyPath: bulletEntries.Array.data[0].bulletPrefab
+      value: 
+      objectReference: {fileID: 2972392977303283589, guid: 8e488cf2ca7dcd041880588edb0bb7b8, type: 3}
+    - target: {fileID: -3153036319468264912, guid: 07e85630dac1dd54e93d4b52ff271f2e, type: 3}
+      propertyPath: bulletEntries.Array.data[0].phase1Setting
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b732dec3d683884b89825098b1ec6a7, type: 2}
+    - target: {fileID: -3153036319468264912, guid: 07e85630dac1dd54e93d4b52ff271f2e, type: 3}
+      propertyPath: bulletEntries.Array.data[0].phase2Setting
+      value: 
+      objectReference: {fileID: 11400000, guid: 8170754347628874694f5008cc717375, type: 2}
+    - target: {fileID: -3153036319468264912, guid: 07e85630dac1dd54e93d4b52ff271f2e, type: 3}
+      propertyPath: bulletEntries.Array.data[0].phase3Setting
+      value: 
+      objectReference: {fileID: 11400000, guid: 092aaadbb077a1742bce79ac6b8938d8, type: 2}
     - target: {fileID: 1245982090284785801, guid: 07e85630dac1dd54e93d4b52ff271f2e, type: 3}
       propertyPath: m_LocalScale.x
       value: 8.3

@@ -165,9 +165,15 @@ public class OrotiController : MonoBehaviour
         float hpPercent = GetHPPercent();
 
         if (hpPercent < 0.33f)
+        {
             CurrentPhase = OrotiPhase.Phase3;
+            Debug.Log($" Oroti Phase Changed ¨ Phase {CurrentPhase}");
+        }
         else if (hpPercent < 0.66f)
+        {
             CurrentPhase = OrotiPhase.Phase2;
+            Debug.Log($" Oroti Phase Changed ¨ Phase {CurrentPhase}");
+        }
     }
 
     private void OnBossDead()
