@@ -2169,6 +2169,7 @@ Assets/Script/Enemy/RocketEnemy/RocketEnemyMovementConfig.cs
 Assets/Script/Game/BossTimerManager.cs
 Assets/Script/Game/GameData.cs
 Assets/Script/Game/GameManager.cs
+Assets/Script/Game/GlobalDebugManager.cs
 Assets/Script/Game/PauseManager.cs
 Assets/Script/Game/SceneLoader.cs
 Assets/Script/Game/TimerManager.cs
@@ -2186,7 +2187,7 @@ Assets/Script/Player/Player.cs
 Assets/Script/Player/PlayerManager.cs
 Assets/Script/Player/PlayerStateMachine.cs
 Assets/Script/Player/SkillModeManager.cs
-Assets/Script/SE/BOSSSEProfile 1.asset
+Assets/Script/SE/BOSSSEProfile.asset
 Assets/Script/SE/EnemySEProfile.asset
 Assets/Script/SE/ItemSEProfile.asset
 Assets/Script/SE/MapSEProfile.asset
