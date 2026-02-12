@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6064d532bed9897449ad8937f028ed6a, type: 3}
+  m_Name: Thunder_Phase3_Homing
+  m_EditorClassIdentifier: 
+  speed: 8
+  power: 1
+  lifeTime: 5
+  evolutionType: 2
+  explosionRadius: 4
+  explosionPower: 1.5
+  explosionEffect: {fileID: 1504583955997493569, guid: 379a32dd76ba2b54db9feb4fc314f9d7, type: 3}
+  homingStrength: 0
+  remainPrefab: {fileID: 0}
+  remainTime: 3

@@ -8,6 +8,8 @@ public abstract class OrotiBulletBase : Bullet
 
     protected float speed;
 
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask playerLayer;
     public virtual void Initialize(
         Vector3 dir,
         GameObject owner,
@@ -41,8 +43,42 @@ public abstract class OrotiBulletBase : Bullet
             return;
 
         base.OnTriggerEnter(other);
-        OnHit();
+
+        if (((1 << other.gameObject.layer) & playerLayer) != 0)
+        {
+            OnPlayerHit(other);
+        }
+        else if (((1 << other.gameObject.layer) & groundLayer) != 0)
+        {
+            OnGroundHit(other);
+        }
+    }
+    protected virtual void OnPlayerHit(Collider other)
+    {
+        // 通常ダメージ（Bullet側で処理される想定）
+        Destroy(gameObject);
     }
 
-    protected abstract void OnHit();
+    protected virtual void OnGroundHit(Collider other)
+    {
+        Destroy(gameObject);
+    }
+
+    protected Vector3 GetBottomPosition()
+    {
+        Collider col = GetComponent<Collider>();
+
+        if (col != null)
+        {
+            Bounds bounds = col.bounds;
+
+            return new Vector3(
+                transform.position.x,
+                bounds.min.y,
+                transform.position.z
+            );
+        }
+
+        return transform.position;
+    }
 }

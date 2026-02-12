@@ -18,7 +18,7 @@ MonoBehaviour:
   evolutionType: 1
   explosionRadius: 4
   explosionPower: 1.5
-  explosionEffect: {fileID: 1504583955997493569, guid: 25fb4bedca27cdc46a495a7e745ed101, type: 3}
+  explosionEffect: {fileID: 1504583955997493569, guid: 379a32dd76ba2b54db9feb4fc314f9d7, type: 3}
   homingStrength: 0
   remainPrefab: {fileID: 0}
   remainTime: 3

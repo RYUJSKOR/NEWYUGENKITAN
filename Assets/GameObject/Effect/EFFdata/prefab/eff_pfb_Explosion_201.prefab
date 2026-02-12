@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8761416166861557833}
   - component: {fileID: 7891341483243569204}
   - component: {fileID: 1854362668895709667}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: eff_pfb_Explosion_201
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5062,8 +5062,16 @@ PrefabInstance:
       value: eff_pfb_Explosion_202
       objectReference: {fileID: 0}
     - target: {fileID: 8202223996820666300, guid: 90ea69c555235aa4e8e23b2d7f737a60, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202223996820666300, guid: 90ea69c555235aa4e8e23b2d7f737a60, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202223996820666300, guid: 90ea69c555235aa4e8e23b2d7f737a60, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     - target: {fileID: 8759052010256498934, guid: 90ea69c555235aa4e8e23b2d7f737a60, type: 3}
       propertyPath: m_Mesh
@@ -5158,6 +5166,14 @@ PrefabInstance:
     - target: {fileID: 8202223996820666300, guid: 90ea69c555235aa4e8e23b2d7f737a60, type: 3}
       propertyPath: m_Name
       value: eff_pfb_Explosion_203
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202223996820666300, guid: 90ea69c555235aa4e8e23b2d7f737a60, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8202223996820666300, guid: 90ea69c555235aa4e8e23b2d7f737a60, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
