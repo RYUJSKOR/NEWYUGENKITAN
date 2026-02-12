@@ -6,7 +6,7 @@ using System.Linq;
 [CreateAssetMenu(fileName = "NewSpinningRodAttack", menuName = "Boss Attacks/Spinning Rod Attack")]
 public class SpinningRodAttack : BossAttackPattern
 {
-    [Header("回転ロッド攻撃の設定")]
+    [Header("回?ロッド攻撃の設定")]
     public GameObject rodPrefab;
     public float[] attackHeights = { 1.0f, 3.0f, 5.0f };
     public int attackCount = 3;
@@ -27,6 +27,7 @@ public class SpinningRodAttack : BossAttackPattern
 
     private IEnumerator AttackRoutine(BossController boss)
     {
+        var SE = FindAnyObjectByType<SEController>();
         // ▼▼▼ 修正 ▼▼▼
         boss.SetAttackingState(true, false);
 
@@ -74,11 +75,13 @@ public class SpinningRodAttack : BossAttackPattern
                 // --- 2. 片サイドから攻撃オブジェクトを生成 ---
                 boss.StartCoroutine(LaunchSingleRod(rodPrefab, startPos, endPos, travelSpeed, rotationSpeed));
 
-                // --- 3. 次の攻撃までの待機 ---
+                if (SE != null) SE.Play("Boss.Swipe");
+
+                // --- 3. 次の攻撃までの待? ---
                 yield return new WaitForSeconds(delayBetweenAttacks);
             }
 
-            // --- 4. 攻撃終了待機 ---
+            // --- 4. 攻撃終了待? ---
             float journeyLength = Vector3.Distance(mainCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)), mainCamera.ViewportToWorldPoint(new Vector3(1, 0, 0))) + screenEdgeOffset * 2;
             yield return new WaitForSeconds(journeyLength / travelSpeed);
         }

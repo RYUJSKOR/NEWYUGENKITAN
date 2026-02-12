@@ -107,8 +107,8 @@ public class ArmSlapAttack : BossAttackPattern
             armRb.MovePosition(chargePosition);
 
             if (SE != null) SE.Play("Boss.Swipe");
+            else Debug.Log("Aaaaaaaaaaaaaa2");
 
-            // --- ƒrƒ“? (Swipe) ---
             boss.SetArmAnimation(isLeftArm, actionHandState);
             while (Vector3.Distance(arm.position, endPos) > 0.1f)
             {

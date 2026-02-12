@@ -105,7 +105,9 @@ public class DoubleArmPressAttack : BossAttackPattern
                 yield return null;
             }
 
+            Debug.Log("Aaaaaaaaaaaaaa");
             if (SE != null) SE.Play("Boss.Press");
+
 
             // --- 4. çdíº ---
             yield return new WaitForSeconds(impactPauseTime);

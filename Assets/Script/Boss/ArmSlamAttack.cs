@@ -151,6 +151,7 @@ public class ArmSlamAttack : BossAttackPattern
             }
 
             if (SE != null) SE.Play("Boss.Slam");
+            else Debug.Log("Aaaaaaaaaaaaaa1");
 
             armRb.isKinematic = true;
             armRb.useGravity = false;
