@@ -15,7 +15,7 @@ public class BossAttackPreparationState : IBossState
 
     public void Enter()
     {
-        Debug.Log("ボス: 攻撃準備状態に移行");
+        Debug.Log("?ス: 攻撃?備状態に移行");
     }
 
     public void Execute()

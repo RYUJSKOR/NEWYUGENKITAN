@@ -13,8 +13,8 @@ public class BossAttackState : IBossState
 
     public void Enter()
     {
-        Debug.Log("ボス: 攻撃状態に移行(トリガー)");
-        boss.ExecuteNextAttack(); // 変更点
+        Debug.Log("?ス: 攻撃状態に移行(トリガ?)");
+        boss.ExecuteNextAttack(); // 変更?
         stateMachine.ChangeState(new BossIdleState(stateMachine, boss));
     }
 
