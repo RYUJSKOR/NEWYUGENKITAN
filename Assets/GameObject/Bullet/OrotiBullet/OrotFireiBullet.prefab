@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 9033966417417920795}
   - component: {fileID: 7150917048743759452}
   - component: {fileID: 875679161122773043}
-  - component: {fileID: 6762829469572643694}
+  - component: {fileID: 2084385623951822805}
   m_Layer: 13
-  m_Name: OrotiBullet
+  m_Name: OrotFireiBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6762829469572643694
+--- !u!114 &2084385623951822805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,12 +146,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6347013360028792297}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6321036a8c16334fbda4e5c41b9a36a, type: 3}
+  m_Script: {fileID: 11500000, guid: b4100455e2a585b4fb7774bf521a5d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   power: 1
   lifeTime: 5
-  ExplosionObject: {fileID: 1000011797152326, guid: 3c6dee4266dd34848ad24aef8c339237, type: 3}
+  ExplosionObject: {fileID: 0}
   ignoreTags:
-  - Bullet
   - Boss
+  - Bullet

@@ -11237,6 +11237,10 @@ PrefabInstance:
       propertyPath: neckId
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: -3153036319468264912, guid: 07e85630dac1dd54e93d4b52ff271f2e, type: 3}
+      propertyPath: bulletEntries.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1245982090284785801, guid: 07e85630dac1dd54e93d4b52ff271f2e, type: 3}
       propertyPath: m_LocalScale.x
       value: 8.3
