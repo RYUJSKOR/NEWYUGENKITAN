@@ -10,9 +10,9 @@ public class ThrustAttack : BossAttackPattern
     public float moveSpeed = 50f;
     public float lungeSpeed = 70f;
     public float returnSpeed = 25f;
-    [Tooltip("プレイヤーを追尾する照準時間")]
+    [Tooltip("プレイヤ?を追尾する照?時間")]
     public float aimDuration = 1.0f;
-    [Tooltip("照準完了後、突き刺すまでの溜め時間")]
+    [Tooltip("照?完了後、突き刺すまでの溜め時間")]
     public float chargeTime = 0.7f;
     public float postLungePauseTime = 1.0f;
 
@@ -47,6 +47,7 @@ public class ThrustAttack : BossAttackPattern
 
     private IEnumerator ThrustRoutine(BossController boss, Transform arm, Transform restPosition, bool isLeftArm)
     {
+        var SE = FindAnyObjectByType<SEController>();
         boss.SetAttackingState(true, isLeftArm);
         Rigidbody armRb = arm.GetComponent<Rigidbody>();
         Collider damageCollider = arm.Find("DamageZone")?.GetComponent<Collider>();
@@ -54,7 +55,7 @@ public class ThrustAttack : BossAttackPattern
 
         try
         {
-            // --- ステップ1: 振りかぶり (指定の深さまで下がる) ---
+            // --- ステップ1: 振りかぶり (指定の?さまで下がる) ---
             boss.SetArmAnimation(isLeftArm, prepareHandState);
             Vector3 initialWindUpPos = new Vector3(restPosition.position.x, restPosition.position.y, windUpDepth);
             while (Vector3.Distance(arm.position, initialWindUpPos) > 0.1f)
@@ -63,23 +64,25 @@ public class ThrustAttack : BossAttackPattern
                 yield return null;
             }
 
-            // --- ステップ2: 照準 (プレイヤーを追尾し続ける) ---
+            // --- ステップ2: 照? (プレイヤ?を追尾し続ける) ---
             float aimTimer = 0f;
             while (aimTimer < aimDuration)
             {
                 Vector3 playerTargetPos = boss.playerTransform.position;
                 Vector3 aimPos = new Vector3(playerTargetPos.x, playerTargetPos.y, windUpDepth);
 
-                // プレイヤーを滑らかに追尾
+                // プレイヤ?を滑らかに追尾
                 armRb.MovePosition(Vector3.Lerp(arm.position, aimPos, Time.deltaTime * 10f));
 
                 aimTimer += Time.deltaTime;
                 yield return null;
             }
 
+            if (SE != null) SE.Play("Boss.Charge");
+
             // --- ステップ3: 溜め (追尾をやめてその場で震える) ---
             float chargeTimer = 0f;
-            Vector3 chargeBasePos = arm.position; // 照準完了時点の座標を保存
+            Vector3 chargeBasePos = arm.position; // 照?完了時?の座標を保存
             while (chargeTimer < chargeTime)
             {
                 float offsetX = Mathf.Sin(Time.time * chargeShakeSpeed) * chargeShakeIntensity;
@@ -89,13 +92,15 @@ public class ThrustAttack : BossAttackPattern
                 chargeTimer += Time.deltaTime;
                 yield return null;
             }
-            armRb.MovePosition(chargeBasePos); // 震えを止める
+            armRb.MovePosition(chargeBasePos); // 震えを?める
 
             // --- ステップ4: 突き刺し ---
             boss.SetArmAnimation(isLeftArm, actionHandState);
             if (damageCollider != null) damageCollider.enabled = true;
 
-            // 溜め完了時点のX, Y座標に向かって突き刺す
+            if (SE != null) SE.Play("Boss.Slam");
+
+            // 溜め完了時?のX, Y座標に向かって突き刺す
             Vector3 lungePos = new Vector3(chargeBasePos.x, chargeBasePos.y, lungeDepth);
             while (Mathf.Abs(arm.position.z - lungePos.z) > 0.1f)
             {
@@ -107,7 +112,7 @@ public class ThrustAttack : BossAttackPattern
             // --- ステップ5: 硬直 ---
             yield return new WaitForSeconds(postLungePauseTime);
 
-            // --- ステップ6: 待機位置に戻る ---
+            // --- ステップ6: 待?位置に戻る ---
             boss.SetArmAnimation(isLeftArm, returnHandState);
             if (damageCollider != null) damageCollider.enabled = false;
 

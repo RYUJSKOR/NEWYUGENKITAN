@@ -4,38 +4,38 @@ using System.Collections;
 [CreateAssetMenu(fileName = "NewPlatformSmashAttack", menuName = "Boss Attacks/Platform Smash Attack")]
 public class PlatformSmashAttack : BossAttackPattern
 {
-    [Header("予兆エフェクト設定")]
-    [Tooltip("攻撃対象の足場に表示するマーカーのプレハブ")]
+    [Header("?兆エフェクト設定")]
+    [Tooltip("攻撃対象の足場に?示する??カ?のプレハブ")]
     public GameObject targetMarkerPrefab;
-    [Tooltip("マーカーが表示されてから腕が動き出すまでの時間")]
+    [Tooltip("??カ?が?示されてから腕が動き出すまでの時間")]
     public float warningDuration = 1.5f;
-    [Tooltip("マーカー表示位置の微調整用オフセット")]
+    [Tooltip("??カ??示位置の微調整用オフセット")]
     public Vector3 markerOffset = new Vector3(0, 0.1f, 0);
 
     [Header("足場破壊攻撃の設定")]
     public int hitCount = 3;
-    [Tooltip("叩きつけと次の叩きつけの間の時間")]
+    [Tooltip("?きつけと次の?きつけの間の時間")]
     public float timeBetweenHits = 0.5f;
     public LayerMask platformLayer;
 
-    [Header("高さとタメ時間")]
-    [Tooltip("叩きつける前に構える高さ")]
+    [Header("高さと?メ時間")]
+    [Tooltip("?きつける前に?える高さ")]
     public float hoverHeight = 4f;
-    [Tooltip("上空で構えてから叩きつけを開始するまでの溜め時間")]
+    [Tooltip("上空で?えてから?きつけを開始するまでの溜め時間")]
     public float chargeTime = 1.0f;
 
-    [Header("★タメ（振動）設定")] // ▼▼▼ 追加 ▼▼▼
-    [Tooltip("タメている間の揺れの大きさ")]
+    [Header("★?メ（振動）設定")] // ▼▼▼ 追加 ▼▼▼
+    [Tooltip("?メている間の揺れの大きさ")]
     public float shakeMagnitude = 0.5f;
-    [Tooltip("タメている間の揺れの速さ")]
+    [Tooltip("?メている間の揺れの速さ")]
     public float shakeSpeed = 50f; // ▲▲▲ ▲▲▲
 
     [Header("動作速度の設定")]
     [Tooltip("足場の上まで移動する時の速度")]
     public float hoverMoveSpeed = 20f;
-    [Tooltip("叩きつける時の振り下ろし速度")]
+    [Tooltip("?きつける時の振り下ろし速度")]
     public float smashSpeed = 100f;
-    [Tooltip("待機位置に戻る時の速度")]
+    [Tooltip("待?位置に戻る時の速度")]
     public float returnSpeed = 30f;
 
 
@@ -47,6 +47,7 @@ public class PlatformSmashAttack : BossAttackPattern
 
     private IEnumerator AttackRoutine(BossController boss)
     {
+        var SE = FindAnyObjectByType<SEController>();
         bool useLeftArm = false;
         Rigidbody armRb = null;
         bool originalKinematicState = false;
@@ -100,7 +101,7 @@ public class PlatformSmashAttack : BossAttackPattern
             }
             armRb.MovePosition(hoverPos); // ぴったり合わせる
 
-            // ▼▼▼ ここからが「タメ（振動）」の処理 ▼▼▼
+            // ▼▼▼ ここからが「?メ（振動）」の処理 ▼▼▼
             float chargeTimer = 0f;
             while (chargeTimer < chargeTime)
             {
@@ -118,7 +119,9 @@ public class PlatformSmashAttack : BossAttackPattern
             armRb.MovePosition(hoverPos);
             // ▲▲▲ ▲▲▲ ▲▲▲ ▲▲▲ ▲▲▲
 
-            // --- 2. 複数回叩いて破壊する ---
+            if (SE != null) SE.Play("Boss.Charge");
+
+            // --- 2. 複数回?いて破壊する ---
             boss.SetArmAnimation(useLeftArm, actionHandState);
 
             Vector3 hitPos = hitCenter;
@@ -129,6 +132,9 @@ public class PlatformSmashAttack : BossAttackPattern
                     armRb.MovePosition(Vector3.MoveTowards(arm.position, hitPos, smashSpeed * Time.deltaTime));
                     yield return null;
                 }
+
+                if (SE != null) SE.Play("Boss.Slam");
+
                 while (Vector3.Distance(arm.position, hoverPos) > 0.1f)
                 {
                     armRb.MovePosition(Vector3.MoveTowards(arm.position, hoverPos, hoverMoveSpeed * 0.8f * Time.deltaTime));
