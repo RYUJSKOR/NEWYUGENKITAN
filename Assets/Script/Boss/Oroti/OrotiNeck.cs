@@ -4,48 +4,60 @@ using UnityEngine;
 
 public class OrotiNeck : MonoBehaviour
 {
-	[Header("Neck ID")]
-	public int neckId;
+    [Header("Neck ID")]
+    public int neckId;
 
     [Header("Distance")]
     [SerializeField] private Transform distancePoint;
 
     [Header("Attack Cooldown")]
     [SerializeField] private float attackCooldown = 3f;
-
     private float lastAttackTime = -999f;
 
     [Header("Shoot")]
     [SerializeField] private Transform shootPoint;
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private float bulletPower = 1f;
+
+    [Header("Bullet Select Mode")]
+    [SerializeField] private bool useRandomBullet = false;
+    [SerializeField] private OrotiBulletType fixedBulletType;
+    [SerializeField] private List<OrotiBulletEntry> bulletEntries;
 
     [Header("Phase Bullet Settings")]
     [SerializeField] private OrotiBulletSetting phase1Setting;
     [SerializeField] private OrotiBulletSetting phase2Setting;
     [SerializeField] private OrotiBulletSetting phase3Setting;
 
+    private int remainingShots;
+    private float shotInterval;
+    private Coroutine shootRoutine;
+
     [Header("Idle Random Range")]
     [SerializeField] private Vector2 idleSpeedRange = new Vector2(0.8f, 1.2f);
 
     [SerializeField] private Vector2 idleOffsetRange = new Vector2(0f, 1f);
-    public float IdleSpeed => idleSpeed;
-    public bool CanAttack =>
-    Time.time >= lastAttackTime + attackCooldown;
 
     private float idleSpeed;
     private float idleOffset;
 
+    public float IdleSpeed => idleSpeed;
+    public bool CanAttack =>
+    Time.time >= lastAttackTime + attackCooldown;
+
+
     private Animator animator;
     private OrotiDamageDealer dealer;
+    private OrotiController controller;
+    private OrotiBulletEntry currentBullet;
 
     private static readonly int AttackTrigger = Animator.StringToHash("Attack");
     private static readonly int ShootTrigger = Animator.StringToHash("Shoot");
 
     private void Awake()
-	{
-		animator = GetComponent<Animator>();
-		dealer = GetComponentInChildren<OrotiDamageDealer>();
+    {
+        animator = GetComponent<Animator>();
+        dealer = GetComponentInChildren<OrotiDamageDealer>();
+        controller = GetComponentInParent<OrotiController>();
 
         // 起動時にランダム決定（1回だけ）
         idleSpeed = Random.Range(idleSpeedRange.x, idleSpeedRange.y);
@@ -72,7 +84,7 @@ public class OrotiNeck : MonoBehaviour
     }
 
     public void PlayAttack()
-	{
+    {
         // 攻撃確定時にクールタイム開始
         lastAttackTime = Time.time;
 
@@ -81,33 +93,98 @@ public class OrotiNeck : MonoBehaviour
         animator.SetTrigger(AttackTrigger);
     }
 
-    public void PlayShoot()
+    // 攻撃開始（AttackScript から呼ばれる）
+    public void PlayShoot(int bulletCount, float interval)
     {
+        lastAttackTime = Time.time;
+
+        DecideRandomBullet();
+        remainingShots = bulletCount;
+        shotInterval = interval;
+
         animator.SetTrigger(ShootTrigger);
+    }
+
+    private void DecideRandomBullet()
+    {
+        if (bulletEntries == null || bulletEntries.Count == 0) return;
+
+        if (useRandomBullet)
+        {
+            currentBullet = bulletEntries[
+                Random.Range(0, bulletEntries.Count)
+            ];
+        }
+        else
+        {
+            currentBullet = bulletEntries.Find(
+                e => e.type == fixedBulletType
+            );
+        }
+    }
+
+    // Animation Event から呼ばれる
+    public void OnShootAnimationEvent()
+    {
+        if (remainingShots <= 0)
+            return;
+
+        if (shootRoutine != null)
+            StopCoroutine(shootRoutine);
+
+        shootRoutine = StartCoroutine(ShootCoroutine());
+    }
+
+    private IEnumerator ShootCoroutine()
+    {
+        while (remainingShots > 0)
+        {
+            FireOneShot();
+            remainingShots--;
+
+            yield return new WaitForSeconds(shotInterval);
+        }
+    }
+
+    private void FireOneShot()
+    {
+        if (controller == null) return;
+
+        SpawnBullet(
+            controller.PlayerTransform,
+            controller.GetPhase()
+        );
     }
 
     public void SpawnBullet(Transform target, OrotiPhase phase)
     {
-        var bulletObj = Instantiate(
-            bulletPrefab,
-            shootPoint.position,
-            Quaternion.identity
-        );
+        if (currentBullet == null)
+            return;
 
-        OrotiBulletSetting setting = phase switch
-        {
-            OrotiPhase.Phase2 => phase2Setting,
-            OrotiPhase.Phase3 => phase3Setting,
-            _ => phase1Setting
-        };
+        var obj = Instantiate(
+                bulletPrefab,
+                shootPoint.position,
+                Quaternion.identity
+            );
 
-        var bullet = bulletObj.GetComponent<OrotiBullet>();
+        var bullet = obj.GetComponent<OrotiBulletBase>();
         bullet.Initialize(
             (target.position - shootPoint.position),
             gameObject,
-            setting,
+            GetSettingByPhase(currentBullet, phase),
             target
         );
+    }
+    private OrotiBulletSetting GetSettingByPhase(
+        OrotiBulletEntry entry,
+        OrotiPhase phase)
+    {
+        return phase switch
+        {
+            OrotiPhase.Phase2 => entry.phase2Setting,
+            OrotiPhase.Phase3 => entry.phase3Setting,
+            _ => entry.phase1Setting
+        };
     }
 
     /// <summary>

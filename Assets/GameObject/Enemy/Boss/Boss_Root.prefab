@@ -2288,7 +2288,7 @@ MonoBehaviour:
     transitionHealthThreshold: 0.6
     nextSceneName: Boss2Scene
   - phaseName: "\u7B2C\u4E8C\u5F62\u614B"
-    phaseColor: {r: 0.8679245, g: 0.61819154, b: 0.61819154, a: 1}
+    phaseColor: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 1}
     attackPatterns:
     - {fileID: 11400000, guid: aa5b815dcfd6b0542a10bd91f07f1b6e, type: 2}
     - {fileID: 11400000, guid: 686a6b0b05fd80540a3d02220d03cbdd, type: 2}
@@ -2297,7 +2297,7 @@ MonoBehaviour:
     transitionHealthThreshold: 0.3
     nextSceneName: Boss2Scene
   - phaseName: "\u7B2C\u4E09\u5F62\u614B"
-    phaseColor: {r: 0.8584906, g: 0.20652366, b: 0.20652366, a: 1}
+    phaseColor: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 1}
     attackPatterns:
     - {fileID: 11400000, guid: 76f63aa4dc12ae442b431acab92b4d8b, type: 2}
     - {fileID: 11400000, guid: ac0255aa200eb5746980f6b30f4e95d2, type: 2}
