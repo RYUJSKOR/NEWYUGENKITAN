@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,17 +18,32 @@ public class OrotiController : MonoBehaviour
 
 	[SerializeField] private Transform player;
 
-	[Header("Attack Interval")]
+    [Header("Debug")]
+    [SerializeField] private float logInterval = 30f;
+
+    [Header("Attack Interval")]
 	[SerializeField] private float attackCooldown = 2f;
 	private float attackTimer;
 
-	private void Awake()
+    private OrotiAttackBase lastAttack;
+
+    private Coroutine sequentialRoutine;
+
+	public OrotiPhase CurrentPhase { get; private set; } = OrotiPhase.Phase1;
+    public OrotiPhase GetPhase() => CurrentPhase;
+
+    private void Awake()
 	{
 		healthManager.OnDamageTaken += OnBossDamaged;
 		healthManager.OnDeath += OnBossDead;
 	}
 
-	private void OnDestroy()
+    private void Start()
+    {
+        StartCoroutine(LogPlayerDistanceRoutine());
+    }
+
+    private void OnDestroy()
 	{
 		healthManager.OnDamageTaken -= OnBossDamaged;
 		healthManager.OnDeath -= OnBossDead;
@@ -35,50 +51,123 @@ public class OrotiController : MonoBehaviour
 
 	private void Update()
 	{
-		if (!phaseController.IsAttackPhase)
-			return;
+        if (!phaseController.IsAttackPhase)
+            return;
 
-		attackTimer -= Time.deltaTime;
-		if (attackTimer > 0f)
-			return;
+        attackTimer -= Time.deltaTime;
+        if (attackTimer > 0f)
+            return;
 
-		ExecuteAttack();
-		attackTimer = attackCooldown;
-	}
+        TryExecuteAttack();
+        attackTimer = attackCooldown;
+    }
 
-	private void ExecuteAttack()
-	{
-		if (attacks.Count == 0) return;
+    private IEnumerator LogPlayerDistanceRoutine()
+    {
+        var wait = new WaitForSeconds(logInterval);
 
-		var attack = attacks[Random.Range(0, attacks.Count)];
+        while (true)
+        {
+            LogDistancesToPlayer();
+            yield return wait;
+        }
+    }
 
-		// ★ 成功したときだけカウント増やす
-		bool executed = attack.Execute(necks, player);
-		if (executed)
-		{
-			phaseController.OnAttackExecuted();
-		}
-	}
+    private void LogDistancesToPlayer()
+    {
+        if (player == null) return;
 
-	public void ApplyDamageToBoss(float damage)
-	{
-		healthManager.ApplyDamage(damage, true);
-	}
+        foreach (var neck in necks)
+        {
+            float dist = Vector3.Distance(
+                neck.transform.position,
+                player.position
+            );
 
-	private void OnBossDamaged()
+            Debug.Log(
+                $"[Oroti] NeckID:{neck.neckId} → Player Distance: {dist:F2}",
+                neck
+            );
+        }
+    }
+
+    public void StartSequentialAttack(  List<OrotiNeck> necks,float interval)
+    {
+        StartCoroutine(SequentialAttackCoroutine(necks, interval));
+    }
+
+    private IEnumerator SequentialAttackCoroutine(
+        List<OrotiNeck> necks,
+        float interval
+    )
+    {
+        foreach (var neck in necks)
+        {
+            if (neck.CanAttack)
+                neck.PlayAttack();
+
+            yield return new WaitForSeconds(interval);
+        }
+    }
+
+    private void TryExecuteAttack()
+    {
+        var candidates = GetAttackCandidates();
+        if (candidates.Count == 0)
+            return;
+
+        var attack = candidates[Random.Range(0, candidates.Count)];
+
+        bool executed = attack.Execute(
+            necks,
+            player,
+            this
+        );
+
+        if (executed)
+        {
+            lastAttack = attack;
+            phaseController.OnAttackExecuted();
+        }
+    }
+
+    private List<OrotiAttackBase> GetAttackCandidates()
+    {
+        List<OrotiAttackBase> result = new();
+
+        foreach (var attack in attacks)
+        {
+            if (!attack.allowRepeat && attack == lastAttack)
+                continue;
+
+            result.Add(attack);
+        }
+
+        return result;
+    }
+
+    // AttackBase から呼ばれる
+    public void StartSequentialAttack(IEnumerator routine)
+    {
+        if (sequentialRoutine != null)
+            StopCoroutine(sequentialRoutine);
+
+        sequentialRoutine = StartCoroutine(routine);
+    }
+
+    public void ApplyDamageToBoss(float damage)
+    {
+        healthManager.ApplyDamage(damage, true);
+    }
+
+    private void OnBossDamaged()
     {
         float hpPercent = GetHPPercent();
 
-        // HP減少時の演出・挙動変更をここに集約
-        if (hpPercent < 0.75f)
-        {
-            // 攻撃が激しくなった演出など
-        }
-
-        if (hpPercent < 0.4f)
-        {
-            // 終盤演出
-        }
+        if (hpPercent < 0.33f)
+            CurrentPhase = OrotiPhase.Phase3;
+        else if (hpPercent < 0.66f)
+            CurrentPhase = OrotiPhase.Phase2;
     }
 
     private void OnBossDead()
@@ -91,4 +180,6 @@ public class OrotiController : MonoBehaviour
     {
         return healthManager.GetHealth() / healthManager.GetMaxHealth();
     }
+
+    public Transform PlayerTransform => player;
 }

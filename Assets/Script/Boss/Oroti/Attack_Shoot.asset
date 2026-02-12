@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986c4c51d42b4e64ca36282134b6b118, type: 3}
+  m_Name: Attack_Shoot
+  m_EditorClassIdentifier: 
+  selectType: 2
+  useNeckCount: 1
+  specificNeckIds: 0300000004000000050000000600000007000000
+  priorityType: 2
+  attackOrder: 1
+  sequentialInterval: 0.3
+  allowRepeat: 0
+  bulletsPerNeck: 3
+  bulletInterval: 0.7
+  shootInterval: 0.4

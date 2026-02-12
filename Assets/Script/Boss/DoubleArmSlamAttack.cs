@@ -5,39 +5,39 @@ using System.Collections;
 public class DoubleArmSlamAttack : BossAttackPattern
 {
     [Header("追撃設定")]
-    [Tooltip("プレイヤーをスタンさせた場合に即座に実行する追撃用の攻撃パターン")]
+    [Tooltip("プレイヤ?をス?ンさせた場合に即座に実行する追撃用の攻撃パ??ン")]
     public BossAttackPattern stunFollowUpAttack;
-    [Tooltip("スタンさせてから追撃を開始するまでの待機時間（秒）")]
+    [Tooltip("ス?ンさせてから追撃を開始するまでの待?時間（秒）")]
     public float stunFollowUpDelay = 1.0f;
 
-    [Header("両腕叩きつけ攻撃の基本設定")]
-    [Tooltip("腕が目標地点へ移動する速度")]
+    [Header("両腕?きつけ攻撃の基?設定")]
+    [Tooltip("腕が目標地?へ移動する速度")]
     public float armAimSpeed = 20f;
     [Tooltip("振りかぶる高さ")]
     public float attackHeight = 10f;
-    [Tooltip("攻撃の予備動作（溜め）の時間")]
+    [Tooltip("攻撃の?備動作（溜め）の時間")]
     public float attackChargeTime = 2.0f;
-    [Tooltip("叩きつけた後、腕を地面に置いておく時間")]
+    [Tooltip("?きつけた後、腕を地面に置いておく時間")]
     public float impactDowntime = 1.0f;
-    [Tooltip("叩きつけ時のスタン判定の半径")]
+    [Tooltip("?きつけ時のス?ン判定の半径")]
     public float attackRadius = 5f;
-    [Tooltip("腕が待機位置に戻る速度")]
+    [Tooltip("腕が待?位置に戻る速度")]
     public float armReturnSpeed = 15f;
-    [Tooltip("叩きつけ時に加える初期衝動の強さ")]
+    [Tooltip("?きつけ時に加える初期衝動の強さ")]
     public float armSlamInitialForce = 60f;
-    [Tooltip("この攻撃が与えるスタンの持続時間")]
+    [Tooltip("この攻撃が?えるス?ンの持続時間")]
     public float stunDuration = 2.0f;
 
-    [Header("画面端での振りかぶり設定")]
-    [Tooltip("画面の左右の端からどれだけ内側に寄せるか")]
+    [Header("画面?での振りかぶり設定")]
+    [Tooltip("画面の左右の?からどれだけ内側に寄せるか")]
     public float screenEdgeHorizontalOffset = 2.0f;
     [Tooltip("カメラから腕までの仮想的な距離（XY座標の計算にのみ使用）")]
     public float distanceToCamera = 25f;
 
     [Header("演出用の設定")]
-    [Tooltip("地面に表示される攻撃範囲マーカー")]
+    [Tooltip("地面に?示される攻撃範囲??カ?")]
     public GameObject groundMarkerPrefab;
-    [Tooltip("叩きつけ時に発生する衝撃エフェクト（土煙など）")]
+    [Tooltip("?きつけ時に発生する衝撃エフェクト（土煙など）")]
     public GameObject impactEffectPrefab;
     [Header("カメラシェイク設定")]
     [Tooltip("揺れの持続時間")]
@@ -71,6 +71,8 @@ public class DoubleArmSlamAttack : BossAttackPattern
 
     private IEnumerator DoubleArmSlamRoutine(BossController boss)
     {
+        var SE = FindAnyObjectByType<SEController>();
+
         boss.SetBothArmsAttacking(true);
 
         Rigidbody leftArmRb = boss.leftArmObject.GetComponent<Rigidbody>();
@@ -80,7 +82,7 @@ public class DoubleArmSlamAttack : BossAttackPattern
 
         try
         {
-            // --- 1. 予備動作 (Aiming) ---
+            // --- 1. ?備動作 (Aiming) ---
             boss.SetArmAnimation(true, prepareHandState);
             boss.SetArmAnimation(false, prepareHandState);
             Camera mainCamera = Camera.main;
@@ -116,6 +118,8 @@ public class DoubleArmSlamAttack : BossAttackPattern
                 rightMarkerInstance = Object.Instantiate(groundMarkerPrefab, markerPos, Quaternion.Euler(90, 0, 0)); // Right marker added for symmetry
             }
 
+            if (SE != null) SE.Play("Boss.Charge");
+
             float chargeTimer = 0f;
             Vector3 leftChargePos = boss.leftArmObject.transform.position;
             Vector3 rightChargePos = boss.rightArmObject.transform.position;
@@ -134,7 +138,7 @@ public class DoubleArmSlamAttack : BossAttackPattern
             leftArmRb.MovePosition(leftChargePos);
             rightArmRb.MovePosition(rightChargePos);
 
-            // --- 3. 叩きつけ (Slam) ---
+            // --- 3. ?きつけ (Slam) ---
             boss.SetArmAnimation(true, actionHandState);
             boss.SetArmAnimation(false, actionHandState);
             leftArmWp.ResetGroundedFlag();
@@ -147,6 +151,8 @@ public class DoubleArmSlamAttack : BossAttackPattern
             rightArmRb.AddForce(Vector3.down * armSlamInitialForce, ForceMode.Impulse);
 
             yield return new WaitUntil(() => leftArmWp.IsGrounded && rightArmWp.IsGrounded);
+
+            if (SE != null) SE.Play("Boss.Slam");
 
             // --- 4. 衝撃 (Impact) & 5. 追撃判定 ---
             leftArmRb.isKinematic = true;
@@ -164,7 +170,7 @@ public class DoubleArmSlamAttack : BossAttackPattern
                 CameraShakeManager.instance.TriggerShake(shakeDuration, shakeMagnitude);
             }
 
-            // (B) プレイヤースタン判定
+            // (B) プレイヤ?ス?ン判定
             Collider[] hitColliders = Physics.OverlapSphere(impactCenter, attackRadius);
             foreach (var hitCollider in hitColliders)
             {

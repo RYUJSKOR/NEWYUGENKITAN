@@ -4,7 +4,7 @@ using System.Collections;
 [CreateAssetMenu(fileName = "NewArmSlamAttack", menuName = "Boss Attacks/Arm Slam Attack")]
 public class ArmSlamAttack : BossAttackPattern
 {
-    [Header("˜r’@‚«‚Â‚¯UŒ‚‚Ìİ’è")]
+    [Header("˜r?‚«‚Â‚¯UŒ‚‚Ìİ’è")]
     public float armAimSpeed = 30f;
     public float attackTellDuration = 0.5f;
     public float attackChargeTime = 1.5f;
@@ -64,6 +64,8 @@ public class ArmSlamAttack : BossAttackPattern
 
     private IEnumerator ArmSlamRoutine(BossController boss, Transform arm, Transform restPosition, bool isLeftArm)
     {
+        var SE = FindAnyObjectByType<SEController>();
+
         boss.SetAttackingState(true, isLeftArm);
 
         Rigidbody armRb = arm.GetComponent<Rigidbody>();
@@ -76,7 +78,7 @@ public class ArmSlamAttack : BossAttackPattern
 
         try
         {
-            // --- UŒ‚€”õ ---
+            // --- UŒ‚?”õ ---
             boss.SetArmAnimation(isLeftArm, prepareHandState);
             yield return new WaitForSeconds(attackTellDuration);
 
@@ -87,7 +89,9 @@ public class ArmSlamAttack : BossAttackPattern
                 yield return null;
             }
 
-            // --- ƒ^ƒ ---
+            if (SE != null) SE.Play("Boss.Charge");
+
+            // --- ?ƒ ---
             float timer = 0;
             Vector3 lockedOnPosition = arm.position;
             float lockOnTime = attackChargeTime - 0.1f;
@@ -145,6 +149,9 @@ public class ArmSlamAttack : BossAttackPattern
                 armRb.position = correctedPos;
                 yield return null;
             }
+
+            if (SE != null) SE.Play("Boss.Slam");
+
             armRb.isKinematic = true;
             armRb.useGravity = false;
             yield return new WaitForSeconds(attackImpactStunTime);

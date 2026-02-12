@@ -4,19 +4,22 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Oroti/Attack/Slam")]
 public class OrotiAttack_Slam : OrotiAttackBase
 {
-	public override bool Execute(
-		 List<OrotiNeck> allNecks,
-		 Transform player)
-	{
-		var targets = SelectNecks(allNecks);
-		if (targets.Count == 0)
-			return false;
+    public override bool Execute(
+         List<OrotiNeck> allNecks,
+         Transform player,
+         OrotiController controller)
+    {
+        // 首選択
+        var selected = SelectNecks(allNecks);
 
-		foreach (var neck in targets)
-		{
-			neck.PlayAttack();
-		}
+        // 攻撃可能チェック
+        var attackable = FilterAttackable(selected);
 
-		return true;
-	}
+        // Priority + Order 実行
+        return ExecuteByOrder(
+            attackable,
+            player,
+            controller
+        );
+    }
 }
