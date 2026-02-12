@@ -19,8 +19,8 @@ MonoBehaviour:
     cooldown: 0
   - id: Player.NohMaskShoot
     clip: {fileID: 8300000, guid: 7d056f44d5dd2ea44876cc7b9ee16b0f, type: 3}
-    volume: 3.04
-    cooldown: 0.5
+    volume: 1
+    cooldown: 0.3
   - id: Player.DemonShoot
     clip: {fileID: 8300000, guid: 62519c82f3a249a4abd81e44879208e4, type: 3}
     volume: 1
@@ -28,7 +28,7 @@ MonoBehaviour:
   - id: Player.FoxShoot
     clip: {fileID: 8300000, guid: 6249207f61e29d849a05f72ab77f9a25, type: 3}
     volume: 1
-    cooldown: 0
+    cooldown: 0.3
   - id: Player.Jump1
     clip: {fileID: 8300000, guid: 37d8c71946fcee94f92e8fa104b17954, type: 3}
     volume: 2

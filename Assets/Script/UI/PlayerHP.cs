@@ -221,5 +221,6 @@ public class PlayerHP : MonoBehaviour
     // 外部参照エラー回避用
     public void StopCountHP()
     {
+        SaveCurrentHP();
     }
 }

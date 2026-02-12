@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeText: {fileID: 1952529096}
-  HPBounusText: {fileID: 0}
+  HPBounusText: {fileID: 455333673}
   Rank: {fileID: 1725431793}
   normalBaseS: 90
   bossBaseS: 180
@@ -1165,6 +1165,54 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2079.0696, y: 1195.3569, z: 69.71304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &503381831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 503381833}
+  - component: {fileID: 503381832}
+  m_Layer: 0
+  m_Name: GameMAnager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &503381832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503381831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af92b69180f12ae49b074192a0203ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClearUIPrefab: {fileID: 0}
+  UIParent: {fileID: 0}
+  bossTimerManager: {fileID: 0}
+  timerManager: {fileID: 0}
+--- !u!4 &503381833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503381831}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.065882, y: 15.914884, z: 90}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2069,7 +2117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1524130893
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2787,6 +2835,8 @@ MonoBehaviour:
   text: {fileID: 1795432500}
   normalColor: {r: 0, g: 0, b: 0, a: 1}
   highlightColor: {r: 1, g: 1, b: 1, a: 1}
+  blackOverlayGroup: {fileID: 0}
+  goldBackgroundGroup: {fileID: 0}
   selectScale: 1.1
   animDuration: 0.1
 --- !u!114 &1900845871
@@ -2951,7 +3001,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: Title
-  isStageSelectButton: 1
   triggerOnButtonClick: 1
   targetTag: Player
 --- !u!1 &1919826091
@@ -3558,3 +3607,4 @@ SceneRoots:
   - {fileID: 1919826094}
   - {fileID: 277332487}
   - {fileID: 875471495}
+  - {fileID: 503381833}
