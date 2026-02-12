@@ -161,13 +161,20 @@ public class OrotiNeck : MonoBehaviour
         if (currentBullet == null)
             return;
 
-        var obj = Instantiate(
-                bulletPrefab,
-                shootPoint.position,
-                Quaternion.identity
-            );
+        var bulletObj = Instantiate(
+              bulletPrefab,
+              shootPoint.position,
+              Quaternion.identity
+          );
 
-        var bullet = obj.GetComponent<OrotiBulletBase>();
+        var bullet = bulletObj.GetComponent<OrotiBulletBase>();
+        if (bullet == null)
+        {
+            Debug.LogError("弾PrefabにOrotiBulletBase継承スクリプトが付いていない！");
+            return;
+        }
+        Vector3 dir = (target.position - shootPoint.position).normalized;
+
         bullet.Initialize(
             (target.position - shootPoint.position),
             gameObject,
@@ -175,6 +182,7 @@ public class OrotiNeck : MonoBehaviour
             target
         );
     }
+
     private OrotiBulletSetting GetSettingByPhase(
         OrotiBulletEntry entry,
         OrotiPhase phase)

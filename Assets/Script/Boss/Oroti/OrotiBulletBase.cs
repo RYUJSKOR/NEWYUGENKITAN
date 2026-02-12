@@ -37,6 +37,9 @@ public abstract class OrotiBulletBase : Bullet
 
     protected override void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Boss"))
+            return;
+
         base.OnTriggerEnter(other);
         OnHit();
     }
