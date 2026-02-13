@@ -9701,6 +9701,12 @@ MonoBehaviour:
   ignoreTags:
   - Boss
   - Bullet
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 768
 --- !u!135 &6176627785939957820
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -2819,6 +2819,16 @@ MonoBehaviour:
     phase1Setting: {fileID: 11400000, guid: 0b732dec3d683884b89825098b1ec6a7, type: 2}
     phase2Setting: {fileID: 11400000, guid: 8170754347628874694f5008cc717375, type: 2}
     phase3Setting: {fileID: 11400000, guid: 092aaadbb077a1742bce79ac6b8938d8, type: 2}
+  - type: 1
+    bulletPrefab: {fileID: 8158890814622466000, guid: 146b3131d211ce849820a1f800c65b38, type: 3}
+    phase1Setting: {fileID: 11400000, guid: 45f6d65167e20594397c8668a4451d5b, type: 2}
+    phase2Setting: {fileID: 11400000, guid: bac4c8fdc907b9c4aa9a5bcd0dac1c72, type: 2}
+    phase3Setting: {fileID: 11400000, guid: 487896c0c62a8034cbad706ba08371e1, type: 2}
+  - type: 2
+    bulletPrefab: {fileID: 3801987325931552435, guid: bbc5ce6fdafc0e34eaa3788e2ed491d5, type: 3}
+    phase1Setting: {fileID: 11400000, guid: cfe66e5c7b82b714d9a183c8b046db5d, type: 2}
+    phase2Setting: {fileID: 11400000, guid: 35b5fb3e570ef2c4786b2b61df577ad8, type: 2}
+    phase3Setting: {fileID: 11400000, guid: 20c6d074f23b4fa46be90bb9bee3083a, type: 2}
   phase1Setting: {fileID: 0}
   phase2Setting: {fileID: 0}
   phase3Setting: {fileID: 0}
