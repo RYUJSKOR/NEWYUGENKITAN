@@ -1,10 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 [CreateAssetMenu(fileName = "NewArmSlamAttack", menuName = "Boss Attacks/Arm Slam Attack")]
 public class ArmSlamAttack : BossAttackPattern
 {
-    [Header("�r?�����U���̐ݒ�")]
+    [Header("腕叩きつけ攻撃の設定")]
     public float armAimSpeed = 30f;
     public float attackTellDuration = 0.5f;
     public float attackChargeTime = 1.5f;
@@ -14,7 +14,7 @@ public class ArmSlamAttack : BossAttackPattern
     public float armReturnSpeed = 20f;
     public float armSlamInitialForce = 50f;
 
-    [Header("���o�p�̐ݒ�")]
+    [Header("演出用の設定")]
     public GameObject groundMarkerPrefab;
     public GameObject chargeUpVFXPrefab;
     public string vfxAnchorName = "VFX_Anchor";
@@ -78,20 +78,22 @@ public class ArmSlamAttack : BossAttackPattern
 
         try
         {
-            // --- �U��?�� ---
+            // --- 1. 攻撃準備 (Aiming) ---
             boss.SetArmAnimation(isLeftArm, prepareHandState);
             yield return new WaitForSeconds(attackTellDuration);
 
             Vector3 aimPosition = boss.playerTransform.position + Vector3.up * 5f;
-            while (Vector3.Distance(arm.position, aimPosition) > 0.1f)
+            float timeoutTimer = 0f; // ★ 無限ループ防止
+            while (Vector3.Distance(arm.position, aimPosition) > 0.1f && timeoutTimer < 3.0f)
             {
                 armRb.MovePosition(Vector3.MoveTowards(arm.position, aimPosition, armAimSpeed * Time.deltaTime));
+                timeoutTimer += Time.deltaTime;
                 yield return null;
             }
 
             if (SE != null) SE.Play("Boss.Charge");
 
-            // --- ?�� ---
+            // --- 2. 溜め (Charge) ---
             float timer = 0;
             Vector3 lockedOnPosition = arm.position;
             float lockOnTime = attackChargeTime - 0.1f;
@@ -119,22 +121,23 @@ public class ArmSlamAttack : BossAttackPattern
             }
             armRb.MovePosition(lockedOnPosition);
 
-            // --- �U�����s ---
+            // --- 3. 攻撃実行前エフェクト ---
             if (groundMarkerPrefab != null)
             {
                 Vector3 markerPos = new Vector3(lockedOnPosition.x, boss.groundLevelY + 0.01f, lockedOnPosition.z);
-                markerInstance = Object.Instantiate(groundMarkerPrefab, markerPos, Quaternion.Euler(90, 0, 0));
+                markerInstance = Instantiate(groundMarkerPrefab, markerPos, Quaternion.Euler(90, 0, 0));
                 markerInstance.transform.localScale = new Vector3(5, 5, 1);
             }
             if (chargeUpVFXPrefab != null)
             {
                 Transform anchor = arm.Find(vfxAnchorName);
                 Transform spawnTransform = (anchor != null) ? anchor : arm;
-                vfxInstance = Object.Instantiate(chargeUpVFXPrefab, spawnTransform.position, spawnTransform.rotation, spawnTransform);
+                vfxInstance = Instantiate(chargeUpVFXPrefab, spawnTransform.position, spawnTransform.rotation, spawnTransform);
             }
 
             yield return new WaitForSeconds(postChargePauseDuration);
 
+            // --- 4. 叩きつけ (Slam) ---
             boss.SetArmAnimation(isLeftArm, actionHandState);
 
             armWp.ResetGroundedFlag();
@@ -143,15 +146,18 @@ public class ArmSlamAttack : BossAttackPattern
             armRb.isKinematic = false;
             armRb.useGravity = true;
             armRb.AddForce(Vector3.down * armSlamInitialForce, ForceMode.Impulse);
-            while (!armWp.IsGrounded)
+
+            timeoutTimer = 0f;
+            // ★ 地面に触れるか、最大2秒経過するまで待つ (床抜け防止)
+            while (!armWp.IsGrounded && timeoutTimer < 2.0f)
             {
                 Vector3 correctedPos = new Vector3(lockedOnPosition.x, arm.position.y, lockedOnPosition.z);
                 armRb.position = correctedPos;
+                timeoutTimer += Time.deltaTime;
                 yield return null;
             }
 
             if (SE != null) SE.Play("Boss.Slam");
-            else Debug.Log("Aaaaaaaaaaaaaa1");
 
             armRb.isKinematic = true;
             armRb.useGravity = false;
@@ -159,12 +165,14 @@ public class ArmSlamAttack : BossAttackPattern
 
             if (damageCollider != null) damageCollider.enabled = false;
 
-            // --- �߂� ---
+            // --- 5. 待機位置に戻る ---
             boss.SetArmAnimation(isLeftArm, returnHandState);
 
-            while (Vector3.Distance(arm.position, restPosition.position) > 0.1f)
+            timeoutTimer = 0f;
+            while (Vector3.Distance(arm.position, restPosition.position) > 0.1f && timeoutTimer < 3.0f)
             {
                 armRb.MovePosition(Vector3.MoveTowards(arm.position, restPosition.position, armReturnSpeed * Time.deltaTime));
+                timeoutTimer += Time.deltaTime;
                 yield return null;
             }
             armRb.MovePosition(restPosition.position);
@@ -183,8 +191,8 @@ public class ArmSlamAttack : BossAttackPattern
 
     private void Cleanup(BossController boss, bool isLeftArm)
     {
-        if (markerInstance != null) Object.Destroy(markerInstance);
-        if (vfxInstance != null) Object.Destroy(vfxInstance);
+        if (markerInstance != null) Destroy(markerInstance);
+        if (vfxInstance != null) Destroy(vfxInstance);
         if (damageCollider != null) damageCollider.enabled = true;
 
         boss.SetArmAnimation(isLeftArm, ArmAnimationState.Default);

@@ -1,54 +1,55 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 
 [CreateAssetMenu(fileName = "NewDoubleArmSlamAttack", menuName = "Boss Attacks/Double Arm Slam Attack")]
 public class DoubleArmSlamAttack : BossAttackPattern
 {
-    [Header("’ÇŒ‚İ’è")]
-    [Tooltip("ƒvƒŒƒCƒ„?‚ğƒX?ƒ“‚³‚¹‚½ê‡‚É‘¦À‚ÉÀs‚·‚é’ÇŒ‚—p‚ÌUŒ‚ƒp??ƒ“")]
+    [Header("è¿½æ’ƒè¨­å®š")]
+    [Tooltip("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’ã‚¹ã‚¿ãƒ³ã•ã›ãŸå ´åˆã«å³åº§ã«å®Ÿè¡Œã™ã‚‹è¿½æ’ƒç”¨ã®æ”»æ’ƒãƒ‘ã‚¿ãƒ¼ãƒ³")]
     public BossAttackPattern stunFollowUpAttack;
-    [Tooltip("ƒX?ƒ“‚³‚¹‚Ä‚©‚ç’ÇŒ‚‚ğŠJn‚·‚é‚Ü‚Å‚Ì‘Ò?ŠÔi•bj")]
+    [Tooltip("ã‚¹ã‚¿ãƒ³ã•ã›ã¦ã‹ã‚‰è¿½æ’ƒã‚’é–‹å§‹ã™ã‚‹ã¾ã§ã®å¾…æ©Ÿæ™‚é–“ï¼ˆç§’ï¼‰")]
     public float stunFollowUpDelay = 1.0f;
 
-    [Header("—¼˜r?‚«‚Â‚¯UŒ‚‚ÌŠî?İ’è")]
-    [Tooltip("˜r‚ª–Ú•W’n?‚ÖˆÚ“®‚·‚é‘¬“x")]
+    [Header("ä¸¡è…•å©ãã¤ã‘æ”»æ’ƒã®åŸºæœ¬è¨­å®š")]
+    [Tooltip("è…•ãŒç›®æ¨™åœ°ç‚¹ã¸ç§»å‹•ã™ã‚‹é€Ÿåº¦")]
     public float armAimSpeed = 20f;
-    [Tooltip("U‚è‚©‚Ô‚é‚‚³")]
+    [Tooltip("æŒ¯ã‚Šã‹ã¶ã‚‹é«˜ã•")]
     public float attackHeight = 10f;
-    [Tooltip("UŒ‚‚Ì?”õ“®ìi—­‚ßj‚ÌŠÔ")]
+    [Tooltip("æ”»æ’ƒã®æº–å‚™å‹•ä½œï¼ˆæºœã‚ï¼‰ã®æ™‚é–“")]
     public float attackChargeTime = 2.0f;
-    [Tooltip("?‚«‚Â‚¯‚½ŒãA˜r‚ğ’n–Ê‚É’u‚¢‚Ä‚¨‚­ŠÔ")]
+    [Tooltip("å©ãã¤ã‘ãŸå¾Œã€è…•ã‚’åœ°é¢ã«ç½®ã„ã¦ãŠãæ™‚é–“")]
     public float impactDowntime = 1.0f;
-    [Tooltip("?‚«‚Â‚¯‚ÌƒX?ƒ“”»’è‚Ì”¼Œa")]
+    [Tooltip("å©ãã¤ã‘æ™‚ã®ã‚¹ã‚¿ãƒ³åˆ¤å®šã®åŠå¾„")]
     public float attackRadius = 5f;
-    [Tooltip("˜r‚ª‘Ò?ˆÊ’u‚É–ß‚é‘¬“x")]
+    [Tooltip("è…•ãŒå¾…æ©Ÿä½ç½®ã«æˆ»ã‚‹é€Ÿåº¦")]
     public float armReturnSpeed = 15f;
-    [Tooltip("?‚«‚Â‚¯‚É‰Á‚¦‚é‰ŠúÕ“®‚Ì‹­‚³")]
+    [Tooltip("å©ãã¤ã‘æ™‚ã«åŠ ãˆã‚‹åˆæœŸè¡å‹•ã®å¼·ã•")]
     public float armSlamInitialForce = 60f;
-    [Tooltip("‚±‚ÌUŒ‚‚ª?‚¦‚éƒX?ƒ“‚Ì‘±ŠÔ")]
+    [Tooltip("ã“ã®æ”»æ’ƒãŒä¸ãˆã‚‹ã‚¹ã‚¿ãƒ³ã®æŒç¶šæ™‚é–“")]
     public float stunDuration = 2.0f;
 
-    [Header("‰æ–Ê?‚Å‚ÌU‚è‚©‚Ô‚èİ’è")]
-    [Tooltip("‰æ–Ê‚Ì¶‰E‚Ì?‚©‚ç‚Ç‚ê‚¾‚¯“à‘¤‚ÉŠñ‚¹‚é‚©")]
+    [Header("ç”»é¢å†…ã§ã®æŒ¯ã‚Šã‹ã¶ã‚Šè¨­å®š")]
+    [Tooltip("ç”»é¢ã®å·¦å³ã®ç«¯ã‹ã‚‰ã©ã‚Œã ã‘å†…å´ã«å¯„ã›ã‚‹ã‹")]
     public float screenEdgeHorizontalOffset = 2.0f;
-    [Tooltip("ƒJƒƒ‰‚©‚ç˜r‚Ü‚Å‚Ì‰¼‘z“I‚È‹——£iXYÀ•W‚ÌŒvZ‚É‚Ì‚İg—pj")]
+    [Tooltip("ã‚«ãƒ¡ãƒ©ã‹ã‚‰è…•ã¾ã§ã®ä»®æƒ³çš„ãªè·é›¢ï¼ˆXYåº§æ¨™ã®è¨ˆç®—ã«ã®ã¿ä½¿ç”¨ï¼‰")]
     public float distanceToCamera = 25f;
 
-    [Header("‰‰o—p‚Ìİ’è")]
-    [Tooltip("’n–Ê‚É?¦‚³‚ê‚éUŒ‚”ÍˆÍ??ƒJ?")]
+    [Header("æ¼”å‡ºç”¨ã®è¨­å®š")]
+    [Tooltip("åœ°é¢ã«è¡¨ç¤ºã•ã‚Œã‚‹æ”»æ’ƒç¯„å›²ãƒãƒ¼ã‚«ãƒ¼")]
     public GameObject groundMarkerPrefab;
-    [Tooltip("?‚«‚Â‚¯‚É”­¶‚·‚éÕŒ‚ƒGƒtƒFƒNƒgi“y‰Œ‚È‚Çj")]
+    [Tooltip("å©ãã¤ã‘æ™‚ã«ç™ºç”Ÿã™ã‚‹è¡æ’ƒã‚¨ãƒ•ã‚§ã‚¯ãƒˆï¼ˆåœŸç…™ãªã©ï¼‰")]
     public GameObject impactEffectPrefab;
-    [Header("ƒJƒƒ‰ƒVƒFƒCƒNİ’è")]
-    [Tooltip("—h‚ê‚Ì‘±ŠÔ")]
+
+    [Header("ã‚«ãƒ¡ãƒ©ã‚·ã‚§ã‚¤ã‚¯è¨­å®š")]
+    [Tooltip("æºã‚Œã®æŒç¶šæ™‚é–“")]
     public float shakeDuration = 0.3f;
-    [Tooltip("—h‚ê‚Ì‹­‚³")]
+    [Tooltip("æºã‚Œã®å¼·ã•")]
     public float shakeMagnitude = 0.4f;
 
-    [Header("—­‚ß‰‰o‚Ìİ’è")]
-    [Tooltip("—­‚ß’†‚Ì˜r‚Ìk‚¦‚Ìw‹­‚³x")]
+    [Header("æºœã‚æ¼”å‡ºã®è¨­å®š")]
+    [Tooltip("æºœã‚ä¸­ã®è…•ã®éœ‡ãˆã®ã€å¼·ã•ã€")]
     public float chargeShakeIntensity = 0.1f;
-    [Tooltip("—­‚ß’†‚Ì˜r‚Ìk‚¦‚Ìw‘¬‚³x")]
+    [Tooltip("æºœã‚ä¸­ã®è…•ã®éœ‡ãˆã®ã€é€Ÿã•ã€")]
     public float chargeShakeSpeed = 50f;
 
     private GameObject leftMarkerInstance, rightMarkerInstance;
@@ -61,8 +62,8 @@ public class DoubleArmSlamAttack : BossAttackPattern
 
     public override void Cleanup(BossController boss)
     {
-        if (leftMarkerInstance != null) Object.Destroy(leftMarkerInstance);
-        if (rightMarkerInstance != null) Object.Destroy(rightMarkerInstance);
+        if (leftMarkerInstance != null) Destroy(leftMarkerInstance);
+        if (rightMarkerInstance != null) Destroy(rightMarkerInstance);
 
         boss.SetArmAnimation(true, ArmAnimationState.Default);
         boss.SetArmAnimation(false, ArmAnimationState.Default);
@@ -82,13 +83,13 @@ public class DoubleArmSlamAttack : BossAttackPattern
 
         try
         {
-            // --- 1. ?”õ“®ì (Aiming) ---
+            // --- 1. æº–å‚™å‹•ä½œ (Aiming) ---
             boss.SetArmAnimation(true, prepareHandState);
             boss.SetArmAnimation(false, prepareHandState);
             Camera mainCamera = Camera.main;
             if (mainCamera == null)
             {
-                Debug.LogError("Main Camera‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñI");
+                Debug.LogError("Main CameraãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ï¼");
                 yield break;
             }
             float distanceToPlayer = Vector3.Dot(boss.playerTransform.position - mainCamera.transform.position, mainCamera.transform.forward);
@@ -101,21 +102,23 @@ public class DoubleArmSlamAttack : BossAttackPattern
             leftTargetPos.y = boss.groundLevelY + attackHeight;
             rightTargetPos.y = boss.groundLevelY + attackHeight;
 
-            while (Vector3.Distance(boss.leftArmObject.transform.position, leftTargetPos) > 0.5f ||
-                   Vector3.Distance(boss.rightArmObject.transform.position, rightTargetPos) > 0.5f)
+            float timeoutTimer = 0f;
+            while ((Vector3.Distance(boss.leftArmObject.transform.position, leftTargetPos) > 0.5f ||
+                   Vector3.Distance(boss.rightArmObject.transform.position, rightTargetPos) > 0.5f) && timeoutTimer < 3.0f)
             {
                 leftArmRb.MovePosition(Vector3.MoveTowards(boss.leftArmObject.transform.position, leftTargetPos, armAimSpeed * Time.deltaTime));
                 rightArmRb.MovePosition(Vector3.MoveTowards(boss.rightArmObject.transform.position, rightTargetPos, armAimSpeed * Time.deltaTime));
+                timeoutTimer += Time.deltaTime;
                 yield return null;
             }
 
-            // --- 2. —­‚ß (Charging) ---
+            // --- 2. æºœã‚ (Charging) ---
             Vector3 slamTargetPos = boss.playerTransform.position;
             if (groundMarkerPrefab != null)
             {
                 Vector3 markerPos = new Vector3(slamTargetPos.x, boss.groundLevelY + 0.01f, slamTargetPos.z);
-                leftMarkerInstance = Object.Instantiate(groundMarkerPrefab, markerPos, Quaternion.Euler(90, 0, 0));
-                rightMarkerInstance = Object.Instantiate(groundMarkerPrefab, markerPos, Quaternion.Euler(90, 0, 0)); // Right marker added for symmetry
+                leftMarkerInstance = Instantiate(groundMarkerPrefab, markerPos, Quaternion.Euler(90, 0, 0));
+                rightMarkerInstance = Instantiate(groundMarkerPrefab, markerPos, Quaternion.Euler(90, 0, 0));
             }
 
             if (SE != null) SE.Play("Boss.Charge");
@@ -138,7 +141,7 @@ public class DoubleArmSlamAttack : BossAttackPattern
             leftArmRb.MovePosition(leftChargePos);
             rightArmRb.MovePosition(rightChargePos);
 
-            // --- 3. ?‚«‚Â‚¯ (Slam) ---
+            // --- 3. å©ãã¤ã‘ (Slam) ---
             boss.SetArmAnimation(true, actionHandState);
             boss.SetArmAnimation(false, actionHandState);
             leftArmWp.ResetGroundedFlag();
@@ -150,32 +153,36 @@ public class DoubleArmSlamAttack : BossAttackPattern
             leftArmRb.AddForce(Vector3.down * armSlamInitialForce, ForceMode.Impulse);
             rightArmRb.AddForce(Vector3.down * armSlamInitialForce, ForceMode.Impulse);
 
-            yield return new WaitUntil(() => leftArmWp.IsGrounded && rightArmWp.IsGrounded);
+            timeoutTimer = 0f;
+            // â˜… ä¸¡è…•ãŒåœ°é¢ã«è§¦ã‚Œã‚‹ã‹ã€æœ€å¤§2ç§’çµŒéã™ã‚‹ã¾ã§å¾…ã¤ (ç„¡é™ãƒ«ãƒ¼ãƒ—é˜²æ­¢)
+            while (!(leftArmWp.IsGrounded && rightArmWp.IsGrounded) && timeoutTimer < 2.0f)
+            {
+                timeoutTimer += Time.deltaTime;
+                yield return null;
+            }
 
             if (SE != null) SE.Play("Boss.Slam");
 
-            // --- 4. ÕŒ‚ (Impact) & 5. ’ÇŒ‚”»’è ---
+            // --- 4. è¡æ’ƒ (Impact) & 5. è¿½æ’ƒåˆ¤å®š ---
             leftArmRb.isKinematic = true;
             rightArmRb.isKinematic = true;
 
-            // (A) ÕŒ‚ƒGƒtƒFƒNƒg‚ÆƒJƒƒ‰ƒVƒFƒCƒN
             Vector3 impactCenter = (boss.leftArmObject.transform.position + boss.rightArmObject.transform.position) / 2f;
             impactCenter.y = boss.groundLevelY;
             if (impactEffectPrefab != null)
             {
-                Object.Instantiate(impactEffectPrefab, impactCenter, Quaternion.identity);
+                Instantiate(impactEffectPrefab, impactCenter, Quaternion.identity);
             }
             if (CameraShakeManager.instance != null)
             {
                 CameraShakeManager.instance.TriggerShake(shakeDuration, shakeMagnitude);
             }
 
-            // (B) ƒvƒŒƒCƒ„?ƒX?ƒ“”»’è
             Collider[] hitColliders = Physics.OverlapSphere(impactCenter, attackRadius);
             foreach (var hitCollider in hitColliders)
             {
                 Player player = hitCollider.GetComponent<Player>();
-                if (player != null && player.IsGrounded()) // Check if player is grounded
+                if (player != null && player.IsGrounded())
                 {
                     player.TriggerStun(stunDuration);
 
@@ -192,16 +199,19 @@ public class DoubleArmSlamAttack : BossAttackPattern
 
             yield return new WaitForSeconds(impactDowntime);
 
-            // --- 6. •œ‹A (Return) ---
+            // --- 6. å¾©å¸° (Return) ---
             boss.SetArmAnimation(true, returnHandState);
             boss.SetArmAnimation(false, returnHandState);
             Vector3 leftRestPos = boss.leftArmRestPosition.position;
             Vector3 rightRestPos = boss.rightArmRestPosition.position;
-            while (Vector3.Distance(boss.leftArmObject.transform.position, leftRestPos) > 0.5f ||
-                   Vector3.Distance(boss.rightArmObject.transform.position, rightRestPos) > 0.5f)
+
+            timeoutTimer = 0f;
+            while ((Vector3.Distance(boss.leftArmObject.transform.position, leftRestPos) > 0.5f ||
+                   Vector3.Distance(boss.rightArmObject.transform.position, rightRestPos) > 0.5f) && timeoutTimer < 3.0f)
             {
                 leftArmRb.MovePosition(Vector3.MoveTowards(boss.leftArmObject.transform.position, leftRestPos, armReturnSpeed * Time.deltaTime));
                 rightArmRb.MovePosition(Vector3.MoveTowards(boss.rightArmObject.transform.position, rightRestPos, armReturnSpeed * Time.deltaTime));
+                timeoutTimer += Time.deltaTime;
                 yield return null;
             }
         }
