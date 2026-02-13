@@ -42,16 +42,22 @@ public abstract class OrotiBulletBase : Bullet
         if (other.gameObject.layer == LayerMask.NameToLayer("Boss"))
             return;
 
-        base.OnTriggerEnter(other);
+        // Ground‚ğÅ—Dæ
+        if (((1 << other.gameObject.layer) & groundLayer) != 0)
+        {
+            OnGroundHit(other);
+            return; // © baseŒÄ‚Î‚È‚¢II
+        }
 
+        // Player
         if (((1 << other.gameObject.layer) & playerLayer) != 0)
         {
             OnPlayerHit(other);
+            return;
         }
-        else if (((1 << other.gameObject.layer) & groundLayer) != 0)
-        {
-            OnGroundHit(other);
-        }
+
+        // ‚»‚êˆÈŠO‚Ì‚İ’Êí’eˆ—
+        base.OnTriggerEnter(other);
     }
     protected virtual void OnPlayerHit(Collider other)
     {
@@ -61,7 +67,6 @@ public abstract class OrotiBulletBase : Bullet
 
     protected virtual void OnGroundHit(Collider other)
     {
-        Destroy(gameObject);
     }
 
     protected Vector3 GetBottomPosition()
