@@ -1,10 +1,10 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 
 [CreateAssetMenu(fileName = "NewDoubleArmPressAttack", menuName = "Boss Attacks/Double Arm Press Attack")]
 public class DoubleArmPressAttack : BossAttackPattern
 {
-    [Header("—¼˜rƒvƒŒƒXUŒ‚‚ÌÝ’è")]
+    [Header("ä¸¡è…•ãƒ—ãƒ¬ã‚¹æ”»æ’ƒã®è¨­å®š")]
     public float windUpSpeed = 25f;
     public float pressSpeed = 60f;
     public float returnSpeed = 20f;
@@ -12,14 +12,13 @@ public class DoubleArmPressAttack : BossAttackPattern
     public float screenEdgeOffset = 2.0f;
     public float pressArmSpacing = 2.5f;
 
-    [Header("—­‚ß‰‰o‚ÌÝ’è")]
-    [Tooltip("—­‚ßŽžŠÔB‚±‚ÌŽžŠÔ‚¾‚¯ƒvƒ‹ƒvƒ‹‚µ‚Ü‚·B")]
+    [Header("æºœã‚æ¼”å‡ºã®è¨­å®š")]
+    [Tooltip("æºœã‚æ™‚é–“ã€‚ã“ã®æ™‚é–“ã ã‘ãƒ—ãƒ«ãƒ—ãƒ«ã—ã¾ã™ã€‚")]
     public float chargeTime = 1.0f;
-    [Tooltip("—­‚ß’†‚Ì˜r‚Ìk‚¦‚Ìw‹­‚³x")]
+    [Tooltip("æºœã‚ä¸­ã®è…•ã®éœ‡ãˆã®ã€Žå¼·ã•ã€")]
     public float chargeShakeIntensity = 0.1f;
-    [Tooltip("—­‚ß’†‚Ì˜r‚Ìk‚¦‚Ìw‘¬‚³x")]
+    [Tooltip("æºœã‚ä¸­ã®è…•ã®éœ‡ãˆã®ã€Žé€Ÿã•ã€")]
     public float chargeShakeSpeed = 50f;
-
 
     public override void Execute(BossController boss)
     {
@@ -40,8 +39,7 @@ public class DoubleArmPressAttack : BossAttackPattern
 
         try
         {
-            // --- 1. U‚è‚©‚Ô‚è (Wind-up) ---
-            // ¥¥¥ ƒAƒjƒ?ƒVƒ‡ƒ“Ý’è ¥¥¥
+            // --- 1. æŒ¯ã‚Šã‹ã¶ã‚Š (Wind-up) ---
             boss.SetArmAnimation(true, prepareHandState);
             boss.SetArmAnimation(false, prepareHandState);
 
@@ -54,20 +52,26 @@ public class DoubleArmPressAttack : BossAttackPattern
             Vector3 rightWindUpPos = new Vector3(rightEdge.x + screenEdgeOffset, boss.playerTransform.position.y, rightEdge.z);
 
             float lockedAttackY = boss.playerTransform.position.y;
+            float timeoutTimer = 0f; // â˜… ç„¡é™ãƒ«ãƒ¼ãƒ—é˜²æ­¢ç”¨ã®ã‚¿ã‚¤ãƒžãƒ¼
 
-            while (Vector3.Distance(boss.leftArmObject.transform.position, leftWindUpPos) > 0.1f || Vector3.Distance(boss.rightArmObject.transform.position, rightWindUpPos) > 0.1f)
+            while ((Vector3.Distance(boss.leftArmObject.transform.position, leftWindUpPos) > 0.1f ||
+                    Vector3.Distance(boss.rightArmObject.transform.position, rightWindUpPos) > 0.1f) &&
+                    timeoutTimer < 3.0f)
             {
                 lockedAttackY = boss.playerTransform.position.y;
                 leftWindUpPos.y = lockedAttackY;
                 rightWindUpPos.y = lockedAttackY;
                 leftArmRb.MovePosition(Vector3.MoveTowards(boss.leftArmObject.transform.position, leftWindUpPos, windUpSpeed * Time.deltaTime));
                 rightArmRb.MovePosition(Vector3.MoveTowards(boss.rightArmObject.transform.position, rightWindUpPos, windUpSpeed * Time.deltaTime));
+
+                timeoutTimer += Time.deltaTime;
                 yield return null;
             }
 
+            // â˜… éšœå®³ç‰©ã«å¼•ã£ã‹ã‹ã£ã¦ã‚‚ã‚¿ã‚¤ãƒžãƒ¼ã§æŠœã‘ã¦å¿…ãšéŸ³ãŒé³´ã‚‹
             if (SE != null) SE.Play("Boss.Charge");
 
-            // --- 2. —­‚ßiƒvƒ‹ƒvƒ‹‰‰oj ---
+            // --- 2. æºœã‚ï¼ˆãƒ—ãƒ«ãƒ—ãƒ«æ¼”å‡ºï¼‰ ---
             float chargeTimer = 0f;
             Vector3 leftChargePos = boss.leftArmObject.transform.position;
             Vector3 rightChargePos = boss.rightArmObject.transform.position;
@@ -87,8 +91,7 @@ public class DoubleArmPressAttack : BossAttackPattern
             leftArmRb.MovePosition(leftChargePos);
             rightArmRb.MovePosition(rightChargePos);
 
-            // --- 3. ƒvƒŒƒX ---
-            // ¥¥¥ ƒAƒjƒ?ƒVƒ‡ƒ“Ý’è ¥¥¥
+            // --- 3. ãƒ—ãƒ¬ã‚¹ ---
             boss.SetArmAnimation(true, actionHandState);
             boss.SetArmAnimation(false, actionHandState);
             if (leftDamageCollider != null) leftDamageCollider.enabled = true;
@@ -98,22 +101,25 @@ public class DoubleArmPressAttack : BossAttackPattern
             Vector3 leftTargetPos = targetCenterPos - boss.transform.right * (pressArmSpacing / 2);
             Vector3 rightTargetPos = targetCenterPos + boss.transform.right * (pressArmSpacing / 2);
 
-            while (Vector3.Distance(boss.leftArmObject.transform.position, leftTargetPos) > 0.1f || Vector3.Distance(boss.rightArmObject.transform.position, rightTargetPos) > 0.1f)
+            timeoutTimer = 0f; // â˜… ã‚¿ã‚¤ãƒžãƒ¼ãƒªã‚»ãƒƒãƒˆ
+            while ((Vector3.Distance(boss.leftArmObject.transform.position, leftTargetPos) > 0.1f ||
+                    Vector3.Distance(boss.rightArmObject.transform.position, rightTargetPos) > 0.1f) &&
+                    timeoutTimer < 3.0f)
             {
                 leftArmRb.MovePosition(Vector3.MoveTowards(boss.leftArmObject.transform.position, leftTargetPos, pressSpeed * Time.deltaTime));
                 rightArmRb.MovePosition(Vector3.MoveTowards(boss.rightArmObject.transform.position, rightTargetPos, pressSpeed * Time.deltaTime));
+
+                timeoutTimer += Time.deltaTime;
                 yield return null;
             }
 
-            Debug.Log("Aaaaaaaaaaaaaa");
+            // â˜… ã“ã“ã‚‚å¿…ãšé³´ã‚‹
             if (SE != null) SE.Play("Boss.Press");
 
-
-            // --- 4. d’¼ ---
+            // --- 4. ç¡¬ç›´ ---
             yield return new WaitForSeconds(impactPauseTime);
 
-            // --- 5. ‘Ò?ˆÊ’u‚É–ß‚é ---
-            // ¥¥¥ ƒAƒjƒ?ƒVƒ‡ƒ“Ý’è ¥¥¥
+            // --- 5. å¾…æ©Ÿä½ç½®ã«æˆ»ã‚‹ ---
             boss.SetArmAnimation(true, returnHandState);
             boss.SetArmAnimation(false, returnHandState);
             if (leftDamageCollider != null) leftDamageCollider.enabled = false;
@@ -140,7 +146,6 @@ public class DoubleArmPressAttack : BossAttackPattern
         }
         finally
         {
-            // ¥¥¥ ƒAƒjƒ?ƒVƒ‡ƒ“‚ðƒŠƒZƒbƒg ¥¥¥
             boss.SetArmAnimation(true, ArmAnimationState.Default);
             boss.SetArmAnimation(false, ArmAnimationState.Default);
             if (leftDamageCollider != null) leftDamageCollider.enabled = true;

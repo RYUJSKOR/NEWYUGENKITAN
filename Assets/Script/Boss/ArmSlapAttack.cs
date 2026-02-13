@@ -1,17 +1,17 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 
 [CreateAssetMenu(fileName = "NewSlapAttack", menuName = "Boss Attacks/Slap Attack")]
 public class ArmSlapAttack : BossAttackPattern
 {
-    [Header("ƒrƒ“?UŒ‚‚Ìİ’è")]
+    [Header("ãƒ“ãƒ³ã‚¿æ”»æ’ƒã®è¨­å®š")]
     public float attackHeightOffset = 1.0f;
     public float screenEdgeOffset = 2.0f;
     public float swipeSpeed = 40f;
     public float returnSpeed = 20f;
     public float windUpTime = 0.8f;
 
-    [Header("?ƒ‚Ì‰‰oİ’è")]
+    [Header("æºœã‚ã®æ¼”å‡ºè¨­å®š")]
     public bool enableChargeShake = true;
     public float shakeAmount = 0.1f;
     public float shakeSpeed = 30f;
@@ -44,7 +44,6 @@ public class ArmSlapAttack : BossAttackPattern
 
     private IEnumerator SlapRoutine(BossController boss, Transform arm, Transform restPosition, bool isLeftArm)
     {
-
         var SE = FindAnyObjectByType<SEController>();
 
         boss.SetAttackingState(true, isLeftArm);
@@ -54,11 +53,11 @@ public class ArmSlapAttack : BossAttackPattern
 
         try
         {
-            // --- UŒ‚ˆÊ’u‚ÌŒvZ ---
+            // --- æ”»æ’ƒä½ç½®ã®è¨ˆç®— ---
             Camera mainCamera = Camera.main;
             if (mainCamera == null)
             {
-                Debug.LogError("Main Camera‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñI");
+                Debug.LogError("Main CameraãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ï¼");
                 yield break;
             }
 
@@ -80,17 +79,19 @@ public class ArmSlapAttack : BossAttackPattern
             startPos.y = endPos.y = boss.playerTransform.position.y + attackHeightOffset;
 
 
-            // --- U‚è‚©‚Ô‚è (Wind-up) ---
+            // --- æŒ¯ã‚Šã‹ã¶ã‚Š (Wind-up) ---
             boss.SetArmAnimation(isLeftArm, prepareHandState);
-            while (Vector3.Distance(arm.position, startPos) > 0.1f)
+            float timeoutTimer = 0f; // â˜… ç„¡é™ãƒ«ãƒ¼ãƒ—é˜²æ­¢ç”¨ã®ã‚¿ã‚¤ãƒãƒ¼
+            while (Vector3.Distance(arm.position, startPos) > 0.1f && timeoutTimer < 3.0f)
             {
                 armRb.MovePosition(Vector3.MoveTowards(arm.position, startPos, swipeSpeed * 1.5f * Time.deltaTime));
+                timeoutTimer += Time.deltaTime;
                 yield return null;
             }
 
             if (SE != null) SE.Play("Boss.Charge");
 
-            // --- —­‚ß (Charge) ---
+            // --- æºœã‚ (Charge) ---
             float timer = 0f;
             Vector3 chargePosition = arm.position;
 
@@ -107,24 +108,29 @@ public class ArmSlapAttack : BossAttackPattern
             armRb.MovePosition(chargePosition);
 
             if (SE != null) SE.Play("Boss.Swipe");
-            else Debug.Log("Aaaaaaaaaaaaaa2");
 
+            // --- ãƒ“ãƒ³ã‚¿ (Swipe) ---
             boss.SetArmAnimation(isLeftArm, actionHandState);
-            while (Vector3.Distance(arm.position, endPos) > 0.1f)
+            timeoutTimer = 0f;
+            while (Vector3.Distance(arm.position, endPos) > 0.1f && timeoutTimer < 3.0f)
             {
                 armRb.MovePosition(Vector3.MoveTowards(arm.position, endPos, swipeSpeed * Time.deltaTime));
+                timeoutTimer += Time.deltaTime;
                 yield return null;
             }
 
-            // --- ‘Ò?ˆÊ’u‚É–ß‚é ---
+            // --- ç¡¬ç›´ ---
             yield return new WaitForSeconds(0.5f);
 
             if (damageCollider != null) damageCollider.enabled = false;
 
+            // --- å¾…æ©Ÿä½ç½®ã«æˆ»ã‚‹ ---
             boss.SetArmAnimation(isLeftArm, returnHandState);
-            while (Vector3.Distance(arm.position, restPosition.position) > 0.1f)
+            timeoutTimer = 0f;
+            while (Vector3.Distance(arm.position, restPosition.position) > 0.1f && timeoutTimer < 3.0f)
             {
                 armRb.MovePosition(Vector3.MoveTowards(arm.position, restPosition.position, returnSpeed * Time.deltaTime));
+                timeoutTimer += Time.deltaTime;
                 yield return null;
             }
             armRb.MovePosition(restPosition.position);
