@@ -2829,6 +2829,11 @@ MonoBehaviour:
     phase1Setting: {fileID: 11400000, guid: cfe66e5c7b82b714d9a183c8b046db5d, type: 2}
     phase2Setting: {fileID: 11400000, guid: 35b5fb3e570ef2c4786b2b61df577ad8, type: 2}
     phase3Setting: {fileID: 11400000, guid: 20c6d074f23b4fa46be90bb9bee3083a, type: 2}
+  - type: 3
+    bulletPrefab: {fileID: 4509475048730356531, guid: 7f4501ee0429ec143873fe194ce2ba92, type: 3}
+    phase1Setting: {fileID: 11400000, guid: 3ff50aa38bd34e745892d5d10a1128b4, type: 2}
+    phase2Setting: {fileID: 11400000, guid: 48b09f489cf36674e91bce1914968bcc, type: 2}
+    phase3Setting: {fileID: 11400000, guid: cf00480e6c1df1244982d831c12cc63b, type: 2}
   phase1Setting: {fileID: 0}
   phase2Setting: {fileID: 0}
   phase3Setting: {fileID: 0}

@@ -9696,7 +9696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 1
-  lifeTime: 5
+  lifeTime: 10
   ExplosionObject: {fileID: 0}
   ignoreTags:
   - Boss
