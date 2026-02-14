@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Attack_Shoot
   m_EditorClassIdentifier: 
   selectType: 2
-  useNeckCount: 1
+  randomSelectCount: 3
   specificNeckIds: 0300000004000000050000000600000007000000
-  priorityType: 2
+  priorityType: 0
   attackOrder: 1
   sequentialInterval: 0.3
   allowRepeat: 0

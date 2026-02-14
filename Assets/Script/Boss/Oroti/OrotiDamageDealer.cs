@@ -38,4 +38,9 @@ public class OrotiDamageDealer : MonoBehaviour
             }
         }
     }
+
+    public void SetDamage(float value)
+    {
+        damage = value;
+    }
 }

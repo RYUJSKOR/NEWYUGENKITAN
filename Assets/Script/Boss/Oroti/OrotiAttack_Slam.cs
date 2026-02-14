@@ -19,7 +19,8 @@ public class OrotiAttack_Slam : OrotiAttackBase
         return ExecuteByOrder(
             attackable,
             player,
-            controller
+            controller,
+            OrotiAttackType.Slam
         );
     }
 }

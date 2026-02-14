@@ -3016,6 +3016,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb13484710b35d04f814682bd4d06e99, type: 2}
   - {fileID: 11400000, guid: ad2e641860e9d1142a22c15782644a32, type: 2}
   - {fileID: 11400000, guid: ba21b0157f055854fafd5ca0034c7d16, type: 2}
+  - {fileID: 11400000, guid: 14e9758ea81d4824383157aa38bf3f85, type: 2}
   player: {fileID: 1424610713}
   logInterval: 30
   attackCooldown: 4
@@ -6097,7 +6098,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -244354694412377190, guid: 57f21af59f170c347b87b42838eeac35, type: 3}
       propertyPath: neckId
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5846472170002618429, guid: 57f21af59f170c347b87b42838eeac35, type: 3}
       propertyPath: m_LocalScale.x

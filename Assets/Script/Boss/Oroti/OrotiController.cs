@@ -91,20 +91,21 @@ public class OrotiController : MonoBehaviour
         }
     }
 
-    public void StartSequentialAttack(  List<OrotiNeck> necks,float interval)
+    public void StartSequentialAttack(  List<OrotiNeck> necks,float interval, OrotiAttackType type)
     {
-        StartCoroutine(SequentialAttackCoroutine(necks, interval));
+        StartCoroutine(SequentialAttackCoroutine(necks, interval, type));
     }
 
     private IEnumerator SequentialAttackCoroutine(
         List<OrotiNeck> necks,
-        float interval
+        float interval,
+        OrotiAttackType type
     )
     {
         foreach (var neck in necks)
         {
             if (neck.CanAttack)
-                neck.PlayAttack();
+                neck.PlayAttack(type);
 
             yield return new WaitForSeconds(interval);
         }

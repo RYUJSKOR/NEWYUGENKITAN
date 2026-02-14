@@ -25,7 +25,13 @@ public class OrotiAttack_Shoot : OrotiAttackBase
 		if (attackable.Count == 0)
 			return false;
 
-		switch (attackOrder)
+        // Priority適用
+        attackable = ApplyPriority(attackable, player);
+
+        // Subset適用（randomSelectCount）
+        attackable = ApplySubset(attackable);
+
+        switch (attackOrder)
 		{
 			case NeckAttackOrderType.Simultaneous:
 				foreach (var neck in attackable)

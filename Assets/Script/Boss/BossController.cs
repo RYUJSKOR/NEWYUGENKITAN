@@ -187,7 +187,7 @@ public class BossController : MonoBehaviour
             {
                 currentPhaseIndex = BossGameManager.Instance.SavedBossPhase;
                 Debug.Log("保存されたボスのフェーズを復元しました: " + currentPhaseIndex);
-                if (bodyHealthManager != null)
+                if (bodyHealthManager != null && BossGameManager.Instance.SavedBossHealth > 0)
                 {
                     bodyHealthManager.SetHealth(BossGameManager.Instance.SavedBossHealth);
                     Debug.Log("保存されたボスの体力を復元しました: " + bodyHealthManager.GetHealth());
@@ -195,7 +195,7 @@ public class BossController : MonoBehaviour
             }
             hasLoadedSavedData = true;
 
-		}
+        }
 
         foreach (var wp in weakPoints)
         {
@@ -308,17 +308,17 @@ public class BossController : MonoBehaviour
             GameManager.Instance.BossClear();
         }
 
-		yield return new WaitForSecondsRealtime(3f);
-		gameObject.SetActive(false);
+        yield return new WaitForSecondsRealtime(3f);
+        gameObject.SetActive(false);
 
-		// リザルトシーンへ移動
-		GameObject triggerInstance = Instantiate(stageExitTriggerPrefab, stageExitTriggerSpawnPoint.position, stageExitTriggerSpawnPoint.rotation);
-		StageExitTrigger triggerScript = triggerInstance.GetComponent<StageExitTrigger>();
-		triggerScript.NextScene();
-	}
+        // リザルトシーンへ移動
+        GameObject triggerInstance = Instantiate(stageExitTriggerPrefab, stageExitTriggerSpawnPoint.position, stageExitTriggerSpawnPoint.rotation);
+        StageExitTrigger triggerScript = triggerInstance.GetComponent<StageExitTrigger>();
+        triggerScript.NextScene();
+    }
 
 
-	private void OnWeakPointDamaged(BossWeakPoint weakPoint)
+    private void OnWeakPointDamaged(BossWeakPoint weakPoint)
     {
         // (前回の修正) 現在のフェーズの色を取得
         Color currentPhaseColor = phases[currentPhaseIndex].phaseColor;

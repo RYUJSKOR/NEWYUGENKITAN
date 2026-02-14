@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Attack_Slam
   m_EditorClassIdentifier: 
   selectType: 2
-  useNeckCount: 1
+  randomSelectCount: 3
   specificNeckIds: 000000000100000002000000
   priorityType: 1
   attackOrder: 1

@@ -2,10 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum OrotiAttackType
+{
+    Swing,
+    Slam,
+    Bite,
+    Shoot
+}
+
 public class OrotiNeck : MonoBehaviour
 {
     [Header("Neck ID")]
     public int neckId;
+
+    [Header("Dive Replacement")]
+    [SerializeField] private GameObject diveReplacementNeck;
 
     [Header("Distance")]
     [SerializeField] private Transform distancePoint;
@@ -50,7 +61,12 @@ public class OrotiNeck : MonoBehaviour
     private OrotiController controller;
     private OrotiBulletEntry currentBullet;
 
-    private static readonly int AttackTrigger = Animator.StringToHash("Attack");
+    private static readonly int SwingTrigger = Animator.StringToHash("Swing");
+
+    private static readonly int SlamTrigger = Animator.StringToHash("Slam");
+
+    private static readonly int BiteTrigger = Animator.StringToHash("Bite");
+
     private static readonly int ShootTrigger = Animator.StringToHash("Shoot");
 
     private void Awake()
@@ -83,14 +99,25 @@ public class OrotiNeck : MonoBehaviour
         return (GetDistancePosition() - player.position).sqrMagnitude;
     }
 
-    public void PlayAttack()
+    public void PlayAttack(OrotiAttackType type)
     {
         // 攻撃確定時にクールタイム開始
         lastAttackTime = Time.time;
 
         dealer.DisableDamage();
-        animator.ResetTrigger(AttackTrigger);
-        animator.SetTrigger(AttackTrigger);
+
+        switch (type)
+        {
+            case OrotiAttackType.Swing:
+                animator.ResetTrigger(SwingTrigger);
+                animator.SetTrigger(SwingTrigger);
+                break;
+
+            case OrotiAttackType.Slam:
+                animator.ResetTrigger(SlamTrigger);
+                animator.SetTrigger(SlamTrigger);
+                break;
+        }
     }
 
     // 攻撃開始（AttackScript から呼ばれる）
@@ -103,6 +130,14 @@ public class OrotiNeck : MonoBehaviour
         shotInterval = interval;
 
         animator.SetTrigger(ShootTrigger);
+    }
+
+    public void PlayDive()
+    {
+        lastAttackTime = Time.time;
+        dealer.DisableDamage();
+        // Animatorの「Dive」Triggerを発火
+        animator.SetTrigger("Dive");
     }
 
     private void DecideRandomBullet()
@@ -202,6 +237,12 @@ public class OrotiNeck : MonoBehaviour
     {
         animator.Play(0, 0, idleOffset);
         animator.Update(0f);
+    }
+
+    public void SetSwingDamage(float value)
+    {
+        if (dealer != null)
+            dealer.SetDamage(value);
     }
 
     // Animator StateMachineBehaviour から呼ばれる

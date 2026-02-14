@@ -9,8 +9,9 @@ public abstract class OrotiAttackBase : ScriptableObject
     [Header("Neck Selection")]
     public NeckSelectType selectType = NeckSelectType.Random;
 
-    [Tooltip("Random時に使う首の本数")]
-    public int useNeckCount = 1;
+    [Header("Random Selection Settings")]
+    [Tooltip("Random時に抽出する首の数")]
+    public int randomSelectCount = 1;
 
     [Tooltip("SpecificIDs時に使う首ID")]
     public List<int> specificNeckIds = new();
@@ -53,21 +54,9 @@ public abstract class OrotiAttackBase : ScriptableObject
                 return allNecks.FindAll(
                     n => specificNeckIds.Contains(n.neckId)
                 );
-
-            case NeckSelectType.Random:
-            default:
-                List<OrotiNeck> pool = new(allNecks);
-                List<OrotiNeck> result = new();
-
-                int count = Mathf.Min(useNeckCount, pool.Count);
-                for (int i = 0; i < count; i++)
-                {
-                    int idx = Random.Range(0, pool.Count);
-                    result.Add(pool[idx]);
-                    pool.RemoveAt(idx);
-                }
-                return result;
         }
+
+        return new List<OrotiNeck>();
     }
 
     // --------------------
@@ -109,49 +98,86 @@ public abstract class OrotiAttackBase : ScriptableObject
     // 実行制御（中核）
     // --------------------
     protected bool ExecuteByOrder(
-        List<OrotiNeck> necks,
-        Transform player,
-        OrotiController controller
-    )
+     List<OrotiNeck> necks,
+    Transform player,
+    OrotiController controller,
+    OrotiAttackType type    )
     {
         if (necks == null || necks.Count == 0)
             return false;
 
-        // Priority 適用
+        // ① Priority適用
         necks = ApplyPriority(necks, player);
 
-        // Order 適用
+        // ② 上位X体 or ランダムX体抽出
+        necks = ApplySubset(necks);
+
+        if (necks == null || necks.Count == 0)
+            return false;
+
+        // ③ Order適用
         if (attackOrder == NeckAttackOrderType.Simultaneous)
         {
-            ExecuteSimultaneous(necks);
+            ExecuteSimultaneous(necks, type);
         }
         else
         {
             controller.StartCoroutine(
-                ExecuteSequential(necks)
+                ExecuteSequential(necks, type)
             );
         }
 
         return true;
     }
 
+    protected List<OrotiNeck> ApplySubset(List<OrotiNeck> necks)
+    {
+        if (randomSelectCount <= 0 || necks.Count <= randomSelectCount)
+            return necks;
+
+        // Priorityなし → ランダム抽出
+        if (priorityType == NeckPriorityType.None)
+        {
+            List<OrotiNeck> pool = new(necks);
+            List<OrotiNeck> result = new();
+
+            for (int i = 0; i < randomSelectCount; i++)
+            {
+                int idx = Random.Range(0, pool.Count);
+                result.Add(pool[idx]);
+                pool.RemoveAt(idx);
+            }
+
+            return result;
+        }
+
+        // Priorityあり → 上位から取得
+        return necks.Take(randomSelectCount).ToList();
+    }
+
     // --------------------
     // 同時攻撃
     // --------------------
-    protected void ExecuteSimultaneous(List<OrotiNeck> necks)
+    protected void ExecuteSimultaneous(
+        List<OrotiNeck> necks,
+        OrotiAttackType type
+    )
     {
         foreach (var neck in necks)
-            neck.PlayAttack();
+            neck.PlayAttack(type);
     }
 
     // --------------------
     // 順番攻撃
     // --------------------
-    protected IEnumerator ExecuteSequential(List<OrotiNeck> necks)
+    protected IEnumerator ExecuteSequential(
+        List<OrotiNeck> necks,
+        OrotiAttackType type
+    )
     {
         foreach (var neck in necks)
         {
-            neck.PlayAttack();
+            neck.PlayAttack(type);
             yield return new WaitForSeconds(sequentialInterval);
         }
     }

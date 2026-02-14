@@ -14,24 +14,25 @@ public class OrotiRockBullet : OrotiBulletBase
     private void BecomeRock()
     {
         if (isRock) return;
-
         isRock = true;
 
-        // ˆÚ“®’â~
         speed = 0f;
-
-        // UŒ‚”»’è‚ğ–³Œø‰»
         DisableDamage();
 
-        // Rigidbody‚ğ•¨—‰»
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.isKinematic = false;
-            rb.useGravity = true;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true;     // © ŒÅ’è
+            rb.useGravity = false;     // © d—Í‚à•s—v
         }
 
-        // ˆê’èŠÔŒã‚ÉÁ‚¦‚é
+        gameObject.tag = "Ground";
+        gameObject.layer = LayerMask.NameToLayer("Ground");
+
+        Destroy(gameObject, setting.remainTime);
+
         Destroy(gameObject, setting.remainTime);
     }
 
