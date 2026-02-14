@@ -562,6 +562,7 @@ Assets/GameObject/UI/AllofUI.prefab
 Assets/GameObject/UI/FoxAmuletMaterial.mat
 Assets/GameObject/UI/NouAmuletMaterial.mat
 Assets/GameObject/UI/OniAmuletMaterial.mat
+Assets/GameObject/UI/PanelCanvas.prefab
 Assets/GameObject/UI/Particle.mat
 Assets/GameObject/UI/PlayerHPUI/緑/Green_Animation.anim
 Assets/GameObject/UI/PlayerHPUI/緑/Red_Animation.anim
