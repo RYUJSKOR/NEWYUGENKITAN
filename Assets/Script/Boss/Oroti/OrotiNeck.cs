@@ -52,6 +52,8 @@ public class OrotiNeck : MonoBehaviour
 
     private float idleSpeed;
     private float idleOffset;
+    private bool hasRoared = false;
+
 
     public float IdleSpeed => idleSpeed;
     public bool CanAttack =>
@@ -94,6 +96,7 @@ public class OrotiNeck : MonoBehaviour
     private void Start()
     {
         ApplyIdleOffset();
+        animator.SetBool("isFirstRoar", true);
     }
 
     public Vector3 GetDistancePosition()
@@ -112,6 +115,7 @@ public class OrotiNeck : MonoBehaviour
 
     public void PlayAttack(OrotiAttackType type,float duration)
     {
+        if (!hasRoared) return;
         // 攻撃確定時にクールタイム開始
         lastAttackTime = Time.time;
 
@@ -139,6 +143,8 @@ public class OrotiNeck : MonoBehaviour
     // 攻撃開始（AttackScript から呼ばれる）
     public void PlayShoot(int bulletCount, float interval)
     {
+        if (!hasRoared) return;
+
         lastAttackTime = Time.time;
 
         DecideRandomBullet();
@@ -150,6 +156,8 @@ public class OrotiNeck : MonoBehaviour
 
     public void StartDive()
     {
+        if (!hasRoared) return;
+
         // ① まず通常首のDiveアニメを再生
         animator.SetTrigger("Dive");
 
@@ -295,6 +303,18 @@ public class OrotiNeck : MonoBehaviour
             _ => entry.phase1Setting
         };
     }
+
+        /// <summary>
+    /// Animation Eventで呼ばれる
+    /// </summary>
+    public void OnRoarFinished()
+    {
+        hasRoared = true;
+        animator.SetBool("isFirstRoar", false);
+
+        Debug.Log("咆哮終了 → 攻撃開始可能");
+    }
+
 
     /// <summary>
     /// Idle の再生位置をずらす
