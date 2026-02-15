@@ -1,6 +1,8 @@
+using GLTFast.Schema;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class OrotiController : MonoBehaviour
 {
@@ -25,12 +27,17 @@ public class OrotiController : MonoBehaviour
 	[SerializeField] private float attackCooldown = 2f;
 	private float attackTimer;
 
-    private OrotiAttackBase lastAttack;
+    [Header("Attack Interval")]
+    private float roarDuration;
 
+    private OrotiAttackBase lastAttack;
+    private Animator animator;
     private Coroutine sequentialRoutine;
 
 	public OrotiPhase CurrentPhase { get; private set; } = OrotiPhase.Phase1;
     public OrotiPhase GetPhase() => CurrentPhase;
+
+    private static readonly int RoarTrigger = Animator.StringToHash("Roar");
 
     private void Awake()
 	{
@@ -40,6 +47,9 @@ public class OrotiController : MonoBehaviour
 
     private void Start()
     {
+        // ゲーム開始時に咆哮してから攻撃開始
+        StartCoroutine(StartWithRoar());
+
         StartCoroutine(LogPlayerDistanceRoutine());
     }
 
@@ -60,6 +70,15 @@ public class OrotiController : MonoBehaviour
 
         TryExecuteAttack();
         attackTimer = attackCooldown;
+    }
+
+    private IEnumerator StartWithRoar()
+    {
+        // 咆哮アニメ再生
+        animator.SetTrigger(RoarTrigger);
+
+        // 咆哮の再生時間待機（秒数はインスペクターで設定可能）
+        yield return new WaitForSeconds(roarDuration);
     }
 
     private IEnumerator LogPlayerDistanceRoutine()

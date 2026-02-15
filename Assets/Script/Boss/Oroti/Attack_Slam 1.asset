@@ -19,3 +19,4 @@ MonoBehaviour:
   attackOrder: 0
   sequentialInterval: 0.7
   allowRepeat: 0
+  animationDuration: 1.4

@@ -101,7 +101,7 @@ public abstract class OrotiAttackBase : ScriptableObject
     // --------------------
     // é¿çsêßå‰ÅiíÜäjÅj
     // --------------------
-    protected bool ExecuteByOrder(
+    public bool ExecuteByOrder(
      List<OrotiNeck> necks,
     Transform player,
     OrotiController controller,
