@@ -31,6 +31,10 @@ public abstract class OrotiAttackBase : ScriptableObject
     [Tooltip("“¯‚¶UŒ‚‚ğ˜A‘±‚Åg—p‚Å‚«‚é‚©")]
     public bool allowRepeat = true;
 
+    [Header("Animation Settings")]
+    [Tooltip("‚±‚ÌUŒ‚‚ÌƒAƒjƒ[ƒVƒ‡ƒ“Ä¶•b”")]
+    public float animationDuration = 1f;
+
     /// <summary>
     /// UŒ‚‚ªÀs‚³‚ê‚½‚ç true
     /// </summary>
@@ -101,7 +105,8 @@ public abstract class OrotiAttackBase : ScriptableObject
      List<OrotiNeck> necks,
     Transform player,
     OrotiController controller,
-    OrotiAttackType type    )
+    OrotiAttackType type,
+        float animationDuration)
     {
         if (necks == null || necks.Count == 0)
             return false;
@@ -118,13 +123,12 @@ public abstract class OrotiAttackBase : ScriptableObject
         // ‡B Order“K—p
         if (attackOrder == NeckAttackOrderType.Simultaneous)
         {
-            ExecuteSimultaneous(necks, type);
+            ExecuteSimultaneousWithDuration(necks, type, animationDuration);
         }
         else
         {
             controller.StartCoroutine(
-                ExecuteSequential(necks, type)
-            );
+                      ExecuteSequential(necks, type, animationDuration));
         }
 
         return true;
@@ -158,26 +162,27 @@ public abstract class OrotiAttackBase : ScriptableObject
     // --------------------
     // “¯UŒ‚
     // --------------------
-    protected void ExecuteSimultaneous(
+    protected void ExecuteSimultaneousWithDuration(
         List<OrotiNeck> necks,
-        OrotiAttackType type
+        OrotiAttackType type,
+        float animDuration
     )
     {
         foreach (var neck in necks)
-            neck.PlayAttack(type);
+            neck.PlayAttack(type, animDuration);
     }
-
     // --------------------
     // ‡”ÔUŒ‚
     // --------------------
     protected IEnumerator ExecuteSequential(
         List<OrotiNeck> necks,
-        OrotiAttackType type
+        OrotiAttackType type,
+        float animDuration
     )
     {
         foreach (var neck in necks)
         {
-            neck.PlayAttack(type);
+            neck.PlayAttack(type, animDuration);
             yield return new WaitForSeconds(sequentialInterval);
         }
     }

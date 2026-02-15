@@ -48,6 +48,8 @@ public class OrotiNeck : MonoBehaviour
 
     [SerializeField] private Vector2 idleOffsetRange = new Vector2(0f, 1f);
 
+    [SerializeField] private GameObject visualRoot;
+
     private float idleSpeed;
     private float idleOffset;
 
@@ -60,6 +62,9 @@ public class OrotiNeck : MonoBehaviour
     private OrotiDamageDealer dealer;
     private OrotiController controller;
     private OrotiBulletEntry currentBullet;
+
+    private Renderer[] renderers;
+    private Collider[] colliders;
 
     private static readonly int SwingTrigger = Animator.StringToHash("Swing");
 
@@ -74,6 +79,12 @@ public class OrotiNeck : MonoBehaviour
         animator = GetComponent<Animator>();
         dealer = GetComponentInChildren<OrotiDamageDealer>();
         controller = GetComponentInParent<OrotiController>();
+
+        renderers = GetComponentsInChildren<Renderer>();
+        colliders = GetComponentsInChildren<Collider>();
+
+        if (diveReplacementNeck != null)
+            diveReplacementNeck.SetActive(false);
 
         // 起動時にランダム決定（1回だけ）
         idleSpeed = Random.Range(idleSpeedRange.x, idleSpeedRange.y);
@@ -99,12 +110,17 @@ public class OrotiNeck : MonoBehaviour
         return (GetDistancePosition() - player.position).sqrMagnitude;
     }
 
-    public void PlayAttack(OrotiAttackType type)
+    public void PlayAttack(OrotiAttackType type,float duration)
     {
         // 攻撃確定時にクールタイム開始
         lastAttackTime = Time.time;
 
         dealer.DisableDamage();
+
+        if (duration <= 0f) duration = 1f;
+
+        float speed = 1f / duration;
+        animator.speed = speed;
 
         switch (type)
         {
@@ -132,12 +148,62 @@ public class OrotiNeck : MonoBehaviour
         animator.SetTrigger(ShootTrigger);
     }
 
-    public void PlayDive()
+    public void StartDive()
     {
-        lastAttackTime = Time.time;
-        dealer.DisableDamage();
-        // Animatorの「Dive」Triggerを発火
+        // ① まず通常首のDiveアニメを再生
         animator.SetTrigger("Dive");
+
+        // ② Dive専用首の準備だけしておく
+        if (diveReplacementNeck != null)
+        {
+            DiveReturnHandler handler =
+                diveReplacementNeck.GetComponent<DiveReturnHandler>();
+
+            if (handler != null)
+                handler.SetOwner(this);
+        }
+    }
+    public void OnSubmerged()
+    {
+ HideNormalNeck();
+
+    if (diveReplacementNeck != null)
+    {
+        diveReplacementNeck.SetActive(true);
+
+        Animator diveAnim =
+            diveReplacementNeck.GetComponent<Animator>();
+
+        if (diveAnim != null)
+            diveAnim.SetTrigger("Dive");
+
+        // ★ 直進開始
+        DiveReturnHandler handler =
+            diveReplacementNeck.GetComponent<DiveReturnHandler>();
+
+        if (handler != null)
+        {
+            handler.SetOwner(this);
+            handler.StartDiveMove();
+        }
+    }    }
+    // --------------------------------------------------
+    // 通常首を隠す
+    // --------------------------------------------------
+    private void HideNormalNeck()
+    {
+        visualRoot.SetActive(false);
+    }
+
+    // --------------------------------------------------
+    // Dive終了後に呼ばれる
+    // --------------------------------------------------
+    public void RestoreFromDive()
+    {
+        visualRoot.SetActive(true);
+
+        if (diveReplacementNeck != null)
+            diveReplacementNeck.SetActive(false);
     }
 
     private void DecideRandomBullet()

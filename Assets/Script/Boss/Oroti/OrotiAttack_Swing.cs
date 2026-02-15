@@ -34,7 +34,8 @@ public class OrotiAttack_Swing : OrotiAttackBase
             selected,
             player,
             controller,
-            OrotiAttackType.Swing
+            OrotiAttackType.Swing,
+             animationDuration
         );
     }
 }

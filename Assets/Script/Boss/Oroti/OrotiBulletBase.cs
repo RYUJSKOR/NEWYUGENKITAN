@@ -62,11 +62,16 @@ public abstract class OrotiBulletBase : Bullet
     protected virtual void OnPlayerHit(Collider other)
     {
         // 通常ダメージ（Bullet側で処理される想定）
-        Destroy(gameObject);
+        var playerHealth = other.GetComponent<CharacterHealthManager>();
+        if (playerHealth != null)
+            playerHealth.ApplyDamage(setting.power);
     }
 
     protected virtual void OnGroundHit(Collider other)
     {
+        var playerHealth = other.GetComponent<CharacterHealthManager>();
+        if (playerHealth != null)
+            playerHealth.ApplyDamage(setting.power);
     }
 
     protected Vector3 GetBottomPosition()

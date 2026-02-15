@@ -5,56 +5,42 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Oroti/Attack/Dive")]
 public class OrotiAttack_Dive : OrotiAttackBase
 {
+    [Header("Sequential Interval")]
+    [SerializeField] private float diveInterval = 0.4f;
+
     public override bool Execute(
-            List<OrotiNeck> allNecks,
-            Transform player,
-            OrotiController controller)
+        List<OrotiNeck> allNecks,
+        Transform player,
+        OrotiController controller)
     {
-        // --------------------------------------------------
-        // ① SelectType に基づいて首グループを選択
-        // --------------------------------------------------
+        // ① グループ選択
         var selected = SelectNecks(allNecks);
 
-        // --------------------------------------------------
-        // ② 現在攻撃可能な首のみ抽出
-        //     (クールダウン中や死亡中を除外)
-        // --------------------------------------------------
+        // ② 攻撃可能な首のみ
         var attackable = FilterAttackable(selected);
 
         if (attackable.Count == 0)
             return false;
 
-        // --------------------------------------------------
         // ③ Priority適用
-        //     ・NearestToPlayer
-        //     ・Order
-        //     などで並び替え
-        // --------------------------------------------------
         attackable = ApplyPriority(attackable, player);
 
-        // --------------------------------------------------
-        // ④ RandomSelectCount適用
-        //     並び替え後の上からX体抽出
-        // --------------------------------------------------
+        // ④ Subset適用
         attackable = ApplySubset(attackable);
 
         if (attackable.Count == 0)
             return false;
 
-        // --------------------------------------------------
-        // ⑤ 攻撃順タイプに応じて実行
-        // --------------------------------------------------
+        // ⑤ 実行
         switch (attackOrder)
         {
-            // 同時に潜る
             case NeckAttackOrderType.Simultaneous:
                 foreach (var neck in attackable)
                 {
-                    neck.PlayDive();
+                    neck.StartDive();
                 }
                 break;
 
-            // 順番に潜る
             case NeckAttackOrderType.Sequential:
                 controller.StartSequentialAttack(
                     SequentialDiveCoroutine(attackable)
@@ -65,19 +51,14 @@ public class OrotiAttack_Dive : OrotiAttackBase
         return true;
     }
 
-    /// <summary>
-    /// 順番に潜るコルーチン
-    /// </summary>
     private IEnumerator SequentialDiveCoroutine(List<OrotiNeck> necks)
     {
         foreach (var neck in necks)
         {
-            // 攻撃可能か最終チェック
             if (neck.CanAttack)
-                neck.PlayDive();
+                neck.StartDive();
 
-            // 次の首までの間隔
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(diveInterval);
         }
     }
 }

@@ -20,7 +20,8 @@ public class OrotiAttack_Slam : OrotiAttackBase
             attackable,
             player,
             controller,
-            OrotiAttackType.Slam
+            OrotiAttackType.Slam,
+             animationDuration
         );
     }
 }
